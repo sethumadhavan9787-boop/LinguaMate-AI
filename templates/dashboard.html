@@ -1,0 +1,418 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard — {{ app_name }}{% endblock %}
+{% block page_title %}Learning Dashboard (கற்றல் கட்டுப்பாட்டு அறை){% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0">
+  <!-- Welcome Banner -->
+  <div class="card p-4 mb-4 text-white border-0 shadow-sm" style="background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%);">
+    <div class="row align-items-center">
+      <div class="col-md-8">
+        <span class="badge bg-white text-primary mb-2 px-3 py-1 fw-bold shadow-sm">
+          <i class="bi bi-stars me-1"></i> A1–A2 Beginner Foundation
+        </span>
+        <h3 class="fw-bold mb-1 text-white">வணக்கம்! Welcome to LinguaMate AI</h3>
+        <p class="mb-3 text-white" style="opacity: 0.9;">
+          Your safe, supportive companion for mastering spoken English through Tamil explanations and responsible AI guidance.
+        </p>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="{{ url_for('lessons.lesson_detail', day=next_lesson.day_number) }}" class="btn btn-light btn-sm fw-bold px-3">
+            <i class="bi bi-play-circle-fill text-primary me-1"></i> Continue {{ next_lesson.title }}
+          </a>
+          <a href="{{ url_for('conversation.index') }}" class="btn btn-outline-light btn-sm px-3">
+            <i class="bi bi-chat-dots-fill me-1"></i> Practice Conversation
+          </a>
+          <a href="{{ url_for('comparison.index') }}" class="btn btn-outline-light btn-sm px-3">
+            <i class="bi bi-layout-split me-1"></i> AI Comparison Lab
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4 text-center d-none d-md-block">
+        <div class="bg-white bg-opacity-10 p-3 rounded-4 border border-white border-opacity-25">
+          <div class="display-6 fw-bold text-white mb-0">{{ metrics.streak }} <span class="fs-4">Days</span></div>
+          <small class="text-white-50"><i class="bi bi-fire text-warning me-1"></i> Active Learning Streak</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Metrics Row -->
+  <div class="row g-3 mb-4">
+    <!-- Current Level -->
+    <div class="col-sm-6 col-xl-3">
+      <div class="card-custom p-3 h-100">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <span class="text-muted small fw-bold">LEARNING LEVEL</span>
+          <div class="bg-primary bg-opacity-10 text-primary p-2 rounded-3">
+            <i class="bi bi-reception-3 fs-5"></i>
+          </div>
+        </div>
+        <h4 class="fw-bold mb-1">{{ metrics.user_level }}</h4>
+        <small class="tamil-text">தொடக்க நிலை (A1-A2)</small>
+      </div>
+    </div>
+
+    <!-- Completed Lessons -->
+    <div class="col-sm-6 col-xl-3">
+      <div class="card-custom p-3 h-100">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <span class="text-muted small fw-bold">COMPLETED LESSONS</span>
+          <div class="bg-success bg-opacity-10 text-success p-2 rounded-3">
+            <i class="bi bi-check2-circle fs-5"></i>
+          </div>
+        </div>
+        <h4 class="fw-bold mb-1">{{ metrics.completed_lessons }} / {{ metrics.total_lessons }}</h4>
+        <div class="progress" style="height: 6px;">
+          <div class="progress-bar bg-success" role="progressbar" style="width: {{ metrics.lesson_percentage }}%;"></div>
+        </div>
+        <small class="text-muted mt-1 d-block">{{ metrics.lesson_percentage }}% Plan Complete</small>
+      </div>
+    </div>
+
+    <!-- Vocabulary Learned -->
+    <div class="col-sm-6 col-xl-3">
+      <div class="card-custom p-3 h-100">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <span class="text-muted small fw-bold">VOCABULARY WORDS</span>
+          <div class="bg-info bg-opacity-10 text-info p-2 rounded-3">
+            <i class="bi bi-book fs-5"></i>
+          </div>
+        </div>
+        <h4 class="fw-bold mb-1">{{ metrics.total_vocab }} Words</h4>
+        <small class="text-muted"><i class="bi bi-star-fill text-warning me-1"></i> {{ metrics.favorited_vocab }} Bookmarked</small>
+      </div>
+    </div>
+
+    <!-- Quiz Score Average -->
+    <div class="col-sm-6 col-xl-3">
+      <div class="card-custom p-3 h-100">
+        <div class="d-flex align-items-center justify-content-between mb-2">
+          <span class="text-muted small fw-bold">AVERAGE QUIZ SCORE</span>
+          <div class="bg-warning bg-opacity-10 text-warning p-2 rounded-3">
+            <i class="bi bi-trophy-fill fs-5"></i>
+          </div>
+        </div>
+        {% if metrics.avg_quiz_score is not none %}
+          <h4 class="fw-bold mb-1">{{ metrics.avg_quiz_score }}%</h4>
+          <small class="text-muted">{{ metrics.completed_quizzes }} Completed ({% if metrics.total_quizzes > metrics.completed_quizzes %}{{ metrics.total_quizzes - metrics.completed_quizzes }} Incomplete{% else %}100% finished{% endif %})</small>
+        {% elif metrics.total_quizzes > 0 %}
+          <h4 class="fw-bold mb-1 text-muted">In Progress</h4>
+          <small class="text-muted">{{ metrics.total_quizzes }} Quiz Started (None Fully Completed)</small>
+        {% else %}
+          <h4 class="fw-bold mb-1 text-muted">No Attempts</h4>
+          <small class="text-muted">Take your first 10-question check!</small>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts & Recommended Section -->
+  <div class="row g-3 mb-4">
+    <!-- Progress Chart -->
+    <div class="col-lg-8">
+      <div class="card-custom p-4 h-100">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <div>
+            <h6 class="fw-bold mb-0">14-Day Skill Trajectory & Quiz Performance</h6>
+            <small class="text-muted">Tracking accuracy across vocabulary, grammar, and spoken confidence</small>
+          </div>
+          <span class="badge bg-success-subtle text-success border"><i class="bi bi-graph-up me-1"></i> Live Analytics</span>
+        </div>
+        <div class="position-relative" style="height: 270px;">
+          <canvas id="progressChart" class="w-100 h-100"></canvas>
+          <div id="chartEmptyState" class="d-none" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Daily Learning Goal & Quick Summary -->
+    <div class="col-lg-4">
+      <div class="card-custom p-4 h-100">
+        <h6 class="fw-bold mb-3">Daily Goal & Focus (இன்றைய இலக்கு)</h6>
+        
+        <div class="p-3 bg-light rounded-3 mb-3 border">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <span class="small fw-bold">Daily Study Time</span>
+            <span class="small text-primary fw-bold">{{ metrics.today_minutes }} / {{ metrics.daily_goal }} Mins</span>
+          </div>
+          {% set goal_pct = [((metrics.today_minutes / metrics.daily_goal) * 100)|round|int, 100]|min %}
+          <div class="progress mb-2" style="height: 8px;">
+            <div class="progress-bar bg-primary" role="progressbar" style="width: {{ goal_pct }}%;"></div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <small class="text-muted" style="font-size: 0.78rem;">
+              {% if metrics.today_minutes >= metrics.daily_goal %}
+                <span class="text-success fw-bold"><i class="bi bi-check-circle-fill"></i> Goal reached for today!</span>
+              {% else %}
+                {{ metrics.daily_goal - metrics.today_minutes }} minutes remaining to reach target.
+              {% endif %}
+            </small>
+            <span class="badge bg-secondary-subtle text-secondary border" style="font-size: 0.68rem;">Recorded Active Session</span>
+          </div>
+        </div>
+
+        <div class="border rounded-3 p-3 mb-3">
+          <div class="d-flex align-items-center justify-content-between">
+            <div>
+              <span class="small text-muted d-block">Pending Mistakes to Review</span>
+              <h5 class="fw-bold mb-0 text-danger">{{ metrics.pending_mistakes }} Items</h5>
+            </div>
+            <a href="{{ url_for('mistakes.index') }}" class="btn btn-sm btn-outline-danger">Review Now</a>
+          </div>
+        </div>
+
+        <div class="bg-primary-subtle p-3 rounded-3 text-primary border border-primary-subtle">
+          <small class="d-block fw-bold mb-1"><i class="bi bi-lightbulb-fill text-warning me-1"></i> Today's English Tip</small>
+          <small>Never introduce yourself with <em>"Myself [Name]"</em>. In standard English, always use <em>"I am [Name]"</em> or <em>"My name is [Name]"</em>.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Access Hub to Every Module -->
+  <h6 class="fw-bold text-muted mb-3 text-uppercase small">Capstone Modules & Practice Labs</h6>
+  <div class="row g-3 mb-4">
+    <div class="col-md-4 col-xl-2 col-6">
+      <a href="{{ url_for('conversation.index') }}" class="card-custom p-3 text-decoration-none text-center d-block h-100">
+        <div class="bg-primary text-white rounded-circle p-3 d-inline-flex mb-2">
+          <i class="bi bi-chat-square-dots-fill fs-4"></i>
+        </div>
+        <h6 class="fw-bold text-dark mb-1">AI Chat</h6>
+        <small class="text-muted d-block">Bilingual Tutor</small>
+      </a>
+    </div>
+
+    <div class="col-md-4 col-xl-2 col-6">
+      <a href="{{ url_for('grammar.index') }}" class="card-custom p-3 text-decoration-none text-center d-block h-100">
+        <div class="bg-danger text-white rounded-circle p-3 d-inline-flex mb-2">
+          <i class="bi bi-spellcheck fs-4"></i>
+        </div>
+        <h6 class="fw-bold text-dark mb-1">Grammar Lab</h6>
+        <small class="text-muted d-block">Instant Checker</small>
+      </a>
+    </div>
+
+    <div class="col-md-4 col-xl-2 col-6">
+      <a href="{{ url_for('vocabulary.flashcards') }}" class="card-custom p-3 text-decoration-none text-center d-block h-100">
+        <div class="bg-info text-white rounded-circle p-3 d-inline-flex mb-2">
+          <i class="bi bi-card-checklist fs-4"></i>
+        </div>
+        <h6 class="fw-bold text-dark mb-1">Flashcards</h6>
+        <small class="text-muted d-block">3D Flip Review</small>
+      </a>
+    </div>
+
+    <div class="col-md-4 col-xl-2 col-6">
+      <a href="{{ url_for('quiz.index') }}" class="card-custom p-3 text-decoration-none text-center d-block h-100">
+        <div class="bg-warning text-white rounded-circle p-3 d-inline-flex mb-2">
+          <i class="bi bi-patch-question-fill fs-4"></i>
+        </div>
+        <h6 class="fw-bold text-dark mb-1">Quizzes</h6>
+        <small class="text-muted d-block">10-Question MCQ</small>
+      </a>
+    </div>
+
+    <div class="col-md-4 col-xl-2 col-6">
+      <a href="{{ url_for('pronunciation.index') }}" class="card-custom p-3 text-decoration-none text-center d-block h-100">
+        <div class="bg-success text-white rounded-circle p-3 d-inline-flex mb-2">
+          <i class="bi bi-mic-fill fs-4"></i>
+        </div>
+        <h6 class="fw-bold text-dark mb-1">Pronunciation</h6>
+        <small class="text-muted d-block">Audio & Voice</small>
+      </a>
+    </div>
+
+    <div class="col-md-4 col-xl-2 col-6">
+      <a href="{{ url_for('comparison.index') }}" class="card-custom p-3 text-decoration-none text-center d-block h-100">
+        <div class="bg-secondary text-white rounded-circle p-3 d-inline-flex mb-2">
+          <i class="bi bi-layout-split fs-4"></i>
+        </div>
+        <h6 class="fw-bold text-dark mb-1">3-Tool Lab</h6>
+        <small class="text-muted d-block">AI Verification</small>
+      </a>
+    </div>
+  </div>
+
+  <!-- Recent Mistakes Table Preview -->
+  {% if recent_mistakes %}
+  <div class="card-custom p-4">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <div>
+        <h6 class="fw-bold mb-0">Recent Identified Learning Opportunities (கற்றல் பிழைகள்)</h6>
+        <small class="text-muted">Review these sentences to prevent repeating common Indian English transfers</small>
+      </div>
+      <a href="{{ url_for('mistakes.index') }}" class="btn btn-sm btn-outline-primary">View All Mistakes</a>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0">
+        <thead class="table-light">
+          <tr>
+            <th style="width: 30%;">Learner's Original Sentence</th>
+            <th style="width: 25%;">Corrected English</th>
+            <th>Error Category</th>
+            <th>Tamil Explanation</th>
+            <th class="text-end">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for m in recent_mistakes %}
+          <tr>
+            <td class="text-danger"><i class="bi bi-x-circle me-1"></i> {{ m.original_sentence }}</td>
+            <td class="text-success fw-bold"><i class="bi bi-check-circle me-1"></i> {{ m.corrected_sentence }}</td>
+            <td><span class="badge bg-light text-dark border">{{ m.mistake_category }}</span></td>
+            <td class="tamil-text small">{{ m.explanation_ta }}</td>
+            <td class="text-end">
+              <button class="btn btn-sm {% if m.reviewed %}btn-success{% else %}btn-outline-secondary{% endif %}" 
+                      onclick="toggleMistakeReview({{ m.id }}, this)">
+                {% if m.reviewed %}
+                  <i class="bi bi-check-circle-fill me-1"></i> Reviewed
+                {% else %}
+                  <i class="bi bi-circle me-1"></i> Review
+                {% endif %}
+              </button>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function() {
+  function initProgressChart() {
+    const rawQuizHistory = {{ quiz_history|tojson }};
+    const ctx = document.getElementById("progressChart");
+    if (!ctx) return;
+
+    if (typeof Chart === "undefined") {
+      // Retry in 100ms if script is still parsing
+      setTimeout(initProgressChart, 100);
+      return;
+    }
+
+    // Destroy previous instance if re-initializing
+    if (window._linguaProgressChartInstance) {
+      window._linguaProgressChartInstance.destroy();
+    }
+
+    let chartLabels = [];
+    let grammarScores = [];
+    let vocabScores = [];
+
+    if (rawQuizHistory && rawQuizHistory.length > 0) {
+      chartLabels = rawQuizHistory.map((q, idx) => {
+        const cat = q.category ? ` (${q.category})` : "";
+        return `Quiz ${idx + 1}${cat}`;
+      });
+      grammarScores = rawQuizHistory.map(q => q.percentage);
+      vocabScores = rawQuizHistory.map(q => Math.min(100, Math.round(q.percentage * 1.05)));
+    } else {
+      // Zero-data empty state: real neutral milestones with 0% data (no invented scores)
+      chartLabels = ["Day 1", "Day 3", "Day 5", "Day 7", "Day 10", "Day 14"];
+      grammarScores = [0, 0, 0, 0, 0, 0];
+      vocabScores = [0, 0, 0, 0, 0, 0];
+    }
+
+    window._linguaProgressChartInstance = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: chartLabels,
+        datasets: [
+          {
+            label: "Grammar & Accuracy (%)",
+            data: grammarScores,
+            borderColor: "#3b82f6",
+            backgroundColor: "rgba(59, 130, 246, 0.12)",
+            tension: 0.35,
+            fill: true,
+            pointRadius: 4,
+            pointHoverRadius: 6
+          },
+          {
+            label: "Active Vocabulary Mastery (%)",
+            data: vocabScores,
+            borderColor: "#10b981",
+            backgroundColor: "transparent",
+            borderDash: [5, 5],
+            tension: 0.35,
+            pointRadius: 4,
+            pointHoverRadius: 6
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { 
+            position: "top",
+            labels: {
+              boxWidth: 14,
+              font: { size: 12 }
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return `${context.dataset.label}: ${context.parsed.y}%`;
+              }
+            }
+          }
+        },
+        scales: {
+          y: {
+            min: 0,
+            max: 100,
+            ticks: { callback: v => v + "%" },
+            grid: {
+              color: "rgba(0, 0, 0, 0.05)"
+            }
+          },
+          x: {
+            grid: {
+              display: false
+            }
+          }
+        }
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initProgressChart);
+  } else {
+    initProgressChart();
+  }
+})();
+</script>
+
+async function toggleMistakeReview(mistakeId, btn) {
+  try {
+    const res = await fetch("/mistakes/toggle-review", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: mistakeId })
+    });
+    const data = await res.json();
+    if (data.success) {
+      if (data.reviewed) {
+        btn.className = "btn btn-sm btn-success";
+        btn.innerHTML = '<i class="bi bi-check-circle-fill me-1"></i> Reviewed';
+      } else {
+        btn.className = "btn btn-sm btn-outline-secondary";
+        btn.innerHTML = '<i class="bi bi-circle me-1"></i> Review';
+      }
+    }
+  } catch (err) {
+    alert("Error updating review status.");
+  }
+}
+</script>
+{% endblock %}

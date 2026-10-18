@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+
+{% block title %}3D Vocabulary Flashcards — {{ app_name }}{% endblock %}
+{% block page_title %}Interactive Flashcards (சொல் நினைவூட்டல் அட்டைகள்){% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0">
+  <!-- Controls Bar -->
+  <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-2">
+    <div>
+      <a href="{{ url_for('vocabulary.index') }}" class="btn btn-outline-secondary btn-sm me-2">
+        <i class="bi bi-arrow-left me-1"></i> Back to Vocabulary
+      </a>
+      <span class="badge bg-primary px-3 py-2 fs-6" id="cardCounter">Card 1 of {{ words|length }}</span>
+    </div>
+
+    <div class="d-flex align-items-center gap-2">
+      <button class="btn btn-outline-secondary btn-sm" id="shuffleBtn" title="Shuffle flashcards">
+        <i class="bi bi-shuffle me-1"></i> Shuffle
+      </button>
+      <button class="btn btn-outline-warning btn-sm" id="favCardBtn" title="Bookmark current word">
+        <i class="bi bi-star me-1" id="favCardIcon"></i> Favorite
+      </button>
+    </div>
+  </div>
+
+  <!-- Flashcard 3D Stage -->
+  <div class="d-flex justify-content-center mb-4">
+    <div class="flashcard-container" id="flashcardContainer" title="Click card to flip">
+      <div class="flashcard-inner">
+        <!-- Front Side -->
+        <div class="flashcard-front">
+          <span class="badge bg-light text-secondary border mb-2" id="cardCategory">Category</span>
+          <h2 class="display-5 fw-bold text-primary mb-1" id="cardWord">Word</h2>
+          <p class="text-muted fs-5 mb-3" id="cardPronunciation">Pronunciation</p>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-primary btn-sm rounded-pill px-3" id="cardListenBtn" onclick="event.stopPropagation()">
+              <i class="bi bi-volume-up-fill me-1"></i> Pronounce
+            </button>
+            <span class="badge bg-secondary-subtle text-secondary align-self-center" id="cardPos">Noun</span>
+          </div>
+          <small class="text-muted mt-4"><i class="bi bi-arrow-repeat me-1"></i> Click card to see Tamil meaning</small>
+        </div>
+
+        <!-- Back Side -->
+        <div class="flashcard-back">
+          <span class="badge bg-white text-primary mb-2">Tamil Meaning (தமிழ் அர்த்தம்)</span>
+          <h3 class="fw-bold mb-3 tamil-text text-white" id="cardTamil">தமிழ் பொருள்</h3>
+          <div class="bg-white bg-opacity-20 p-3 rounded-3 text-start w-100 border border-white border-opacity-25">
+            <p class="mb-1 fw-bold text-white" id="cardExample">Example sentence in English</p>
+            <p class="mb-0 text-white-50 tamil-text small" id="cardExampleTamil">தமிழ் மொழிபெயர்ப்பு</p>
+          </div>
+          <small class="text-white-50 mt-3"><i class="bi bi-arrow-repeat me-1"></i> Click card to flip back</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="d-flex justify-content-center align-items-center gap-3">
+    <button class="btn btn-outline-secondary px-4 py-2 fw-bold" id="prevCardBtn">
+      <i class="bi bi-chevron-left me-1"></i> Previous
+    </button>
+    <button class="btn btn-primary px-4 py-2 fw-bold" id="flipCardBtn">
+      <i class="bi bi-arrow-repeat me-1"></i> Flip Card (Space)
+    </button>
+    <button class="btn btn-outline-secondary px-4 py-2 fw-bold" id="nextCardBtn">
+      Next <i class="bi bi-chevron-right ms-1"></i>
+    </button>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+const wordsData = {{ words|tojson }};
+let currentIndex = 0;
+
+const container = document.getElementById("flashcardContainer");
+const counter = document.getElementById("cardCounter");
+const wordEl = document.getElementById("cardWord");
+const pronEl = document.getElementById("cardPronunciation");
+const catEl = document.getElementById("cardCategory");
+const posEl = document.getElementById("cardPos");
+const tamilEl = document.getElementById("cardTamil");
+const exampleEl = document.getElementById("cardExample");
+const exampleTamilEl = document.getElementById("cardExampleTamil");
+const listenBtn = document.getElementById("cardListenBtn");
+const favIcon = document.getElementById("favCardIcon");
+
+function renderCard(idx) {
+  if (!wordsData.length) return;
+  const item = wordsData[idx];
+  container.classList.remove("is-flipped");
+
+  counter.innerText = `Card ${idx + 1} of ${wordsData.length}`;
+  wordEl.innerText = item.word;
+  pronEl.innerText = item.pronunciation_tip || "";
+  catEl.innerText = item.category || "Vocabulary";
+  posEl.innerText = item.part_of_speech || "";
+  tamilEl.innerText = item.tamil_meaning;
+  exampleEl.innerText = item.example_sentence;
+  exampleTamilEl.innerText = item.example_tamil;
+
+  if (item.is_favorite) {
+    favIcon.className = "bi bi-star-fill text-warning";
+  } else {
+    favIcon.className = "bi bi-star";
+  }
+
+  listenBtn.onclick = (e) => {
+    e.stopPropagation();
+    speakText(item.word, 0.85);
+  };
+}
+
+renderCard(currentIndex);
+
+container.addEventListener("click", () => {
+  container.classList.toggle("is-flipped");
+});
+
+document.getElementById("flipCardBtn").addEventListener("click", () => {
+  container.classList.toggle("is-flipped");
+});
+
+document.getElementById("nextCardBtn").addEventListener("click", () => {
+  if (currentIndex < wordsData.length - 1) {
+    currentIndex++;
+    renderCard(currentIndex);
+  } else {
+    currentIndex = 0;
+    renderCard(currentIndex);
+  }
+});
+
+document.getElementById("prevCardBtn").addEventListener("click", () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    renderCard(currentIndex);
+  } else {
+    currentIndex = wordsData.length - 1;
+    renderCard(currentIndex);
+  }
+});
+
+document.getElementById("shuffleBtn").addEventListener("click", () => {
+  wordsData.sort(() => Math.random() - 0.5);
+  currentIndex = 0;
+  renderCard(currentIndex);
+});
+
+document.getElementById("favCardBtn").addEventListener("click", async () => {
+  const item = wordsData[currentIndex];
+  await toggleWordFavorite(item.id, document.getElementById("favCardBtn"));
+  item.is_favorite = !item.is_favorite;
+  favIcon.className = item.is_favorite ? "bi bi-star-fill text-warning" : "bi bi-star";
+});
+
+// Keyboard arrow / space shortcuts
+document.addEventListener("keydown", (e) => {
+  if (e.code === "Space") {
+    e.preventDefault();
+    container.classList.toggle("is-flipped");
+  } else if (e.code === "ArrowRight") {
+    document.getElementById("nextCardBtn").click();
+  } else if (e.code === "ArrowLeft") {
+    document.getElementById("prevCardBtn").click();
+  }
+});
+</script>
+{% endblock %}

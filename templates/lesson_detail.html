@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+
+{% block title %}{{ lesson.title }} — {{ app_name }}{% endblock %}
+{% block page_title %}{{ lesson.title }}{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0">
+  <!-- Navigation Header -->
+  <div class="d-flex flex-wrap align-items-center justify-content-between mb-3 gap-2">
+    <div>
+      <a href="{{ url_for('lessons.list_lessons') }}" class="btn btn-outline-secondary btn-sm me-2">
+        <i class="bi bi-arrow-left me-1"></i> Back to 14-Day Plan
+      </a>
+      <span class="badge bg-primary px-3 py-2 fs-6">Day {{ lesson.day_number }} of 14</span>
+    </div>
+
+    <div class="d-flex align-items-center gap-2">
+      <button class="btn {% if lesson.completed %}btn-success{% else %}btn-outline-success{% endif %} btn-sm fw-bold" 
+              onclick="toggleLessonCompletion({{ lesson.day_number }}, this)">
+        {% if lesson.completed %}
+          <i class="bi bi-check-circle-fill me-1"></i> Completed
+        {% else %}
+          <i class="bi bi-circle me-1"></i> Mark as Complete
+        {% endif %}
+      </button>
+
+      {% if prev_day %}
+        <a href="{{ url_for('lessons.lesson_detail', day=prev_day) }}" class="btn btn-outline-secondary btn-sm" title="Previous Day">
+          <i class="bi bi-chevron-left"></i>
+        </a>
+      {% endif %}
+      {% if next_day %}
+        <a href="{{ url_for('lessons.lesson_detail', day=next_day) }}" class="btn btn-primary btn-sm" title="Next Day">
+          Day {{ next_day }} <i class="bi bi-chevron-right"></i>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <!-- Left Column: Content -->
+    <div class="col-lg-8">
+      <!-- 1. Learning Objectives -->
+      <div class="card-custom p-4 mb-4">
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="bi bi-bullseye me-1"></i> 1. Learning Objectives (கற்றல் குறிக்கோள்கள்)
+        </h6>
+        <ul class="mb-0 ps-3">
+          {% for obj in lesson.learning_objectives %}
+            <li class="mb-1">{{ obj }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- 2. Grammar Explanation -->
+      <div class="card-custom p-4 mb-4">
+        <h6 class="fw-bold text-primary mb-2">
+          <i class="bi bi-spellcheck me-1"></i> 2. Grammar Rule & Explanation (இலக்கண விளக்கம்)
+        </h6>
+        <div class="p-3 bg-light rounded-3 border mb-3">
+          <span class="badge bg-secondary mb-2">GRAMMAR FOCUS</span>
+          <h6 class="fw-bold mb-2">{{ lesson.grammar_focus }}</h6>
+          <p class="mb-0" style="white-space: pre-line;">{{ lesson.grammar_explanation }}</p>
+        </div>
+      </div>
+
+      <!-- 3. Vocabulary Words (10 Words) -->
+      <div class="card-custom p-4 mb-4">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h6 class="fw-bold text-primary mb-0">
+            <i class="bi bi-book-half me-1"></i> 3. Daily Vocabulary (10 புதிய சொற்கள்)
+          </h6>
+          <small class="text-muted">Click <i class="bi bi-volume-up text-primary"></i> to listen</small>
+        </div>
+
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>English Word</th>
+                <th>Pronunciation</th>
+                <th>Tamil Meaning</th>
+                <th class="text-end">Listen</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for v in lesson.vocabulary_words %}
+              <tr>
+                <td class="fw-bold text-primary">{{ v.word }}</td>
+                <td class="small text-muted">{{ v.pronunciation }}</td>
+                <td class="tamil-text fw-bold">{{ v.tamil }}</td>
+                <td class="text-end">
+                  <button class="btn btn-sm btn-outline-primary" onclick="speakText('{{ v.word }}', 0.85)" title="Listen Pronunciation">
+                    <i class="bi bi-volume-up-fill"></i>
+                  </button>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- 4. Example Sentences (5 Sentences) -->
+      <div class="card-custom p-4 mb-4">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h6 class="fw-bold text-primary mb-0">
+            <i class="bi bi-chat-quote-fill me-1"></i> 4. Model Example Sentences (மாதிரி வாக்கியங்கள்)
+          </h6>
+          <small class="text-muted">5 Practice Examples</small>
+        </div>
+
+        <div class="d-flex flex-column gap-2">
+          {% for ex in lesson.example_sentences %}
+          <div class="p-3 bg-light rounded-3 border d-flex align-items-center justify-content-between">
+            <div>
+              <p class="fw-bold mb-1 text-dark">{{ ex.en }}</p>
+              <p class="tamil-text small mb-0">{{ ex.ta }}</p>
+            </div>
+            <button class="btn btn-sm btn-outline-primary ms-3 flex-shrink-0" onclick="speakText('{{ ex.en }}', 0.9)">
+              <i class="bi bi-volume-up-fill"></i>
+            </button>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- 5. Conversation Exercise -->
+      <div class="card-custom p-4 mb-4 border-primary">
+        <h6 class="fw-bold text-primary mb-2">
+          <i class="bi bi-chat-dots-fill me-1"></i> 5. Spoken Conversation Task (பேச்சுப் பயிற்சி)
+        </h6>
+        <p class="mb-3">{{ lesson.conversation_exercise }}</p>
+        <a href="{{ url_for('conversation.index') }}" class="btn btn-primary btn-sm">
+          <i class="bi bi-chat-fill me-1"></i> Practice with AI Tutor Now
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive 5 Practice Questions -->
+    <div class="col-lg-4">
+      <div class="card-custom p-4 sticky-top" style="top: 85px;">
+        <h6 class="fw-bold text-primary mb-3">
+          <i class="bi bi-patch-question-fill me-1"></i> 6. Practice Questions (5 வினாக்கள்)
+        </h6>
+        <p class="small text-muted mb-3">
+          Test your understanding right now. Click on an option to check your answer and view the Tamil explanation.
+        </p>
+
+        <div class="d-flex flex-column gap-3" id="practiceQuestionsContainer">
+          {% for q in lesson.practice_questions %}
+          <div class="border rounded-3 p-3 bg-white practice-card" data-q-id="{{ q.id }}" data-correct="{{ q.correct_answer }}">
+            <span class="badge bg-secondary mb-2">Question {{ loop.index }}</span>
+            <p class="small fw-bold mb-2">{{ q.question }}</p>
+
+            <div class="d-flex flex-column gap-1 mb-2">
+              {% for opt in q.options %}
+              <button class="btn btn-sm btn-outline-secondary text-start practice-opt-btn" 
+                      onclick="checkPracticeQuestion(this, {{ loop.index0 }}, {{ q.correct_answer }}, '{{ q.explanation_en|replace("'", "\\'") }}', '{{ q.explanation_ta|replace("'", "\\'") }}')">
+                <span class="badge bg-light text-dark border me-1">{{ ['A','B','C','D'][loop.index0] }}</span> {{ opt }}
+              </button>
+              {% endfor %}
+            </div>
+
+            <!-- Feedback Box (Hidden initially) -->
+            <div class="practice-feedback d-none p-2 rounded-2 small mt-2"></div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function checkPracticeQuestion(btn, selectedIdx, correctIdx, expEn, expTa) {
+  const card = btn.closest(".practice-card");
+  const allBtns = card.querySelectorAll(".practice-opt-btn");
+  const feedback = card.querySelector(".practice-feedback");
+
+  allBtns.forEach((b, idx) => {
+    b.disabled = true;
+    if (idx === correctIdx) {
+      b.classList.replace("btn-outline-secondary", "btn-success");
+    } else if (idx === selectedIdx && selectedIdx !== correctIdx) {
+      b.classList.replace("btn-outline-secondary", "btn-danger");
+    }
+  });
+
+  feedback.classList.remove("d-none");
+  if (selectedIdx === correctIdx) {
+    feedback.className = "practice-feedback p-2 rounded-2 small mt-2 bg-success-subtle text-success border border-success-subtle";
+    feedback.innerHTML = `<strong><i class="bi bi-check-circle-fill"></i> Correct!</strong><br>${expEn}<br><span class="tamil-text">${expTa}</span>`;
+  } else {
+    feedback.className = "practice-feedback p-2 rounded-2 small mt-2 bg-danger-subtle text-danger border border-danger-subtle";
+    feedback.innerHTML = `<strong><i class="bi bi-x-circle-fill"></i> Incorrect!</strong><br>${expEn}<br><span class="tamil-text">${expTa}</span>`;
+  }
+}
+</script>
+{% endblock %}

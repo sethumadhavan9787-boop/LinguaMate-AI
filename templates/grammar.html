@@ -1,0 +1,212 @@
+{% extends "base.html" %}
+
+{% block title %}Grammar Correction Lab — {{ app_name }}{% endblock %}
+{% block page_title %}Grammar Correction Lab (இலக்கண திருத்தக் கூடம்){% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0">
+  <div class="row g-4">
+    <!-- Input Form & Sample Sentences -->
+    <div class="col-lg-6">
+      <div class="card-custom p-4 mb-4">
+        <h5 class="fw-bold mb-2"><i class="bi bi-spellcheck text-primary me-1"></i> Analyze Your English Sentence</h5>
+        <p class="text-muted small mb-3">
+          Type or paste any English sentence. Our bilingual engine checks subject-verb agreement, L1 transfers, tenses, articles, and prepositions with complete Tamil explanations.
+        </p>
+
+        <form id="grammarForm">
+          <div class="mb-3">
+            <label for="sentenceInput" class="form-label fw-bold small">Your Sentence (உங்கள் வாக்கியம்)</label>
+            <textarea class="form-control" id="sentenceInput" rows="3" placeholder="Enter sentence here... e.g. 'One of my friend is working in TCS company.'" required></textarea>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between">
+            <span class="badge bg-light text-muted border">
+              <i class="bi bi-cpu text-primary me-1"></i> {{ provider_name }}
+            </span>
+            <button type="submit" class="btn btn-primary px-4 fw-bold" id="checkBtn">
+              <i class="bi bi-search me-1"></i> Check Grammar
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Quick Test Bench -->
+      <div class="card-custom p-4">
+        <h6 class="fw-bold mb-2"><i class="bi bi-lightning-charge-fill text-warning me-1"></i> 1-Click Common Beginner Test Sentences</h6>
+        <p class="text-muted small mb-3">Click any sentence below to test the diagnostic engine instantly:</p>
+        <div class="d-flex flex-column gap-2">
+          {% for s in samples %}
+          <button type="button" class="btn btn-outline-secondary btn-sm text-start sample-btn p-2" onclick="setSampleSentence('{{ s.sentence|replace("'", "\\'") }}')">
+            <span class="badge bg-primary-subtle text-primary border me-1">{{ s.label }}</span>
+            <span class="text-dark small">{{ s.sentence }}</span>
+          </button>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Display Column -->
+    <div class="col-lg-6">
+      <div class="card-custom p-4 h-100" id="resultContainer">
+        <!-- Initial Empty State -->
+        <div class="text-center py-5 text-muted" id="emptyState">
+          <i class="bi bi-card-text fs-1 d-block mb-3 opacity-50"></i>
+          <h5>No sentence analyzed yet</h5>
+          <p class="small text-muted mb-0">Type a sentence on the left or click a sample sentence to see the breakdown.</p>
+        </div>
+
+        <!-- Populated Results Card (Hidden Initially) -->
+        <div id="resultsCard" class="d-none">
+          <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+            <h6 class="fw-bold mb-0 text-primary"><i class="bi bi-clipboard2-check-fill me-1"></i> Diagnostic Analysis</h6>
+            <span class="badge" id="statusBadge">Correct</span>
+          </div>
+
+          <!-- Original vs Corrected Box -->
+          <div class="mb-3">
+            <div class="p-3 bg-light rounded-3 border mb-2">
+              <span class="text-muted small fw-bold d-block" style="font-size: 0.72rem;">ORIGINAL SENTENCE</span>
+              <p class="mb-0 fw-bold text-danger" id="origText"></p>
+            </div>
+            <div class="p-3 bg-success-subtle rounded-3 border border-success-subtle">
+              <span class="text-success small fw-bold d-block" style="font-size: 0.72rem;">CORRECTED SENTENCE</span>
+              <div class="d-flex align-items-center justify-content-between">
+                <p class="mb-0 fw-bold text-success fs-5" id="corrText"></p>
+                <button class="btn btn-sm btn-outline-success" id="listenCorrBtn" title="Listen Pronunciation">
+                  <i class="bi bi-volume-up-fill"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Errors Found Badges -->
+          <div class="mb-3" id="errorsSection">
+            <span class="small fw-bold text-secondary d-block mb-1">MISTAKES IDENTIFIED:</span>
+            <div id="errorsBadges" class="d-flex flex-wrap gap-1"></div>
+          </div>
+
+          <!-- English Explanation Box -->
+          <div class="p-3 bg-light rounded-3 border mb-3" id="englishExpBox">
+            <span class="badge bg-secondary mb-2">ENGLISH EXPLANATION</span>
+            <p class="text-dark mb-0 small" id="englishExp" style="white-space: pre-line;"></p>
+          </div>
+
+          <!-- Tamil Explanation Box -->
+          <div class="p-3 bg-light rounded-3 border mb-3">
+            <span class="badge bg-teal text-white mb-2" style="background-color: #0d9488;">தமிழ் விளக்கம் (TAMIL EXPLANATION)</span>
+            <p class="tamil-text mb-0 fs-6" id="tamilExp" style="white-space: pre-line;"></p>
+          </div>
+
+          <!-- Additional Examples -->
+          <div class="mb-3" id="examplesSection">
+            <span class="small fw-bold text-secondary d-block mb-1">ADDITIONAL MODEL EXAMPLES:</span>
+            <ul class="list-group list-group-flush small" id="examplesList"></ul>
+          </div>
+
+          <!-- Confidence & Verification Note -->
+          <div class="p-2 bg-light rounded border text-muted small d-flex align-items-center justify-content-between">
+            <div>
+              <i class="bi bi-shield-check text-success me-1"></i>
+              <span id="confidenceNote">Verified against standard ESL benchmarks.</span>
+            </div>
+            <button class="btn btn-link btn-sm text-danger p-0" onclick="openReportModal('Grammar Lab', document.getElementById('origText').innerText, document.getElementById('corrText').innerText)">
+              Flag Output
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+const grammarForm = document.getElementById("grammarForm");
+const sentenceInput = document.getElementById("sentenceInput");
+const checkBtn = document.getElementById("checkBtn");
+const emptyState = document.getElementById("emptyState");
+const resultsCard = document.getElementById("resultsCard");
+const origText = document.getElementById("origText");
+const corrText = document.getElementById("corrText");
+const statusBadge = document.getElementById("statusBadge");
+const errorsBadges = document.getElementById("errorsBadges");
+const englishExp = document.getElementById("englishExp");
+const tamilExp = document.getElementById("tamilExp");
+const examplesList = document.getElementById("examplesList");
+const confidenceNote = document.getElementById("confidenceNote");
+const listenCorrBtn = document.getElementById("listenCorrBtn");
+
+function setSampleSentence(text) {
+  sentenceInput.value = text;
+  grammarForm.dispatchEvent(new Event("submit"));
+}
+
+grammarForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const sentence = sentenceInput.value.trim();
+  if (!sentence) return;
+
+  checkBtn.disabled = true;
+  checkBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span> Analyzing...';
+
+  try {
+    const res = await fetch("/grammar/check", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sentence })
+    });
+    const data = await res.json();
+    if (data.success && data.result) {
+      displayResults(data.result);
+    }
+  } catch (err) {
+    alert("Error checking sentence. Please try again.");
+  } finally {
+    checkBtn.disabled = false;
+    checkBtn.innerHTML = '<i class="bi bi-search me-1"></i> Check Grammar';
+  }
+});
+
+function displayResults(r) {
+  emptyState.classList.add("d-none");
+  resultsCard.classList.remove("d-none");
+
+  origText.innerText = r.original;
+  corrText.innerText = r.corrected;
+  if (englishExp) {
+    englishExp.innerText = r.explanation_en || r.confidence_note || "Linguistically analyzed.";
+  }
+  tamilExp.innerText = r.tamil_explanation;
+  confidenceNote.innerText = r.confidence_note || "Linguistically verified.";
+
+  listenCorrBtn.onclick = () => speakText(r.corrected, 0.9);
+
+  const statusText = r.status || (r.is_correct ? "Correct" : "Needs Correction");
+  if (r.is_correct) {
+    statusBadge.className = "badge bg-success";
+    statusBadge.innerHTML = `<i class="bi bi-check-circle-fill me-1"></i> ${statusText}`;
+    errorsBadges.innerHTML = '<span class="badge bg-light text-success border">No errors detected</span>';
+  } else {
+    statusBadge.className = "badge bg-danger";
+    statusBadge.innerHTML = `<i class="bi bi-exclamation-triangle-fill me-1"></i> ${statusText}`;
+    errorsBadges.innerHTML = "";
+    (r.errors || []).forEach(err => {
+      const b = document.createElement("span");
+      b.className = "badge bg-danger-subtle text-danger border border-danger-subtle";
+      b.innerText = err;
+      errorsBadges.appendChild(b);
+    });
+  }
+
+  examplesList.innerHTML = "";
+  (r.examples || []).forEach(ex => {
+    const li = document.createElement("li");
+    li.className = "list-group-item bg-transparent px-0 py-1 text-dark";
+    li.innerHTML = `<i class="bi bi-arrow-right text-primary me-2"></i> ${ex}`;
+    examplesList.appendChild(li);
+  });
+}
+</script>
+{% endblock %}

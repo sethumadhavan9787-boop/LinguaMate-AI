@@ -1,0 +1,304 @@
+{% extends "base.html" %}
+
+{% block title %}AI Conversation Practice — {{ app_name }}{% endblock %}
+{% block page_title %}AI Conversation Partner (உரையாடல் பயிற்சி கூடம்){% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0">
+  <div class="row g-4">
+    <!-- Left Sidebar: Topic and Level Selection -->
+    <div class="col-lg-4 col-xl-3">
+      <div class="card-custom p-3 mb-3">
+        <h6 class="fw-bold mb-2"><i class="bi bi-tag-fill text-primary me-1"></i> Conversation Topics</h6>
+        <div class="d-flex flex-column gap-1">
+          {% for t in topics %}
+          <a href="{{ url_for('conversation.index', topic=t.id, level=current_level) }}" 
+             class="btn btn-sm text-start {% if current_topic == t.id %}btn-primary{% else %}btn-outline-secondary{% endif %}">
+            {{ t.name }}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="card-custom p-3 mb-3">
+        <h6 class="fw-bold mb-2"><i class="bi bi-sliders text-primary me-1"></i> Practice Level</h6>
+        <div class="btn-group w-100" role="group">
+          <a href="{{ url_for('conversation.index', topic=current_topic, level='Beginner') }}" 
+             class="btn btn-sm {% if current_level == 'Beginner' %}btn-primary{% else %}btn-outline-secondary{% endif %}">
+            A1 Beginner
+          </a>
+          <a href="{{ url_for('conversation.index', topic=current_topic, level='Elementary') }}" 
+             class="btn btn-sm {% if current_level == 'Elementary' %}btn-primary{% else %}btn-outline-secondary{% endif %}">
+            A2 Elem
+          </a>
+          <a href="{{ url_for('conversation.index', topic=current_topic, level='Intermediate') }}" 
+             class="btn btn-sm {% if current_level == 'Intermediate' %}btn-primary{% else %}btn-outline-secondary{% endif %}">
+            B1 Inter
+          </a>
+        </div>
+      </div>
+
+      <div class="card-custom p-3 bg-light border">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="small fw-bold">Active Engine</span>
+          <span class="badge bg-secondary">{{ provider_name }}</span>
+        </div>
+        <p class="small text-muted mb-0">
+          Your tutor corrects grammar politely and explains rules in simple Tamil.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Chat Interface -->
+    <div class="col-lg-8 col-xl-9">
+      <div class="chat-container">
+        <!-- Chat Header -->
+        <div class="p-3 border-bottom d-flex align-items-center justify-content-between bg-light">
+          <div class="d-flex align-items-center">
+            <div class="bg-primary text-white rounded-circle p-2 me-2">
+              <i class="bi bi-robot fs-5"></i>
+            </div>
+            <div>
+              <h6 class="mb-0 fw-bold">{{ topic_starter.title }}</h6>
+              <small class="tamil-text">{{ topic_starter.tamil_note }}</small>
+            </div>
+          </div>
+          <button class="btn btn-outline-danger btn-sm" id="resetChatBtn" title="Reset this conversation topic">
+            <i class="bi bi-arrow-counterclockwise me-1"></i> Reset
+          </button>
+        </div>
+
+        <!-- Chat Messages Feed -->
+        <div class="chat-messages" id="chatMessages">
+          <!-- Initial Welcome Message from AI Tutor -->
+          <div class="chat-bubble ai">
+            <div class="d-flex align-items-center justify-content-between mb-1">
+              <strong class="text-primary small"><i class="bi bi-robot"></i> LinguaMate Tutor</strong>
+              <button class="btn btn-link btn-sm p-0 text-muted" onclick="speakText('{{ topic_starter.starter|replace("'", "\\'") }}')" title="Listen">
+                <i class="bi bi-volume-up-fill"></i>
+              </button>
+            </div>
+            <p class="mb-1">{{ topic_starter.starter }}</p>
+            <div class="p-2 bg-white bg-opacity-75 rounded-2 border small mt-2">
+              <span class="text-muted fw-bold d-block" style="font-size: 0.72rem;">NEED A SIMPLER QUESTION?</span>
+              <span class="text-secondary">{{ topic_starter.simpler }}</span>
+            </div>
+          </div>
+
+          <!-- Past History from Database -->
+          {% for msg in history %}
+            {% if msg.sender == 'user' %}
+              <div class="chat-bubble user">
+                <p class="mb-0">{{ msg.message }}</p>
+                {% if msg.corrected_message and msg.corrected_message != msg.message %}
+                <div class="correction-card bg-white text-dark mt-2 p-2 rounded border">
+                  <small class="text-danger fw-bold d-block">Suggested Correction:</small>
+                  <span class="text-success fw-bold">{{ msg.corrected_message }}</span>
+                  {% if msg.tamil_explanation %}
+                  <small class="tamil-text d-block mt-1">{{ msg.tamil_explanation }}</small>
+                  {% endif %}
+                </div>
+                {% endif %}
+              </div>
+            {% else %}
+              <div class="chat-bubble ai">
+                <div class="d-flex align-items-center justify-content-between mb-1">
+                  <strong class="text-primary small"><i class="bi bi-robot"></i> LinguaMate Tutor</strong>
+                  <button class="btn btn-link btn-sm p-0 text-muted" onclick="speakText('{{ msg.message|replace("'", "\\'") }}')" title="Listen">
+                    <i class="bi bi-volume-up-fill"></i>
+                  </button>
+                </div>
+                <p class="mb-0">{{ msg.message }}</p>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <!-- Chat Input Bar -->
+        <div class="chat-input-bar">
+          <form id="chatForm" class="d-flex align-items-center gap-2">
+            <!-- Voice Input Button -->
+            <button type="button" class="btn btn-outline-secondary" id="voiceInputBtn" title="Speak through microphone">
+              <i class="bi bi-mic-fill" id="micIcon"></i>
+            </button>
+
+            <!-- Text Input -->
+            <input type="text" class="form-control" id="chatInput" placeholder="Type your English response here (e.g. My name is Suresh and I like cricket)..." autocomplete="off" required>
+
+            <!-- Send Button -->
+            <button type="submit" class="btn btn-primary px-3" id="sendBtn">
+              <i class="bi bi-send-fill me-1"></i> Send
+            </button>
+          </form>
+          <div class="d-flex justify-content-between align-items-center mt-1">
+            <small class="text-muted" style="font-size: 0.74rem;">
+              <i class="bi bi-info-circle me-1"></i> Speak or type freely. Errors are caught politely without shame!
+            </small>
+            <button type="button" class="btn btn-link btn-sm text-danger p-0" style="font-size: 0.74rem;" onclick="openReportModal('Conversation', document.getElementById('chatInput').value, '')">
+              Report issue
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+const currentTopic = "{{ current_topic }}";
+const currentLevel = "{{ current_level }}";
+const chatMessages = document.getElementById("chatMessages");
+const chatForm = document.getElementById("chatForm");
+const chatInput = document.getElementById("chatInput");
+const sendBtn = document.getElementById("sendBtn");
+const resetChatBtn = document.getElementById("resetChatBtn");
+const voiceInputBtn = document.getElementById("voiceInputBtn");
+const micIcon = document.getElementById("micIcon");
+
+// Scroll chat to bottom
+function scrollToBottom() {
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+scrollToBottom();
+
+// Handle form submission
+chatForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const text = chatInput.value.trim();
+  if (!text) return;
+
+  // Append user bubble immediately
+  appendUserBubble(text);
+  chatInput.value = "";
+  chatInput.focus();
+  sendBtn.disabled = true;
+
+  try {
+    const res = await fetch("/conversation/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: text, topic: currentTopic, level: currentLevel })
+    });
+    const data = await res.json();
+    if (data.success && data.response) {
+      appendAiBubble(data.response);
+    }
+  } catch (err) {
+    console.error("Chat error:", err);
+    appendSystemError("Network issue or server unavailable.");
+  } finally {
+    sendBtn.disabled = false;
+    scrollToBottom();
+  }
+});
+
+function appendUserBubble(text) {
+  const bubble = document.createElement("div");
+  bubble.className = "chat-bubble user";
+  bubble.innerHTML = `<p class="mb-0">${escapeHtml(text)}</p>`;
+  chatMessages.appendChild(bubble);
+  scrollToBottom();
+}
+
+function appendAiBubble(resp) {
+  const bubble = document.createElement("div");
+  bubble.className = "chat-bubble ai";
+
+  let correctionHtml = "";
+  if (resp.has_correction && resp.corrected_sentence) {
+    correctionHtml = `
+      <div class="correction-card">
+        <div class="fw-bold text-danger mb-1"><i class="bi bi-pencil-square me-1"></i> Correction:</div>
+        <div class="fw-bold text-success mb-1">${escapeHtml(resp.corrected_sentence)}</div>
+        <div class="tamil-text small mb-1">${escapeHtml(resp.tamil_explanation)}</div>
+        ${resp.extra_example ? `<div class="small text-muted fst-italic">Example: ${escapeHtml(resp.extra_example)}</div>` : ''}
+      </div>
+    `;
+  }
+
+  let simplerHtml = "";
+  if (resp.simpler_sentence) {
+    simplerHtml = `
+      <div class="p-2 bg-white bg-opacity-75 rounded-2 border small mt-2">
+        <span class="text-muted fw-bold d-block" style="font-size: 0.72rem;">SIMPLER ALTERNATIVE</span>
+        <span class="text-secondary">${escapeHtml(resp.simpler_sentence)}</span>
+      </div>
+    `;
+  }
+
+  bubble.innerHTML = `
+    <div class="d-flex align-items-center justify-content-between mb-1">
+      <strong class="text-primary small"><i class="bi bi-robot"></i> LinguaMate Tutor</strong>
+      <button class="btn btn-link btn-sm p-0 text-muted" onclick="speakText('${escapeQuotes(resp.ai_response)}')" title="Listen">
+        <i class="bi bi-volume-up-fill"></i>
+      </button>
+    </div>
+    ${correctionHtml}
+    <p class="mb-1 mt-2">${escapeHtml(resp.ai_response)}</p>
+    ${simplerHtml}
+  `;
+
+  chatMessages.appendChild(bubble);
+  scrollToBottom();
+  speakText(resp.ai_response);
+}
+
+function appendSystemError(msg) {
+  const el = document.createElement("div");
+  el.className = "alert alert-warning p-2 small my-2";
+  el.innerText = msg;
+  chatMessages.appendChild(el);
+}
+
+// Reset chat
+resetChatBtn.addEventListener("click", async () => {
+  if (confirm("Reset conversation for this topic?")) {
+    await fetch("/conversation/reset", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ topic: currentTopic })
+    });
+    window.location.reload();
+  }
+});
+
+// Voice Recognition
+let isRecording = false;
+voiceInputBtn.addEventListener("click", () => {
+  if (!isRecording) {
+    micIcon.className = "bi bi-mic-fill text-danger";
+    voiceInputBtn.classList.add("border-danger");
+    isRecording = true;
+    window.speechService.startRecording(
+      "",
+      (transcript) => {
+        chatInput.value = transcript;
+        stopMic();
+      },
+      (err) => {
+        alert(err);
+        stopMic();
+      }
+    );
+  } else {
+    stopMic();
+  }
+});
+
+function stopMic() {
+  window.speechService.stopRecording();
+  micIcon.className = "bi bi-mic-fill";
+  voiceInputBtn.classList.remove("border-danger");
+  isRecording = false;
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function escapeQuotes(str) {
+  return str.replace(/'/g, "\\'").replace(/"/g, '\\"');
+}
+</script>
+{% endblock %}

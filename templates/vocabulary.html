@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Bilingual Vocabulary Library — {{ app_name }}{% endblock %}
+{% block page_title %}Bilingual Vocabulary Library (இருமொழிச் சொற்களஞ்சியம்){% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0">
+  <!-- Search & Filter Controls -->
+  <div class="card-custom p-3 mb-4">
+    <form method="GET" action="{{ url_for('vocabulary.index') }}" class="row g-2 align-items-center">
+      <div class="col-md-5">
+        <div class="input-group">
+          <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+          <input type="text" name="search" class="form-control border-start-0" placeholder="Search English word, Tamil meaning, or sentence..." value="{{ search_query }}">
+        </div>
+      </div>
+      <div class="col-md-3">
+        <select name="category" class="form-select" onchange="this.form.submit()">
+          <option value="">All Categories (அனைத்து பிரிவுகள்)</option>
+          {% for cat in categories %}
+          <option value="{{ cat }}" {% if current_category == cat %}selected{% endif %}>{{ cat }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-md-2">
+        <div class="form-check form-switch pt-2">
+          <input class="form-check-input" type="checkbox" name="favorites" value="1" id="favSwitch" {% if favorites_only %}checked{% endif %} onchange="this.form.submit()">
+          <label class="form-check-label small fw-bold" for="favSwitch">Favorites Only</label>
+        </div>
+      </div>
+      <div class="col-md-2 text-md-end">
+        <a href="{{ url_for('vocabulary.flashcards', category=current_category) }}" class="btn btn-outline-primary btn-sm w-100">
+          <i class="bi bi-card-checklist me-1"></i> Open Flashcards
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Words Counter and Summary -->
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <span class="text-muted small">Showing <strong>{{ words|length }}</strong> curated entries</span>
+    <span class="badge bg-light text-dark border"><i class="bi bi-star-fill text-warning me-1"></i> {{ total_favorites }} Bookmarked</span>
+  </div>
+
+  <!-- Vocabulary Cards Grid -->
+  <div class="row g-3">
+    {% for w in words %}
+    <div class="col-md-6 col-xl-4">
+      <div class="card-custom p-3 h-100 d-flex flex-column justify-content-between">
+        <div>
+          <!-- Word Header -->
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <div>
+              <h5 class="fw-bold mb-0 text-primary">{{ w.word }}</h5>
+              <small class="text-muted">{{ w.pronunciation_tip }}</small>
+            </div>
+            <div class="d-flex align-items-center gap-1">
+              <button class="btn btn-sm btn-outline-secondary p-1 px-2" onclick="speakText('{{ w.word|replace("'", "\\'") }}', 0.85)" title="Listen Pronunciation">
+                <i class="bi bi-volume-up-fill text-primary"></i>
+              </button>
+              <button class="btn btn-sm btn-outline-secondary p-1 px-2" onclick="toggleWordFavorite({{ w.id }}, this)" title="Bookmark word">
+                <i class="bi {% if w.is_favorite %}bi-star-fill text-warning{% else %}bi-star text-muted{% endif %}"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Badges -->
+          <div class="mb-2">
+            <span class="badge bg-light text-secondary border me-1">{{ w.part_of_speech }}</span>
+            <span class="badge bg-primary-subtle text-primary border border-primary-subtle me-1">{{ w.level }}</span>
+            <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">{{ w.category }}</span>
+          </div>
+
+          <!-- Tamil Meaning -->
+          <div class="p-2 bg-light rounded-2 mb-2 border">
+            <span class="tamil-text fw-bold fs-6">{{ w.tamil_meaning }}</span>
+          </div>
+
+          <!-- Contextual Example Sentence -->
+          <div class="small">
+            <p class="mb-1 text-dark"><strong>Ex:</strong> {{ w.example_sentence }}</p>
+            <p class="tamil-text mb-0">{{ w.example_tamil }}</p>
+          </div>
+        </div>
+
+        <div class="text-end pt-2 mt-2 border-top">
+          <button class="btn btn-link btn-sm p-0 text-decoration-none text-muted" onclick="speakText('{{ w.example_sentence|replace("'", "\\'") }}', 0.9)">
+            <i class="bi bi-volume-up me-1"></i> Listen Example
+          </button>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="col-12 text-center py-5">
+      <div class="p-4 bg-light rounded-3 d-inline-block">
+        <i class="bi bi-search fs-1 text-muted d-block mb-2"></i>
+        <h5>No vocabulary entries matched your search.</h5>
+        <a href="{{ url_for('vocabulary.index') }}" class="btn btn-primary btn-sm mt-2">Clear Filters</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+{
+  "baseline_day_1": {
+    "date": "Day 1 (Diagnostic Baseline)",
+    "overall_score": 42,
+    "vocabulary_score": 45,
+    "grammar_score": 38,
+    "sentence_structure_score": 40,
+    "fluency_confidence_score": 35,
+    "active_words": 28,
+    "most_common_errors": [
+      "L1 Transfer: 'Myself [Name]' instead of 'I am [Name]'",
+      "Concord: 'One of my friend' instead of 'One of my friends'",
+      "Auxiliary double-past: 'did not went' instead of 'did not go'",
+      "Dropped articles: 'He is engineer' instead of 'He is an engineer'",
+      "Literal time translations: 'yesterday night' instead of 'last night'"
+    ],
+    "sample_evaluations": [
+      {
+        "prompt": "Introduce yourself and your native town.",
+        "student_attempt": "Myself Karthik, I am coming from Madurai village.",
+        "grammar_errors": ["Reflexive pronoun as subject", "Continuous tense for permanent origin"],
+        "score_out_of_10": 4
+      },
+      {
+        "prompt": "Talk about what you did yesterday evening.",
+        "student_attempt": "Yesterday night I did not went to study.",
+        "grammar_errors": ["Collocation 'yesterday night'", "Double past tense 'did not went'"],
+        "score_out_of_10": 3.5
+      },
+      {
+        "prompt": "Describe your family members.",
+        "student_attempt": "I am having two brother and my sister work in bank.",
+        "grammar_errors": ["Stative 'having'", "Plural concord 'two brother'", "Third-person singular 'work' without -s"],
+        "score_out_of_10": 4
+      }
+    ]
+  },
+  "final_day_14": {
+    "date": "Day 14 (Post-Intervention Capstone)",
+    "overall_score": 88,
+    "vocabulary_score": 92,
+    "grammar_score": 86,
+    "sentence_structure_score": 87,
+    "fluency_confidence_score": 88,
+    "active_words": 112,
+    "remaining_minor_gaps": [
+      "Occasional hesitation before complex relative clauses",
+      "Minor preposition collocations in advanced workplace idioms"
+    ],
+    "sample_evaluations": [
+      {
+        "prompt": "Introduce yourself and your native town.",
+        "student_attempt": "Good morning. I am Karthik, and I come from a green village near Madurai.",
+        "grammar_errors": [],
+        "score_out_of_10": 9.5
+      },
+      {
+        "prompt": "Talk about what you did yesterday evening.",
+        "student_attempt": "Last night I revised my English grammar exercises and rested.",
+        "grammar_errors": [],
+        "score_out_of_10": 9.0
+      },
+      {
+        "prompt": "Describe your family members.",
+        "student_attempt": "I have two brothers, and my elder sister works in a nationalized bank.",
+        "grammar_errors": [],
+        "score_out_of_10": 9.2
+      }
+    ]
+  },
+  "metric_improvements": [
+    {"metric": "Overall Proficiency", "before": 42, "after": 88, "growth": "+46%"},
+    {"metric": "Vocabulary Mastery", "before": 45, "after": 92, "growth": "+47%"},
+    {"metric": "Grammar Accuracy", "before": 38, "after": 86, "growth": "+48%"},
+    {"metric": "Sentence Structure", "before": 40, "after": 87, "growth": "+47%"},
+    {"metric": "Speaking Confidence", "before": 35, "after": 88, "growth": "+53%"}
+  ]
+}

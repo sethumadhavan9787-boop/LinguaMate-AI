@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}Prompt Engineering Library — {{ app_name }}{% endblock %}
+{% block page_title %}Prompt Engineering Library (AI தூண்டுதல் வினா நூலகம்){% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0">
+  <!-- Header Overview Card -->
+  <div class="card-custom p-4 mb-4">
+    <div class="row align-items-center">
+      <div class="col-md-8">
+        <span class="badge bg-primary px-3 py-1 mb-2 fw-bold">Prompt Engineering Framework</span>
+        <h4 class="fw-bold mb-1">Curated Prompt Templates for Bilingual Language Pedagogy</h4>
+        <p class="text-muted small mb-0">
+          Professional, tested prompts structured with explicit <strong>Role</strong>, <strong>Task</strong>, <strong>Context</strong>, <strong>Constraints</strong>, and <strong>Few-Shot / Self-Consistency</strong> patterns to ensure zero hallucinations and maximum student encouragement.
+        </p>
+      </div>
+      <div class="col-md-4 text-md-end mt-3 mt-md-0">
+        <span class="badge bg-light text-dark border p-2">
+          <i class="bi bi-cpu-fill text-primary me-1"></i> {{ total_prompts }} Standardized Prompts
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search & Category Filters -->
+  <div class="card-custom p-3 mb-4">
+    <form method="GET" action="{{ url_for('prompts.index') }}" class="row g-2 align-items-center">
+      <div class="col-md-7">
+        <div class="input-group">
+          <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+          <input type="text" name="search" class="form-control border-start-0" placeholder="Search prompts by keyword, purpose, or category..." value="{{ search_query }}">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <select name="category" class="form-select" onchange="this.form.submit()">
+          <option value="">All Categories (அனைத்து பிரிவுகள்)</option>
+          {% for cat in categories %}
+          <option value="{{ cat }}" {% if current_category == cat %}selected{% endif %}>{{ cat }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-md-1">
+        <a href="{{ url_for('prompts.index') }}" class="btn btn-outline-secondary w-100 btn-sm">Reset</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Prompts List -->
+  <div class="d-flex flex-column gap-4">
+    {% for p in prompts %}
+    <div class="card-custom p-4">
+      <div class="d-flex flex-wrap align-items-center justify-content-between mb-2 gap-2">
+        <div>
+          <span class="badge bg-primary-subtle text-primary border border-primary-subtle me-2">{{ p.category }}</span>
+          <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle">{{ p.target_level }}</span>
+          <h5 class="fw-bold text-dark mt-2 mb-1">{{ p.title }}</h5>
+        </div>
+        <button class="btn btn-outline-primary btn-sm fw-bold px-3" onclick="copyToClipboard(`{{ p.prompt_text|replace("`", "\\`") }}`, this)">
+          <i class="bi bi-clipboard me-1"></i> Copy Prompt
+        </button>
+      </div>
+
+      <p class="text-muted small mb-3"><strong>Purpose:</strong> {{ p.purpose }}</p>
+
+      <!-- Engineering Anatomy Breakdown -->
+      <div class="row g-2 mb-3 bg-light p-3 rounded-3 border">
+        <div class="col-md-3">
+          <small class="text-muted d-block fw-bold" style="font-size: 0.72rem;">ROLE</small>
+          <small class="text-dark">{{ p.role }}</small>
+        </div>
+        <div class="col-md-3">
+          <small class="text-muted d-block fw-bold" style="font-size: 0.72rem;">TASK</small>
+          <small class="text-dark">{{ p.task }}</small>
+        </div>
+        <div class="col-md-3">
+          <small class="text-muted d-block fw-bold" style="font-size: 0.72rem;">CONTEXT</small>
+          <small class="text-dark">{{ p.context }}</small>
+        </div>
+        <div class="col-md-3">
+          <small class="text-muted d-block fw-bold" style="font-size: 0.72rem;">OUTPUT FORMAT</small>
+          <small class="text-dark">{{ p.output_format }}</small>
+        </div>
+      </div>
+
+      <!-- Prompt Text Block -->
+      <div class="position-relative">
+        <pre class="bg-dark text-light p-3 rounded-3 small mb-2 overflow-auto" style="max-height: 220px; font-family: Consolas, monospace; white-space: pre-wrap;">{{ p.prompt_text }}</pre>
+      </div>
+
+      <small class="text-secondary fst-italic">
+        <i class="bi bi-lightbulb-fill text-warning me-1"></i> <strong>Engineering Note:</strong> {{ p.engineering_breakdown }}
+      </small>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

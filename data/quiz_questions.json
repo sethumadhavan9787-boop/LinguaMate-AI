@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "category": "Vocabulary",
+    "question": "What is the English meaning of the Tamil word 'காலை வணக்கம்'?",
+    "options": ["Good night", "Good afternoon", "Good morning", "Goodbye"],
+    "correct_answer": 2,
+    "explanation_en": "'காலை வணக்கம்' corresponds to 'Good morning' in English.",
+    "explanation_ta": "'காலை வணக்கம்' என்பது ஆங்கிலத்தில் 'Good morning' ஆகும்."
+  },
+  {
+    "id": 2,
+    "category": "Vocabulary",
+    "question": "Which English word means 'மகிழ்ச்சியான' (feeling joy)?",
+    "options": ["Angry", "Tired", "Sad", "Happy"],
+    "correct_answer": 3,
+    "explanation_en": "'Happy' means feeling or showing pleasure and joy.",
+    "explanation_ta": "'Happy' என்றால் 'மகிழ்ச்சியான' என்று பொருள்."
+  },
+  {
+    "id": 3,
+    "category": "Vocabulary",
+    "question": "What is the part of speech for the word 'Delicious'?",
+    "options": ["Noun", "Adjective", "Verb", "Preposition"],
+    "correct_answer": 1,
+    "explanation_en": "'Delicious' describes a quality of food, so it is an adjective.",
+    "explanation_ta": "'Delicious' என்பது சுவையை விவரிக்கும் பெயரடை (Adjective)."
+  },
+  {
+    "id": 4,
+    "category": "Vocabulary",
+    "question": "What is the Tamil meaning of 'Opportunity'?",
+    "options": ["தடை", "வாய்ப்பு", "சம்பளம்", "நேரம்"],
+    "correct_answer": 1,
+    "explanation_en": "'Opportunity' translates to 'வாய்ப்பு' (favorable circumstance).",
+    "explanation_ta": "'Opportunity' என்றால் 'வாய்ப்பு'."
+  },
+  {
+    "id": 5,
+    "category": "Grammar",
+    "question": "Choose the correct verb: 'She ____ English very well.'",
+    "options": ["speaks", "speak", "is speak", "speaking"],
+    "correct_answer": 0,
+    "explanation_en": "Third-person singular 'She' takes 'speaks' in simple present tense.",
+    "explanation_ta": "'She' ஒருமை என்பதால் வினைச்சொல்லில் 's' சேர்க்க வேண்டும்: 'speaks'."
+  },
+  {
+    "id": 6,
+    "category": "Grammar",
+    "question": "Which sentence uses the correct article?",
+    "options": ["He is a honest man.", "He is an honest man.", "He is the honest man without reason.", "He is an doctor."],
+    "correct_answer": 1,
+    "explanation_en": "'Honest' begins with a vowel sound (silent 'h'), so it requires 'an'.",
+    "explanation_ta": "'Honest' என்பது உயிர் ஒலியில் தொடங்குவதால் 'an' வர வேண்டும்."
+  },
+  {
+    "id": 7,
+    "category": "Grammar",
+    "question": "Fill in the blank: 'We ____ to Chennai yesterday.'",
+    "options": ["go", "gone", "went", "going"],
+    "correct_answer": 2,
+    "explanation_en": "'Yesterday' specifies past time; the past tense of 'go' is 'went'.",
+    "explanation_ta": "'Yesterday' இறந்த காலத்தைக் குறிப்பதால் 'went' வர வேண்டும்."
+  },
+  {
+    "id": 8,
+    "category": "Grammar",
+    "question": "Select the correct negative sentence:",
+    "options": ["He did not saw me.", "He did not see me.", "He not saw me.", "He does not saw me."],
+    "correct_answer": 1,
+    "explanation_en": "After 'did not', the verb remains in its base form: 'did not see'.",
+    "explanation_ta": "'did not' அடுத்து 'see' என்ற மூல வினைச்சொல் மட்டுமே வரும்."
+  },
+  {
+    "id": 9,
+    "category": "Translation",
+    "question": "Translate to English: 'நான் ஒரு கல்லூரி மாணவர்.'",
+    "options": ["I is a college student.", "I am a college student.", "Myself college student.", "Me am college student."],
+    "correct_answer": 1,
+    "explanation_en": "'I am a college student' is grammatically accurate and natural.",
+    "explanation_ta": "'I am a college student' என்பதே முறையான வாக்கியம்."
+  },
+  {
+    "id": 10,
+    "category": "Translation",
+    "question": "Translate to English: 'அவர் எங்கே வசிக்கிறார்?'",
+    "options": ["Where does he live?", "Where do he live?", "Where he is living?", "Where he lives?"],
+    "correct_answer": 0,
+    "explanation_en": "'Where does he live?' correctly uses 'does' for third-person singular.",
+    "explanation_ta": "'Where does he live?' என்பதில் 'he' க்கு 'does' வர வேண்டும்."
+  },
+  {
+    "id": 11,
+    "category": "Translation",
+    "question": "What is the Tamil translation of: 'Practice makes a person perfect.'?",
+    "options": ["பயிற்சி மனிதனை முழுமையாக்குகிறது.", "பயிற்சி செய்ய வேண்டாம்.", "நேரம் பொன் போன்றது.", "அமைதியாக இருங்கள்."],
+    "correct_answer": 0,
+    "explanation_en": "It translates to 'பயிற்சி மனிதனை முழுமையாக்குகிறது'.",
+    "explanation_ta": "பயிற்சியே முழுமைக்கு அடிப்படை."
+  },
+  {
+    "id": 12,
+    "category": "Sentence Correction",
+    "question": "Correct the mistake: 'Myself Suresh from Salem.'",
+    "options": ["I am Suresh from Salem.", "Me Suresh from Salem.", "I is Suresh from Salem.", "Mine is Suresh from Salem."],
+    "correct_answer": 0,
+    "explanation_en": "'Myself...' is an incorrect reflexive opening; 'I am...' is standard.",
+    "explanation_ta": "'Myself Suresh' தவறானது, 'I am Suresh' என்பதே சரி."
+  },
+  {
+    "id": 13,
+    "category": "Sentence Correction",
+    "question": "Correct the mistake: 'One of my friend is working in a hospital.'",
+    "options": ["One of my friend are working.", "One of my friends is working in a hospital.", "One of my friends are working.", "One of friend is working."],
+    "correct_answer": 1,
+    "explanation_en": "'One of' is followed by a plural noun ('friends') with a singular verb ('is').",
+    "explanation_ta": "'One of my friends is working' - 'friends' பன்மையாகவும் 'is' ஒருமையாகவும் வர வேண்டும்."
+  },
+  {
+    "id": 14,
+    "category": "Sentence Correction",
+    "question": "Correct the mistake: 'She do not like coffee.'",
+    "options": ["She does not likes coffee.", "She does not like coffee.", "She not like coffee.", "She are not liking coffee."],
+    "correct_answer": 1,
+    "explanation_en": "'She' takes 'does not' followed by the base verb 'like'.",
+    "explanation_ta": "'She' க்கு 'does not like' பொருத்தமானது."
+  },
+  {
+    "id": 15,
+    "category": "Conversation",
+    "question": "What is the polite reply when someone asks 'How are you?'?",
+    "options": ["Why are you asking?", "I am fine, thank you. How about you?", "Yes, I am.", "No problem at all."],
+    "correct_answer": 1,
+    "explanation_en": "'I am fine, thank you. How about you?' is friendly and polite.",
+    "explanation_ta": "'I am fine, thank you. How about you?' என்று நலம் விசாரித்து பதில் அளிப்பது நாகரிகம்."
+  },
+  {
+    "id": 16,
+    "category": "Conversation",
+    "question": "In a restaurant, how do you politely ask for the bill?",
+    "options": ["Give bill!", "Could you please bring the bill?", "Where is bill?", "I want bill quickly."],
+    "correct_answer": 1,
+    "explanation_en": "'Could you please bring the bill?' is courteous.",
+    "explanation_ta": "'Could you please bring the bill?' என்று கேட்பதே கண்ணியமான முறை."
+  },
+  {
+    "id": 17,
+    "category": "Conversation",
+    "question": "When you accidentally bump into someone, what should you say?",
+    "options": ["Excuse me / I am so sorry.", "Why did you stand there?", "Never mind.", "Goodbye."],
+    "correct_answer": 0,
+    "explanation_en": "Say 'Excuse me' or 'I am so sorry'.",
+    "explanation_ta": "தற்செயலாக மோதும்போது 'I am so sorry' அல்லது 'Excuse me' கூற வேண்டும்."
+  },
+  {
+    "id": 18,
+    "category": "Vocabulary",
+    "question": "What is the opposite of the word 'Difficult'?",
+    "options": ["Hard", "Easy", "Rough", "Heavy"],
+    "correct_answer": 1,
+    "explanation_en": "'Easy' is the direct opposite of 'Difficult'.",
+    "explanation_ta": "'Difficult' (கடினமான) என்பதன் எதிர்ச்சொல் 'Easy' (எளிதான)."
+  },
+  {
+    "id": 19,
+    "category": "Grammar",
+    "question": "Which sentence describes an action happening right now?",
+    "options": ["I wrote an email.", "I am writing an email.", "I will write an email.", "I write emails every day."],
+    "correct_answer": 1,
+    "explanation_en": "'I am writing an email' is in the present continuous tense.",
+    "explanation_ta": "'I am writing an email' என்பது இப்போது நடக்கும் செயல்."
+  },
+  {
+    "id": 20,
+    "category": "Sentence Correction",
+    "question": "Correct the mistake: 'I am having two brothers.'",
+    "options": ["I have two brothers.", "I has two brothers.", "I am have two brothers.", "I having two brothers."],
+    "correct_answer": 0,
+    "explanation_en": "Possession in standard English uses 'I have', not continuous 'having'.",
+    "explanation_ta": "உடன்பிறப்புகள் அல்லது உடைமைகளுக்கு 'I have' எனப் பயன்படும் ('having' கூடாது)."
+  }
+]

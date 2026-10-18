@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+
+{% block title %}Responsible AI & Safety Framework — {{ app_name }}{% endblock %}
+{% block page_title %}Responsible AI & Safety Guidelines (பொறுப்புள்ள AI வழிகாட்டுதல்கள்){% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0">
+  <!-- Header Banner -->
+  <div class="card-custom p-4 mb-4 border-primary">
+    <div class="row align-items-center">
+      <div class="col-md-8">
+        <span class="badge bg-primary px-3 py-1 mb-2 fw-bold">Ethical & Responsible AI Architecture</span>
+        <h4 class="fw-bold mb-1">Human-in-the-Loop Safeguards for AI Language Education</h4>
+        <p class="text-muted small mb-0">
+          AI is a supportive <strong>practice assistant</strong>, not an infallible authority. LinguaMate AI is engineered to empower Tamil-speaking beginners while mitigating algorithmic biases, dialect erasure, and hallucinations.
+        </p>
+      </div>
+      <div class="col-md-4 text-md-end mt-3 mt-md-0">
+        <button class="btn btn-danger btn-sm fw-bold px-3" onclick="openReportModal('General', '', '')">
+          <i class="bi bi-flag-fill me-1"></i> Report Questionable AI Answer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Pillars Grid (8 Safety Dimensions) -->
+  <div class="row g-4 mb-4">
+    <!-- 1. Cultural Nuance -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card-custom p-3 h-100">
+        <div class="bg-primary text-white rounded-3 p-2 d-inline-flex mb-2">
+          <i class="bi bi-globe-americas fs-4"></i>
+        </div>
+        <h6 class="fw-bold mb-1">1. Cultural Nuance</h6>
+        <p class="small text-muted mb-0">
+          Respects South Indian socio-cultural references (e.g., idli, pongal, town buses, college campus norms) rather than forcing Western cultural idioms onto beginners.
+        </p>
+      </div>
+    </div>
+
+    <!-- 2. Dialect Differences -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card-custom p-3 h-100">
+        <div class="bg-success text-white rounded-3 p-2 d-inline-flex mb-2">
+          <i class="bi bi-chat-quote-fill fs-4"></i>
+        </div>
+        <h6 class="fw-bold mb-1">2. Dialect Awareness</h6>
+        <p class="small text-muted mb-0">
+          Distinguishes valid Indian English expressions from actual syntactic errors. Explains standard global English alternatives without ridiculing regional communication.
+        </p>
+      </div>
+    </div>
+
+    <!-- 3. Translation Ambiguity -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card-custom p-3 h-100">
+        <div class="bg-warning text-white rounded-3 p-2 d-inline-flex mb-2">
+          <i class="bi bi-translate fs-4"></i>
+        </div>
+        <h6 class="fw-bold mb-1">3. Translation Ambiguity</h6>
+        <p class="small text-muted mb-0">
+          Warns against literal word-for-word translation between Tamil (SOV syntax) and English (SVO syntax). Emphasizes idiomatic naturalness over machine transliteration.
+        </p>
+      </div>
+    </div>
+
+    <!-- 4. Preventing AI Hallucinations -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card-custom p-3 h-100">
+        <div class="bg-danger text-white rounded-3 p-2 d-inline-flex mb-2">
+          <i class="bi bi-shield-x fs-4"></i>
+        </div>
+        <h6 class="fw-bold mb-1">4. Anti-Hallucination</h6>
+        <p class="small text-muted mb-0">
+          Enforces explicit negative constraints in system prompts: <em>"Do not invent grammar rules. If unsure, acknowledge uncertainty."</em> Uses curated rule fallbacks.
+        </p>
+      </div>
+    </div>
+
+    <!-- 5. Mitigating Over-Trust -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card-custom p-3 h-100">
+        <div class="bg-info text-white rounded-3 p-2 d-inline-flex mb-2">
+          <i class="bi bi-exclamation-triangle-fill fs-4"></i>
+        </div>
+        <h6 class="fw-bold mb-1">5. Guarding Over-Trust</h6>
+        <p class="small text-muted mb-0">
+          Reminds students that LLM output is probabilistic. Encourages cross-checking with teachers, dictionaries, and human mentors rather than accepting output blindly.
+        </p>
+      </div>
+    </div>
+
+    <!-- 6. Privacy & Data Protection -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card-custom p-3 h-100">
+        <div class="bg-secondary text-white rounded-3 p-2 d-inline-flex mb-2">
+          <i class="bi bi-lock-fill fs-4"></i>
+        </div>
+        <h6 class="fw-bold mb-1">6. Privacy by Design</h6>
+        <p class="small text-muted mb-0">
+          Zero personal identifying data (PII) collection. All chat history, quiz attempts, and mistake records stay entirely in local SQLite storage on the learner's own computer.
+        </p>
+      </div>
+    </div>
+
+    <!-- 7. Human Verification -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card-custom p-3 h-100">
+        <div class="bg-primary text-white rounded-3 p-2 d-inline-flex mb-2">
+          <i class="bi bi-person-check-fill fs-4"></i>
+        </div>
+        <h6 class="fw-bold mb-1">7. Human Verification</h6>
+        <p class="small text-muted mb-0">
+          Provides human review controls across all 10 benchmark sentences. Teachers and students can mark AI responses as Verified, Uncertain, or Incorrect.
+        </p>
+      </div>
+    </div>
+
+    <!-- 8. Reporting Pipeline -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card-custom p-3 h-100">
+        <div class="bg-danger text-white rounded-3 p-2 d-inline-flex mb-2">
+          <i class="bi bi-flag-fill fs-4"></i>
+        </div>
+        <h6 class="fw-bold mb-1">8. Active Feedback Loop</h6>
+        <p class="small text-muted mb-0">
+          Includes an accessible "Report AI" button in every module so learners can flag questionable corrections directly to the local database audit log.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Logged Questionable Reports -->
+  <div class="card-custom p-4">
+    <div class="d-flex align-items-center justify-content-between mb-3 border-bottom pb-2">
+      <div>
+        <h6 class="fw-bold mb-0 text-dark"><i class="bi bi-journal-text me-1"></i> Learner Questionable Output Audit Log</h6>
+        <small class="text-muted">Reports logged by students during practice for review and model tuning</small>
+      </div>
+      <button class="btn btn-sm btn-outline-danger" onclick="openReportModal('Responsible AI', '', '')">
+        <i class="bi bi-plus-circle me-1"></i> Log New Report
+      </button>
+    </div>
+
+    {% if recent_reports %}
+    <div class="table-responsive">
+      <table class="table table-hover align-middle small mb-0">
+        <thead class="table-light">
+          <tr>
+            <th>Module</th>
+            <th>Input Sentence</th>
+            <th>AI Output</th>
+            <th>Issue Category</th>
+            <th>Student Notes</th>
+            <th>Reported At</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in recent_reports %}
+          <tr>
+            <td><span class="badge bg-light text-dark border">{{ r.module }}</span></td>
+            <td class="text-danger fw-semibold">{{ r.input_text }}</td>
+            <td class="text-secondary">{{ r.ai_response or 'N/A' }}</td>
+            <td><span class="badge bg-danger-subtle text-danger border border-danger-subtle">{{ r.issue_category }}</span></td>
+            <td>{{ r.user_notes or 'No notes provided' }}</td>
+            <td class="text-muted">{{ r.reported_at }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <div class="text-center py-4 text-muted">
+      <i class="bi bi-check2-all fs-2 text-success d-block mb-1"></i>
+      <p class="mb-0">No questionable AI outputs reported yet. If you spot an inaccurate rule, use the Report button above!</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

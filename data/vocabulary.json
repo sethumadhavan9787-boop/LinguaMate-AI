@@ -1,0 +1,1052 @@
+[
+  {
+    "word": "Hello",
+    "part_of_speech": "Interjection",
+    "tamil_meaning": "வணக்கம் (Vanakkam)",
+    "pronunciation_tip": "ஹலோ (heh-LOH)",
+    "category": "Greetings",
+    "level": "A1",
+    "example_sentence": "Hello, my name is Priya.",
+    "example_tamil": "வணக்கம், என் பெயர் பிரியா."
+  },
+  {
+    "word": "Good morning",
+    "part_of_speech": "Phrase",
+    "tamil_meaning": "காலை வணக்கம் (Kaalai vanakkam)",
+    "pronunciation_tip": "குட் மார்னிங் (gud MOR-ning)",
+    "category": "Greetings",
+    "level": "A1",
+    "example_sentence": "Good morning, teacher!",
+    "example_tamil": "காலை வணக்கம் ஆசிரியரே!"
+  },
+  {
+    "word": "Good evening",
+    "part_of_speech": "Phrase",
+    "tamil_meaning": "மாலை வணக்கம் (Maalai vanakkam)",
+    "pronunciation_tip": "குட் ஈவினிங் (gud EEV-ning)",
+    "category": "Greetings",
+    "level": "A1",
+    "example_sentence": "Good evening, how was your day?",
+    "example_tamil": "மாலை வணக்கம், உங்கள் நாள் எப்படி இருந்தது?"
+  },
+  {
+    "word": "Welcome",
+    "part_of_speech": "Verb / Interjection",
+    "tamil_meaning": "நல்வரவு / வரவேற்கிறேன் (Nalvaravu)",
+    "pronunciation_tip": "வெல்கம் (WEL-kum)",
+    "category": "Greetings",
+    "level": "A1",
+    "example_sentence": "Welcome to our college campus.",
+    "example_tamil": "எங்கள் கல்லூரி வளாகத்திற்கு நல்வரவு."
+  },
+  {
+    "word": "Please",
+    "part_of_speech": "Adverb",
+    "tamil_meaning": "தயவுசெய்து (Thayavuseithu)",
+    "pronunciation_tip": "ப்ளீஸ் (PLEEZ)",
+    "category": "Greetings",
+    "level": "A1",
+    "example_sentence": "Please sit down and take notes.",
+    "example_tamil": "தயவுசெய்து அமர்ந்து குறிப்புகளை எடுக்கவும்."
+  },
+  {
+    "word": "Thank you",
+    "part_of_speech": "Phrase",
+    "tamil_meaning": "நன்றி (Nandri)",
+    "pronunciation_tip": "தேங்க் யூ (THANGK yoo)",
+    "category": "Greetings",
+    "level": "A1",
+    "example_sentence": "Thank you very much for your kind help.",
+    "example_tamil": "உங்கள் அன்பான உதவிக்கு மிக்க நன்றி."
+  },
+  {
+    "word": "Excuse me",
+    "part_of_speech": "Phrase",
+    "tamil_meaning": "மன்னிக்கவும் (கவனம் ஈர்க்க) (Mannikkavum)",
+    "pronunciation_tip": "எக்ஸ்கியூஸ் மீ (ik-SKYOOS mee)",
+    "category": "Greetings",
+    "level": "A1",
+    "example_sentence": "Excuse me, where is room 104?",
+    "example_tamil": "மன்னிக்கவும், அறை 104 எங்குள்ளது?"
+  },
+  {
+    "word": "Sorry",
+    "part_of_speech": "Adjective",
+    "tamil_meaning": "மன்னிக்கவும் (வருத்தம் தெரிவிக்க) (Mannikkavum)",
+    "pronunciation_tip": "ஸாரி (SOR-ee)",
+    "category": "Greetings",
+    "level": "A1",
+    "example_sentence": "I am sorry for coming late today.",
+    "example_tamil": "இன்று தாமதமாக வந்ததற்கு மன்னிக்கவும்."
+  },
+  {
+    "word": "Goodbye",
+    "part_of_speech": "Interjection",
+    "tamil_meaning": "விடைபெறுகிறேன் / போய் வருகிறேன் (Poi varugiren)",
+    "pronunciation_tip": "குட்பை (gud-BYE)",
+    "category": "Greetings",
+    "level": "A1",
+    "example_sentence": "Goodbye, see you in class tomorrow.",
+    "example_tamil": "போய் வருகிறேன், நாளை வகுப்பில் சந்திப்போம்."
+  },
+  {
+    "word": "Nice to meet you",
+    "part_of_speech": "Phrase",
+    "tamil_meaning": "உங்களை சந்தித்ததில் மகிழ்ச்சி (Ungalai sandhithadhil magizhchi)",
+    "pronunciation_tip": "நைஸ் டு மீட் யூ (nys too MEET yoo)",
+    "category": "Greetings",
+    "level": "A1",
+    "example_sentence": "Nice to meet you, Ravi.",
+    "example_tamil": "உங்களை சந்தித்ததில் மகிழ்ச்சி, ரவி."
+  },
+  {
+    "word": "Father",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "தந்தை / அப்பா (Appa)",
+    "pronunciation_tip": "ஃபாதர் (FAH-thur)",
+    "category": "Family",
+    "level": "A1",
+    "example_sentence": "My father works in a bank.",
+    "example_tamil": "என் தந்தை வங்கியில் வேலை செய்கிறார்."
+  },
+  {
+    "word": "Mother",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "தாய் / அம்மா (Amma)",
+    "pronunciation_tip": "மதர் (MUH-thur)",
+    "category": "Family",
+    "level": "A1",
+    "example_sentence": "My mother cooks delicious sambar.",
+    "example_tamil": "என் அம்மா சுவையான சாம்பார் சமைக்கிறார்."
+  },
+  {
+    "word": "Brother",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "சகோதரன் (அண்ணன் / தம்பி) (Sagodharan)",
+    "pronunciation_tip": "பிரதர் (BRUH-thur)",
+    "category": "Family",
+    "level": "A1",
+    "example_sentence": "My younger brother is studying in school.",
+    "example_tamil": "என் தம்பி பள்ளியில் படித்து வருகிறார்."
+  },
+  {
+    "word": "Sister",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "சகோதரி (அக்கா / தங்கை) (Sagodhari)",
+    "pronunciation_tip": "சிஸ்டர் (SIS-tur)",
+    "category": "Family",
+    "level": "A1",
+    "example_sentence": "My elder sister teaches mathematics.",
+    "example_tamil": "என் அக்கா கணிதம் கற்பிக்கிறார்."
+  },
+  {
+    "word": "Parents",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "பெற்றோர்கள் (Petrorgal)",
+    "pronunciation_tip": "பேரண்ட்ஸ் (PAIR-unts)",
+    "category": "Family",
+    "level": "A1",
+    "example_sentence": "I respect and love my parents deeply.",
+    "example_tamil": "நான் என் பெற்றோரை மிகவும் மதிக்கிறேன், நேசிக்கிறேன்."
+  },
+  {
+    "word": "Grandfather",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "தாத்தா (Thaatha)",
+    "pronunciation_tip": "கிராண்ட்ஃபாதர் (GRAND-fah-thur)",
+    "category": "Family",
+    "level": "A1",
+    "example_sentence": "My grandfather tells fascinating stories.",
+    "example_tamil": "என் தாத்தா சுவாரசியமான கதைகள் சொல்வார்."
+  },
+  {
+    "word": "Grandmother",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "பாட்டி (Paatti)",
+    "pronunciation_tip": "கிராண்ட்மதர் (GRAND-muh-thur)",
+    "category": "Family",
+    "level": "A1",
+    "example_sentence": "My grandmother lives in a quiet village.",
+    "example_tamil": "என் பாட்டி அமைதியான கிராமத்தில் வசிக்கிறார்."
+  },
+  {
+    "word": "Son",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "மகன் (Magan)",
+    "pronunciation_tip": "சன் (SUN)",
+    "category": "Family",
+    "level": "A1",
+    "example_sentence": "He plays cricket with his son every Sunday.",
+    "example_tamil": "அவர் ஒவ்வொரு ஞாயிறும் தன் மகனுடன் கிரிக்கெட் விளையாடுகிறார்."
+  },
+  {
+    "word": "Daughter",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "மகள் (Magal)",
+    "pronunciation_tip": "டாட்டர் (DAW-tur)",
+    "category": "Family",
+    "level": "A1",
+    "example_sentence": "Their daughter won first prize in drawing.",
+    "example_tamil": "அவர்களின் மகள் ஓவியத்தில் முதல் பரிசு வென்றார்."
+  },
+  {
+    "word": "Friend",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "நண்பர் / தோழி (Nanbar)",
+    "pronunciation_tip": "ஃப்ரெண்ட் (FREND)",
+    "category": "Family",
+    "level": "A1",
+    "example_sentence": "Karthik is my best friend in college.",
+    "example_tamil": "கார்த்திக் கல்லூரியில் என் உற்ற நண்பன்."
+  },
+  {
+    "word": "Rice",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "அரிசி / சாதம் (Saadham)",
+    "pronunciation_tip": "ரைஸ் (RYS)",
+    "category": "Food",
+    "level": "A1",
+    "example_sentence": "We eat rice and curry for lunch.",
+    "example_tamil": "நாங்கள் மதிய உணவுக்கு சாதமும் குழம்பும் சாப்பிடுகிறோம்."
+  },
+  {
+    "word": "Water",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "தண்ணீர் (Thanneer)",
+    "pronunciation_tip": "வாட்டர் (WAH-tur)",
+    "category": "Food",
+    "level": "A1",
+    "example_sentence": "Drink plenty of water every morning.",
+    "example_tamil": "ஒவ்வொரு காலையிலும் நிறைய தண்ணீர் குடியுங்கள்."
+  },
+  {
+    "word": "Milk",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "பால் (Paal)",
+    "pronunciation_tip": "மில்க் (MILK)",
+    "category": "Food",
+    "level": "A1",
+    "example_sentence": "She drinks warm milk before sleeping.",
+    "example_tamil": "அவள் தூங்குவதற்கு முன் வெதுவெதுப்பான பால் குடிக்கிறாள்."
+  },
+  {
+    "word": "Tea",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "தேநீர் (Theneer)",
+    "pronunciation_tip": "டீ (TEE)",
+    "category": "Food",
+    "level": "A1",
+    "example_sentence": "Would you like a hot cup of tea?",
+    "example_tamil": "சூடான ஒரு கோப்பை தேநீர் அருந்துகிறீர்களா?"
+  },
+  {
+    "word": "Coffee",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "காபி (Kaapi)",
+    "pronunciation_tip": "காஃபி (KAH-fee)",
+    "category": "Food",
+    "level": "A1",
+    "example_sentence": "Filter coffee is very popular in Tamil Nadu.",
+    "example_tamil": "தமிழ்நாட்டில் ஃபில்டர் காபி மிகவும் பிரசித்தி பெற்றது."
+  },
+  {
+    "word": "Vegetables",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "காய்கறிகள் (Kaaikarigal)",
+    "pronunciation_tip": "வெஜிடபிள்ஸ் (VEJ-tuh-bulz)",
+    "category": "Food",
+    "level": "A1",
+    "example_sentence": "Fresh vegetables are good for our health.",
+    "example_tamil": "புதிய காய்கறிகள் நமது உடலுக்கு நல்லது."
+  },
+  {
+    "word": "Fruit",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "பழம் (Pazham)",
+    "pronunciation_tip": "ஃப்ரூட் (FROOT)",
+    "category": "Food",
+    "level": "A1",
+    "example_sentence": "An apple is a sweet and healthy fruit.",
+    "example_tamil": "ஆப்பிள் ஒரு இனிப்பான மற்றும் ஆரோக்கியமான பழம்."
+  },
+  {
+    "word": "Breakfast",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "காலை உணவு (Kaalai unavu)",
+    "pronunciation_tip": "ப்ரெக்ஃபாஸ்ட் (BREK-fust)",
+    "category": "Food",
+    "level": "A1",
+    "example_sentence": "I usually have idli for breakfast.",
+    "example_tamil": "நான் வழக்கமாக காலை உணவுக்கு இட்லி சாப்பிடுகிறேன்."
+  },
+  {
+    "word": "Lunch",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "மதிய உணவு (Madhiya unavu)",
+    "pronunciation_tip": "லன்ச் (LUNCH)",
+    "category": "Food",
+    "level": "A1",
+    "example_sentence": "We take lunch together at 1:00 PM.",
+    "example_tamil": "நாங்கள் மதியம் 1:00 மணிக்கு ஒன்றாக சாப்பிடுகிறோம்."
+  },
+  {
+    "word": "Dinner",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "இரவு உணவு (Iravu unavu)",
+    "pronunciation_tip": "டின்னர் (DIN-ur)",
+    "category": "Food",
+    "level": "A1",
+    "example_sentence": "Our family has dinner at 8:30 PM.",
+    "example_tamil": "எங்கள் குடும்பம் இரவு 8:30 மணிக்கு உணவு உண்கிறது."
+  },
+  {
+    "word": "College",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "கல்லூரி (Kalluri)",
+    "pronunciation_tip": "காலேஜ் (KOL-ij)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "Our college has a well-equipped computer lab.",
+    "example_tamil": "எங்கள் கல்லூரியில் சிறந்த கணினி ஆய்வகம் உள்ளது."
+  },
+  {
+    "word": "Student",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "மாணவர் / மாணவி (Maanavar)",
+    "pronunciation_tip": "ஸ்டூடன்ட் (STOO-dunt)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "Every student must bring their identity card.",
+    "example_tamil": "ஒவ்வொரு மாணவரும் தங்கள் அடையாள அட்டையைக் கொண்டுவர வேண்டும்."
+  },
+  {
+    "word": "Teacher",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "ஆசிரியர் (Aasiriyar)",
+    "pronunciation_tip": "டீச்சர் (TEE-chur)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "Our teacher explains concepts with clarity.",
+    "example_tamil": "எங்கள் ஆசிரியர் பாடங்களை தெளிவாக விளக்குகிறார்."
+  },
+  {
+    "word": "Book",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "புத்தகம் (Puthagam)",
+    "pronunciation_tip": "புக் (BOOK)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "Open your grammar book to page twenty.",
+    "example_tamil": "உங்கள் இலக்கணப் புத்தகத்தில் பக்கம் இருபதை திறக்கவும்."
+  },
+  {
+    "word": "Classroom",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "வகுப்பறை (Vagupparai)",
+    "pronunciation_tip": "கிளாஸ்ரூம் (KLAS-room)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "The classroom is neat, bright, and clean.",
+    "example_tamil": "வகுப்பறை நேர்த்தியாகவும், வெளிச்சமாகவும், சுத்தமாகவும் உள்ளது."
+  },
+  {
+    "word": "Library",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "நூலகம் (Noolagam)",
+    "pronunciation_tip": "லைப்ரரி (LY-brer-ee)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "I borrow English storybooks from the library.",
+    "example_tamil": "நான் நூலகத்திலிருந்து ஆங்கிலக் கதைப் புத்தகங்களை இரவல் வாங்குகிறேன்."
+  },
+  {
+    "word": "Homework",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "வீட்டுப்பாடம் (Veettuppaadam)",
+    "pronunciation_tip": "ஹோம்வொர்க் (HOHM-wurk)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "Did you finish your English homework?",
+    "example_tamil": "உங்கள் ஆங்கில வீட்டுப்பாடத்தை முடித்துவிட்டீர்களா?"
+  },
+  {
+    "word": "Question",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "கேள்வி (Kelvi)",
+    "pronunciation_tip": "கொஸ்டின் (KWES-chun)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "Do not hesitate to ask a question in class.",
+    "example_tamil": "வகுப்பில் கேள்வி கேட்க தயங்காதீர்கள்."
+  },
+  {
+    "word": "Answer",
+    "part_of_speech": "Noun / Verb",
+    "tamil_meaning": "பதில் (Badhil)",
+    "pronunciation_tip": "ஆன்ஸர் (AN-sur)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "Write your answer clearly in your notebook.",
+    "example_tamil": "உங்கள் பதிலை குறிப்பேட்டில் தெளிவாக எழுதுங்கள்."
+  },
+  {
+    "word": "Exam",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "தேர்வு (Therivu)",
+    "pronunciation_tip": "எக்ஸாம் (ig-ZAM)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "The semester exam starts next Monday.",
+    "example_tamil": "பருவத் தேர்வு அடுத்த திங்கட்கிழமை தொடங்குகிறது."
+  },
+  {
+    "word": "Bus",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "பேருந்து (Perundhu)",
+    "pronunciation_tip": "பஸ் (BUS)",
+    "category": "Travel",
+    "level": "A1",
+    "example_sentence": "I take the town bus to college every day.",
+    "example_tamil": "நான் தினமும் கல்லூரிக்கு நகரப் பேருந்தில் செல்கிறேன்."
+  },
+  {
+    "word": "Train",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "ரயில் (Rayil)",
+    "pronunciation_tip": "ட்ரெய்ன் (TRAYN)",
+    "category": "Travel",
+    "level": "A1",
+    "example_sentence": "The express train to Chennai departs at 6 AM.",
+    "example_tamil": "சென்னை செல்லும் விரைவு ரயில் காலை 6 மணிக்கு புறப்படுகிறது."
+  },
+  {
+    "word": "Ticket",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "பயணச்சீட்டு (Payanacheettu)",
+    "pronunciation_tip": "டிக்கெட் (TIK-it)",
+    "category": "Travel",
+    "level": "A1",
+    "example_sentence": "Keep your bus ticket safe until your stop.",
+    "example_tamil": "உங்கள் நிறுத்தத்திற்கு செல்லும் வரை பயணச்சீட்டை பத்திரமாக வைத்திருங்கள்."
+  },
+  {
+    "word": "Station",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "நிலையம் (Nilayam)",
+    "pronunciation_tip": "ஸ்டேஷன் (STAY-shun)",
+    "category": "Travel",
+    "level": "A1",
+    "example_sentence": "We arrived at the railway station on time.",
+    "example_tamil": "நாங்கள் சரியான நேரத்திற்கு ரயில் நிலையத்தை அடைந்தோம்."
+  },
+  {
+    "word": "Road",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "சாலை / தெரு (Saalai)",
+    "pronunciation_tip": "ரோடு (ROHD)",
+    "category": "Travel",
+    "level": "A1",
+    "example_sentence": "Cross the road carefully at the pedestrian crossing.",
+    "example_tamil": "பாதசாரி கடவையில் சாலையை கவனமாகக் கடக்கவும்."
+  },
+  {
+    "word": "Left",
+    "part_of_speech": "Adjective / Noun",
+    "tamil_meaning": "இடதுபுறம் (Idadhu puram)",
+    "pronunciation_tip": "லெஃப்ட் (LEFT)",
+    "category": "Travel",
+    "level": "A1",
+    "example_sentence": "Turn left at the hospital signal.",
+    "example_tamil": "மருத்துவமனை சிக்னலில் இடதுபுறம் திரும்பவும்."
+  },
+  {
+    "word": "Right",
+    "part_of_speech": "Adjective / Noun",
+    "tamil_meaning": "வலதுபுறம் (Valadhu puram)",
+    "pronunciation_tip": "ரைட் (RYT)",
+    "category": "Travel",
+    "level": "A1",
+    "example_sentence": "The medical shop is on your right.",
+    "example_tamil": "மருந்துக் கடை உங்கள் வலதுபுறத்தில் உள்ளது."
+  },
+  {
+    "word": "Straight",
+    "part_of_speech": "Adverb",
+    "tamil_meaning": "நேராக (Neraaga)",
+    "pronunciation_tip": "ஸ்ட்ரெய்ட் (STRAYT)",
+    "category": "Travel",
+    "level": "A1",
+    "example_sentence": "Go straight for two hundred meters.",
+    "example_tamil": "இருநூறு மீட்டர்கள் நேராகச் செல்லவும்."
+  },
+  {
+    "word": "Near",
+    "part_of_speech": "Preposition",
+    "tamil_meaning": "அருகில் (Arugil)",
+    "pronunciation_tip": "நியர் (NEER)",
+    "category": "Travel",
+    "level": "A1",
+    "example_sentence": "My house is near the temple pond.",
+    "example_tamil": "என் வீடு கோயில் குளம் அருகில் உள்ளது."
+  },
+  {
+    "word": "Far",
+    "part_of_speech": "Adverb",
+    "tamil_meaning": "தொலைவில் (Tholaivil)",
+    "pronunciation_tip": "ஃபார் (FAHR)",
+    "category": "Travel",
+    "level": "A1",
+    "example_sentence": "The airport is far from this bus stand.",
+    "example_tamil": "விமான நிலையம் இந்த பேருந்து நிலையத்திலிருந்து தொலைவில் உள்ளது."
+  },
+  {
+    "word": "Wake up",
+    "part_of_speech": "Verb (Phrasal)",
+    "tamil_meaning": "எழுந்திரு (Ezhundhiru)",
+    "pronunciation_tip": "வேக் அப் (WAYK up)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "I wake up at six o'clock every morning.",
+    "example_tamil": "நான் தினமும் காலை ஆறு மணிக்கு எழுந்திருக்கிறேன்."
+  },
+  {
+    "word": "Wash",
+    "part_of_speech": "Verb",
+    "tamil_meaning": "கழுவு (Kazhuvu)",
+    "pronunciation_tip": "வாஷ் (WASH)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "Wash your hands with soap before eating.",
+    "example_tamil": "சாப்பிடுவதற்கு முன் கைகளை சோப்பினால் கழுவவும்."
+  },
+  {
+    "word": "Eat",
+    "part_of_speech": "Verb",
+    "tamil_meaning": "சாப்பிடு (Saappidu)",
+    "pronunciation_tip": "ஈட் (EET)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "Children must eat wholesome food.",
+    "example_tamil": "குழந்தைகள் சத்தான உணவை சாப்பிட வேண்டும்."
+  },
+  {
+    "word": "Drink",
+    "part_of_speech": "Verb",
+    "tamil_meaning": "குடி (Kudi)",
+    "pronunciation_tip": "டிரிங்க் (DRINGK)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "Drink clean water to remain energized.",
+    "example_tamil": "சுறுசுறுப்பாக இருக்க சுத்தமான தண்ணீர் குடியுங்கள்."
+  },
+  {
+    "word": "Read",
+    "part_of_speech": "Verb",
+    "tamil_meaning": "படி (வாசி) (Padi)",
+    "pronunciation_tip": "ரீட் (REED)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "I read English newspaper articles every day.",
+    "example_tamil": "நான் தினமும் ஆங்கில செய்தித்தாள் கட்டுரைகளை வாசிக்கிறேன்."
+  },
+  {
+    "word": "Write",
+    "part_of_speech": "Verb",
+    "tamil_meaning": "எழுது (Ezhudhu)",
+    "pronunciation_tip": "ரைட் (RYT)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "Write one short paragraph about your hobby.",
+    "example_tamil": "உங்கள் பொழுதுபோக்கைப் பற்றி ஒரு சிறு பத்தி எழுதுங்கள்."
+  },
+  {
+    "word": "Speak",
+    "part_of_speech": "Verb",
+    "tamil_meaning": "பேசு (Pesu)",
+    "pronunciation_tip": "ஸ்பீக் (SPEEK)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "Try to speak simple English with your friends.",
+    "example_tamil": "நண்பர்களுடன் எளிய ஆங்கிலத்தில் பேச முயற்சி செய்யுங்கள்."
+  },
+  {
+    "word": "Listen",
+    "part_of_speech": "Verb",
+    "tamil_meaning": "கவனி / கேள் (Gavani)",
+    "pronunciation_tip": "லிசன் (LIS-un)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "Listen carefully to the pronunciation audio.",
+    "example_tamil": "உச்சரிப்பு ஒலியை கவனமாகக் கேளுங்கள்."
+  },
+  {
+    "word": "Walk",
+    "part_of_speech": "Verb",
+    "tamil_meaning": "நட (Nada)",
+    "pronunciation_tip": "வாக் (WAWK)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "We walk in the neighborhood park every evening.",
+    "example_tamil": "நாங்கள் தினமும் மாலையில் பூங்காவில் நடக்கிறோம்."
+  },
+  {
+    "word": "Sleep",
+    "part_of_speech": "Verb",
+    "tamil_meaning": "தூங்கு (Thoongu)",
+    "pronunciation_tip": "ஸ்லீப் (SLEEP)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "Good students sleep seven to eight hours daily.",
+    "example_tamil": "நல்ல மாணவர்கள் தினமும் ஏழு முதல் எட்டு மணி நேரம் தூங்குகிறார்கள்."
+  },
+  {
+    "word": "Happy",
+    "part_of_speech": "Adjective",
+    "tamil_meaning": "மகிழ்ச்சியான (Magizhchiyaana)",
+    "pronunciation_tip": "ஹேப்பி (HAP-ee)",
+    "category": "Emotions",
+    "level": "A1",
+    "example_sentence": "I am truly happy with my quiz score.",
+    "example_tamil": "எனது வினாடி வினா மதிப்பெண்ணில் நான் உண்மையிலேயே மகிழ்ச்சியடைகிறேன்."
+  },
+  {
+    "word": "Sad",
+    "part_of_speech": "Adjective",
+    "tamil_meaning": "வருத்தமான / சோகமான (Sogamaana)",
+    "pronunciation_tip": "சேட் (SAD)",
+    "category": "Emotions",
+    "level": "A1",
+    "example_sentence": "Do not feel sad when you make a mistake.",
+    "example_tamil": "தவறு செய்யும் போது சோகமடைய வேண்டாம்."
+  },
+  {
+    "word": "Angry",
+    "part_of_speech": "Adjective",
+    "tamil_meaning": "கோபமான (Kobamaana)",
+    "pronunciation_tip": "ஆங்க்ரி (ANG-gree)",
+    "category": "Emotions",
+    "level": "A1",
+    "example_sentence": "He was angry because the train was cancelled.",
+    "example_tamil": "ரயில் ரத்தானதால் அவர் கோபமாக இருந்தார்."
+  },
+  {
+    "word": "Tired",
+    "part_of_speech": "Adjective",
+    "tamil_meaning": "களைப்பான / சோர்வான (Sorvaana)",
+    "pronunciation_tip": "டயர்ட் (TY-urd)",
+    "category": "Emotions",
+    "level": "A1",
+    "example_sentence": "After playing football, we were very tired.",
+    "example_tamil": "கால்பந்து விளையாடிய பிறகு நாங்கள் மிகவும் சோர்வாக இருந்தோம்."
+  },
+  {
+    "word": "Excited",
+    "part_of_speech": "Adjective",
+    "tamil_meaning": "ஆர்வமிக்க / உற்சாகமான (Utsaagamaana)",
+    "pronunciation_tip": "எக்சைட்டட் (ik-SY-tid)",
+    "category": "Emotions",
+    "level": "A1",
+    "example_sentence": "The students are excited about the college tour.",
+    "example_tamil": "மாணவர்கள் கல்லூரி சுற்றுலா குறித்து உற்சாகமாக உள்ளனர்."
+  },
+  {
+    "word": "Afraid",
+    "part_of_speech": "Adjective",
+    "tamil_meaning": "பயந்த (Bayamandha)",
+    "pronunciation_tip": "அஃப்ரைட் (uh-FRAYD)",
+    "category": "Emotions",
+    "level": "A1",
+    "example_sentence": "Do not be afraid of speaking English in public.",
+    "example_tamil": "பொது இடங்களில் ஆங்கிலம் பேச பயப்பட வேண்டாம்."
+  },
+  {
+    "word": "Surprised",
+    "part_of_speech": "Adjective",
+    "tamil_meaning": "வியப்படைந்த (Viyappadaindha)",
+    "pronunciation_tip": "சர்ப்ரைஸ்ட் (sur-PRYZD)",
+    "category": "Emotions",
+    "level": "A1",
+    "example_sentence": "She was surprised by the unexpected birthday gift.",
+    "example_tamil": "எதிர்பாராத பிறந்தநாள் பரிசினால் அவள் வியப்படைந்தாள்."
+  },
+  {
+    "word": "Proud",
+    "part_of_speech": "Adjective",
+    "tamil_meaning": "பெருமையான (Perumaiyaana)",
+    "pronunciation_tip": "ப்ரவுட் (PROWD)",
+    "category": "Emotions",
+    "level": "A1",
+    "example_sentence": "My parents are proud of my capstone achievement.",
+    "example_tamil": "என் இறுதி திட்ட சாதனையை நினைத்து என் பெற்றோர் பெருமைப்படுகிறார்கள்."
+  },
+  {
+    "word": "Calm",
+    "part_of_speech": "Adjective",
+    "tamil_meaning": "அமைதியான (Amaidhiyaana)",
+    "pronunciation_tip": "காம் (KAHM)",
+    "category": "Emotions",
+    "level": "A1",
+    "example_sentence": "Stay calm and confident during your interview.",
+    "example_tamil": "நேர்காணலின் போது அமைதியாகவும் தன்னம்பிக்கையுடனும் இருங்கள்."
+  },
+  {
+    "word": "Bored",
+    "part_of_speech": "Adjective",
+    "tamil_meaning": "சலிப்படைந்த (Salippadaindha)",
+    "pronunciation_tip": "போர்ட் (BAWRD)",
+    "category": "Emotions",
+    "level": "A1",
+    "example_sentence": "He felt bored waiting in the long queue.",
+    "example_tamil": "நீண்ட வரிசையில் காத்திருந்து அவர் சலிப்படைந்தார்."
+  },
+  {
+    "word": "Office",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "அலுவலகம் (Aluvalagam)",
+    "pronunciation_tip": "ஆஃபீஸ் (AW-fis)",
+    "category": "Workplace",
+    "level": "A2",
+    "example_sentence": "He reaches the office at nine o'clock sharp.",
+    "example_tamil": "அவர் சரியாக ஒன்பது மணிக்கு அலுவலகத்தை அடைகிறார்."
+  },
+  {
+    "word": "Manager",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "மேலாளர் (Melaalar)",
+    "pronunciation_tip": "மேனேஜர் (MAN-ih-jur)",
+    "category": "Workplace",
+    "level": "A2",
+    "example_sentence": "The project manager approved our software design.",
+    "example_tamil": "திட்ட மேலாளர் எங்கள் மென்பொருள் வடிவமைப்பை ஏற்றுக்கொண்டார்."
+  },
+  {
+    "word": "Meeting",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "கூட்டம் / சந்திப்பு (Sandhippu)",
+    "pronunciation_tip": "மீட்டிங் (MEE-ting)",
+    "category": "Workplace",
+    "level": "A2",
+    "example_sentence": "We have an important team meeting at two o'clock.",
+    "example_tamil": "மதியம் இரண்டு மணிக்கு எங்களுக்கு ஒரு முக்கியமான குழு கூட்டம் உள்ளது."
+  },
+  {
+    "word": "Job",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "வேலை / பணி (Velai)",
+    "pronunciation_tip": "ஜாப் (JOB)",
+    "category": "Workplace",
+    "level": "A2",
+    "example_sentence": "She applied for a junior software engineer job.",
+    "example_tamil": "அவள் ஜூனியர் சாப்ட்வேர் இன்ஜினியர் வேலைக்கு விண்ணப்பித்தாள்."
+  },
+  {
+    "word": "Interview",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "நேர்காணல் (Nerkaanal)",
+    "pronunciation_tip": "இன்டர்வியூ (IN-tur-vyoo)",
+    "category": "Workplace",
+    "level": "A2",
+    "example_sentence": "Wear formal attire for your job interview.",
+    "example_tamil": "உங்கள் வேலை நேர்காணலுக்கு முறையான உடை அணியுங்கள்."
+  },
+  {
+    "word": "Salary",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "சம்பளம் (Sambalam)",
+    "pronunciation_tip": "சேலரி (SAL-uh-ree)",
+    "category": "Workplace",
+    "level": "A2",
+    "example_sentence": "Employees receive their monthly salary on the first day.",
+    "example_tamil": "பணியாளர்கள் மாதத்தின் முதல் நாளில் ஊதியத்தைப் பெறுகிறார்கள்."
+  },
+  {
+    "word": "Colleague",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "உடன் பணிபுரிபவர் (Udan panipuribhavar)",
+    "pronunciation_tip": "கலீக் (KOL-eeg)",
+    "category": "Workplace",
+    "level": "A2",
+    "example_sentence": "My colleague assisted me with the report.",
+    "example_tamil": "அறிக்கையை முடிக்க எனது உடன் பணிபுரிபவர் எனக்கு உதவினார்."
+  },
+  {
+    "word": "Email",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "மின்னஞ்சல் (Minnanjal)",
+    "pronunciation_tip": "ஈமெயில் (EE-mayl)",
+    "category": "Workplace",
+    "level": "A2",
+    "example_sentence": "Please send your resume through email.",
+    "example_tamil": "தயவுசெய்து உங்கள் சுயவிவரக் குறிப்பை மின்னஞ்சல் மூலம் அனுப்புங்கள்."
+  },
+  {
+    "word": "Project",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "திட்டம் / செயல் திட்டம் (Seyal thittam)",
+    "pronunciation_tip": "ப்ராஜெக்ட் (PROJ-ekt)",
+    "category": "Workplace",
+    "level": "A2",
+    "example_sentence": "Our capstone project builds an AI language companion.",
+    "example_tamil": "எங்கள் இறுதி ஆண்டு திட்டம் AI மொழி துணையை உருவாக்குகிறது."
+  },
+  {
+    "word": "Success",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "வெற்றி (Vetri)",
+    "pronunciation_tip": "சக்சஸ் (suk-SES)",
+    "category": "Workplace",
+    "level": "A2",
+    "example_sentence": "Consistent practice leads to great success.",
+    "example_tamil": "தொடர்ச்சியான பயிற்சி மகத்தான வெற்றிக்கு வழிவகுக்கும்."
+  },
+  {
+    "word": "Help",
+    "part_of_speech": "Verb / Noun",
+    "tamil_meaning": "உதவி (Udhavi)",
+    "pronunciation_tip": "ஹெல்ப் (HELP)",
+    "category": "Greetings",
+    "level": "A1",
+    "example_sentence": "Can you please help me with this exercise?",
+    "example_tamil": "இந்த பயிற்சியில் எனக்கு தயவுசெய்து உதவ முடியுமா?"
+  },
+  {
+    "word": "Name",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "பெயர் (Peyar)",
+    "pronunciation_tip": "நேம் (NAYM)",
+    "category": "Greetings",
+    "level": "A1",
+    "example_sentence": "What is your full name?",
+    "example_tamil": "உங்கள் முழுப் பெயர் என்ன?"
+  },
+  {
+    "word": "Age",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "வயது (Vayadhu)",
+    "pronunciation_tip": "ஏஜ் (AYJ)",
+    "category": "Greetings",
+    "level": "A1",
+    "example_sentence": "My age is twenty years.",
+    "example_tamil": "எனக்கு வயது இருபது."
+  },
+  {
+    "word": "House",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "வீடு (Veedu)",
+    "pronunciation_tip": "ஹவுஸ் (HOWS)",
+    "category": "Family",
+    "level": "A1",
+    "example_sentence": "We live in an independent house.",
+    "example_tamil": "நாங்கள் ஒரு தனி வீட்டில் வசிக்கிறோம்."
+  },
+  {
+    "word": "Village",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "கிராமம் (Giraamam)",
+    "pronunciation_tip": "வில்லேஜ் (VIL-ij)",
+    "category": "Travel",
+    "level": "A1",
+    "example_sentence": "My native village is green and peaceful.",
+    "example_tamil": "எனது சொந்த கிராமம் பசுமையாகவும் அமைதியாகவும் உள்ளது."
+  },
+  {
+    "word": "City",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "நகரம் (Nagaram)",
+    "pronunciation_tip": "சிட்டி (SIT-ee)",
+    "category": "Travel",
+    "level": "A1",
+    "example_sentence": "Chennai is a major coastal city.",
+    "example_tamil": "சென்னை ஒரு முதன்மையான கடலோர நகரம்."
+  },
+  {
+    "word": "Shop",
+    "part_of_speech": "Noun / Verb",
+    "tamil_meaning": "கடை (Kadai)",
+    "pronunciation_tip": "ஷாப் (SHOP)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "Let us go to the stationery shop.",
+    "example_tamil": "எழுதுபொருள் கடைக்கு செல்வோம் வாருங்கள்."
+  },
+  {
+    "word": "Money",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "பணம் (Panam)",
+    "pronunciation_tip": "மனி (MUN-ee)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "Count the money before leaving the counter.",
+    "example_tamil": "கவுண்டரை விட்டு வெளியேறும் முன் பணத்தை எண்ணுங்கள்."
+  },
+  {
+    "word": "Price",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "விலை (Vilai)",
+    "pronunciation_tip": "ப்ரைஸ் (PRYS)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "What is the price of this dictionary?",
+    "example_tamil": "இந்த அகராதியின் விலை என்ன?"
+  },
+  {
+    "word": "Buy",
+    "part_of_speech": "Verb",
+    "tamil_meaning": "வாங்கு (Vaangu)",
+    "pronunciation_tip": "பை (BYE)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "I want to buy a notebook.",
+    "example_tamil": "நான் ஒரு குறிப்பேடு வாங்க விரும்புகிறேன்."
+  },
+  {
+    "word": "Time",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "நேரம் (Neram)",
+    "pronunciation_tip": "டைம் (TYM)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "What time does our class start?",
+    "example_tamil": "நமது வகுப்பு எத்தனை மணிக்கு தொடங்குகிறது?"
+  },
+  {
+    "word": "Today",
+    "part_of_speech": "Adverb / Noun",
+    "tamil_meaning": "இன்று (Indru)",
+    "pronunciation_tip": "டுடே (tuh-DAY)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "Today is a wonderful day to learn English.",
+    "example_tamil": "ஆங்கிலம் கற்க இன்று ஒரு அருமையான நாள்."
+  },
+  {
+    "word": "Tomorrow",
+    "part_of_speech": "Adverb / Noun",
+    "tamil_meaning": "நாளை (Naalai)",
+    "pronunciation_tip": "டுமாரோ (tuh-MAHR-oh)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "We will take our vocabulary quiz tomorrow.",
+    "example_tamil": "நாம் நாளை நமது சொற்களஞ்சிய வினாடி வினாவை எடுப்போம்."
+  },
+  {
+    "word": "Yesterday",
+    "part_of_speech": "Adverb / Noun",
+    "tamil_meaning": "நேற்று (Netru)",
+    "pronunciation_tip": "எஸ்டர்டே (YES-tur-day)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "Yesterday we revised the past tense verbs.",
+    "example_tamil": "நேற்று நாம் இறந்த கால வினைச்சொற்களை திருத்தினோம்."
+  },
+  {
+    "word": "Morning",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "காலை (Kaalai)",
+    "pronunciation_tip": "மார்னிங் (MOR-ning)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "The fresh morning breeze feels refreshing.",
+    "example_tamil": "புத்துணர்ச்சியான காலை தென்றல் மனதை மகிழ்விக்கிறது."
+  },
+  {
+    "word": "Night",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "இரவு (Iravu)",
+    "pronunciation_tip": "நைட் (NYT)",
+    "category": "Daily Activities",
+    "level": "A1",
+    "example_sentence": "Review your flashcards at night.",
+    "example_tamil": "இரவில் உங்கள் நினைவூட்டல் அட்டைகளை மீள்பார்வை செய்யுங்கள்."
+  },
+  {
+    "word": "Learn",
+    "part_of_speech": "Verb",
+    "tamil_meaning": "கற்றுக்கொள் (Katrukol)",
+    "pronunciation_tip": "லேர்ன் (LURN)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "We learn five new words every day.",
+    "example_tamil": "நாம் தினமும் ஐந்து புதிய சொற்களைக் கற்றுக்கொள்கிறோம்."
+  },
+  {
+    "word": "Understand",
+    "part_of_speech": "Verb",
+    "tamil_meaning": "புரிந்துகொள் (Purindhukol)",
+    "pronunciation_tip": "அண்டர்ஸ்டாண்ட் (un-dur-STAND)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "Do you understand the grammar rule?",
+    "example_tamil": "உங்களுக்கு இலக்கண விதி புரிகிறதா?"
+  },
+  {
+    "word": "Practice",
+    "part_of_speech": "Noun / Verb",
+    "tamil_meaning": "பயிற்சி (Payirchi)",
+    "pronunciation_tip": "ப்ராக்டிஸ் (PRAK-tis)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "Daily practice builds confidence in speaking.",
+    "example_tamil": "தினசரி பயிற்சி பேசுவதில் தன்னம்பிக்கையை உருவாக்குகிறது."
+  },
+  {
+    "word": "Mistake",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "தவறு (Thavaru)",
+    "pronunciation_tip": "மிஸ்டேக் (mis-TAYK)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "Every mistake teaches us a valuable lesson.",
+    "example_tamil": "ஒவ்வொரு தவறும் நமக்கு ஒரு மதிப்புமிக்க பாடத்தை கற்பிக்கிறது."
+  },
+  {
+    "word": "Correct",
+    "part_of_speech": "Adjective / Verb",
+    "tamil_meaning": "சரியான / சரிசெய் (Sariyaana)",
+    "pronunciation_tip": "கரெக்ட் (kuh-REKT)",
+    "category": "Education",
+    "level": "A1",
+    "example_sentence": "Choose the correct answer for each question.",
+    "example_tamil": "ஒவ்வொரு கேள்விக்கும் சரியான விடையைத் தேர்வுசெய்க."
+  },
+  {
+    "word": "Confidence",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "தன்னம்பிக்கை (Thannambikkai)",
+    "pronunciation_tip": "கான்ஃபிடன்ஸ் (KON-fi-dunss)",
+    "category": "Emotions",
+    "level": "A2",
+    "example_sentence": "Speak slowly with clear confidence.",
+    "example_tamil": "தெளிவான தன்னம்பிக்கையுடன் நிதானமாக பேசுங்கள்."
+  },
+  {
+    "word": "Goal",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "இலக்கு (Ilakku)",
+    "pronunciation_tip": "கோல் (GOHL)",
+    "category": "Workplace",
+    "level": "A2",
+    "example_sentence": "My goal is to speak fluent English in three months.",
+    "example_tamil": "மூன்று மாதங்களில் சரளமாக ஆங்கிலம் பேசுவதே என் இலக்கு."
+  },
+  {
+    "word": "Skill",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "திறன் (Thiran)",
+    "pronunciation_tip": "ஸ்கில் (SKIL)",
+    "category": "Workplace",
+    "level": "A2",
+    "example_sentence": "Communication is a crucial career skill.",
+    "example_tamil": "தகவல்தொடர்பு என்பது மிக முக்கியமான தொழில் திறன்."
+  },
+  {
+    "word": "Team",
+    "part_of_speech": "Noun",
+    "tamil_meaning": "அணி / குழு (Kuzhu)",
+    "pronunciation_tip": "டீம் (TEEM)",
+    "category": "Workplace",
+    "level": "A1",
+    "example_sentence": "Our capstone team collaborates harmoniously.",
+    "example_tamil": "எங்கள் இறுதி திட்டக் குழு ஒற்றுமையுடன் இணைந்து செயல்படுகிறது."
+  }
+]

@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% block title %}Pronunciation Practice — {{ app_name }}{% endblock %}
+{% block page_title %}Pronunciation & Phonetics Lab (உச்சரிப்புப் பயிற்சி கூடம்){% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0">
+  <!-- Responsible Note on Speech Synthesis -->
+  <div class="alert alert-info border-0 shadow-sm mb-4 d-flex align-items-center">
+    <i class="bi bi-info-circle-fill fs-4 me-3 text-info"></i>
+    <div>
+      <strong>Synthetic Voice Transparency Note:</strong>
+      <p class="mb-0 small">
+        This module uses your browser's native SpeechSynthesis API for offline zero-cost playback. The audio is a synthetic computer-generated voice and should be used as a general guide. Reference phonetic tips are provided below for natural articulatory positioning.
+      </p>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <!-- Interactive Pronunciation Tool -->
+    <div class="col-lg-6">
+      <div class="card-custom p-4 mb-4">
+        <h5 class="fw-bold mb-3"><i class="bi bi-soundwave text-primary me-1"></i> Custom Speech & Audio Player</h5>
+
+        <div class="mb-3">
+          <label for="pronText" class="form-label fw-bold small">Enter Any English Word or Sentence</label>
+          <textarea class="form-control" id="pronText" rows="3" placeholder="Type here... e.g. 'Good morning, how are you today?'">Good morning, my name is Priya.</textarea>
+        </div>
+
+        <!-- Speed Controls -->
+        <div class="mb-4">
+          <label class="form-label small fw-bold d-flex justify-content-between">
+            <span>Playback Speed</span>
+            <span class="text-primary fw-bold" id="speedLabel">0.9x</span>
+          </label>
+          <div class="btn-group w-100" role="group">
+            <button type="button" class="btn btn-outline-secondary btn-sm speed-btn" data-speed="0.5">0.5x Slow</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm speed-btn" data-speed="0.75">0.75x</button>
+            <button type="button" class="btn btn-primary btn-sm speed-btn active" data-speed="0.9">0.9x Natural</button>
+            <button type="button" class="btn btn-outline-secondary btn-sm speed-btn" data-speed="1.2">1.2x Fast</button>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="d-flex flex-wrap gap-2 mb-3">
+          <button class="btn btn-primary px-4 fw-bold" id="playBtn">
+            <i class="bi bi-volume-up-fill me-1"></i> Listen Pronunciation
+          </button>
+          <button class="btn btn-outline-danger px-3 fw-bold" id="recordBtn">
+            <i class="bi bi-mic-fill me-1" id="recordMicIcon"></i> Practice Speaking
+          </button>
+        </div>
+
+        <!-- Recording Result Box -->
+        <div id="recordingFeedback" class="d-none p-3 rounded-3 border bg-light">
+          <span class="small fw-bold text-secondary d-block mb-1">YOUR RECORDED SPEECH:</span>
+          <p class="mb-1 fw-bold fs-5" id="recordedTranscript">...</p>
+          <div class="d-flex align-items-center justify-content-between mt-2">
+            <span class="small text-muted">Acoustic Word Similarity:</span>
+            <span class="badge fs-6" id="similarityBadge">85% Match</span>
+          </div>
+          <small class="text-muted d-block mt-1" style="font-size: 0.75rem;">
+            *Evaluated via browser Web Speech API client recognition.
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Curated Phonetic Guides -->
+    <div class="col-lg-6">
+      <div class="card-custom p-4">
+        <h5 class="fw-bold mb-3"><i class="bi bi-journal-text text-primary me-1"></i> Curated Articulation & Phonetics</h5>
+        <p class="text-muted small mb-3">
+          Common English phrases with syllable stress, Tamil phonetic approximations, and mouth positioning tips:
+        </p>
+
+        <div class="d-flex flex-column gap-3">
+          {% for p in practice_items %}
+          <div class="p-3 bg-light rounded-3 border">
+            <div class="d-flex align-items-center justify-content-between mb-1">
+              <span class="fw-bold text-dark fs-6">{{ p.phrase }}</span>
+              <button class="btn btn-sm btn-outline-primary p-1 px-2" onclick="playPreset('{{ p.phrase|replace("'", "\\'") }}')">
+                <i class="bi bi-volume-up-fill"></i>
+              </button>
+            </div>
+            <p class="tamil-text small mb-1">{{ p.tamil }}</p>
+            <div class="p-2 bg-white rounded border small mb-2">
+              <span class="text-primary fw-bold font-monospace">{{ p.phonetics }}</span>
+            </div>
+            <div class="small text-muted">
+              <strong>Mouth Tip:</strong> {{ p.tip }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+let currentSpeed = 0.9;
+const pronText = document.getElementById("pronText");
+const playBtn = document.getElementById("playBtn");
+const recordBtn = document.getElementById("recordBtn");
+const recordMicIcon = document.getElementById("recordMicIcon");
+const recordingFeedback = document.getElementById("recordingFeedback");
+const recordedTranscript = document.getElementById("recordedTranscript");
+const similarityBadge = document.getElementById("similarityBadge");
+const speedLabel = document.getElementById("speedLabel");
+
+document.querySelectorAll(".speed-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".speed-btn").forEach(b => b.classList.remove("active", "btn-primary"));
+    document.querySelectorAll(".speed-btn").forEach(b => b.classList.add("btn-outline-secondary"));
+    btn.classList.add("active", "btn-primary");
+    btn.classList.remove("btn-outline-secondary");
+    currentSpeed = parseFloat(btn.getAttribute("data-speed"));
+    speedLabel.innerText = `${currentSpeed}x`;
+  });
+});
+
+playBtn.addEventListener("click", () => {
+  const text = pronText.value.trim();
+  if (text) speakText(text, currentSpeed);
+});
+
+function playPreset(text) {
+  pronText.value = text;
+  speakText(text, currentSpeed);
+}
+
+let isRecording = false;
+recordBtn.addEventListener("click", () => {
+  const target = pronText.value.trim();
+  if (!target) {
+    alert("Please enter a target phrase first.");
+    return;
+  }
+
+  if (!isRecording) {
+    isRecording = true;
+    recordBtn.className = "btn btn-danger px-3 fw-bold";
+    recordBtn.innerHTML = '<span class="spinner-grow spinner-grow-sm me-1"></span> Listening...';
+    recordingFeedback.classList.remove("d-none");
+    recordedTranscript.innerText = "Listening to your voice...";
+
+    window.speechService.startRecording(
+      target,
+      (transcript, score) => {
+        recordedTranscript.innerText = `"${transcript}"`;
+        similarityBadge.innerText = `${score}% Match`;
+        if (score >= 80) {
+          similarityBadge.className = "badge bg-success fs-6";
+        } else if (score >= 50) {
+          similarityBadge.className = "badge bg-warning text-dark fs-6";
+        } else {
+          similarityBadge.className = "badge bg-danger fs-6";
+        }
+        stopRecordingUi();
+      },
+      (err) => {
+        alert(err);
+        stopRecordingUi();
+      }
+    );
+  } else {
+    window.speechService.stopRecording();
+    stopRecordingUi();
+  }
+});
+
+function stopRecordingUi() {
+  isRecording = false;
+  recordBtn.className = "btn btn-outline-danger px-3 fw-bold";
+  recordBtn.innerHTML = '<i class="bi bi-mic-fill me-1"></i> Practice Speaking';
+}
+</script>
+{% endblock %}

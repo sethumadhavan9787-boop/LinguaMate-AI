@@ -1,0 +1,372 @@
+{% extends "base.html" %}
+
+{% block title %}AI Tool Comparison & Verification Lab — {{ app_name }}{% endblock %}
+{% block page_title %}AI Tool Comparison Lab (ChatGPT vs Gemini vs Claude AI ஒப்பீடு){% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0">
+  <!-- Capstone Academic Header Banner -->
+  <div class="card-custom p-4 mb-4 border-primary">
+    <div class="row align-items-center">
+      <div class="col-md-7">
+        <span class="badge bg-primary px-3 py-1 mb-2 fw-bold">Mandatory Capstone Lab Feature</span>
+        <h4 class="fw-bold mb-1">Comparative Linguistic Evaluation Across 3 Leading AI Models</h4>
+        <p class="text-muted small mb-2">
+          Empirically evaluating <strong>OpenAI ChatGPT</strong>, <strong>Google Gemini</strong>, and <strong>Anthropic Claude</strong> on 10 benchmark sentences with known Tamil ESL transfers. All outputs are human-reviewed, audited for hallucinations, and cross-checked against Google Translate.
+        </p>
+        <!-- Provider Availability Labels -->
+        <div class="d-flex flex-wrap gap-2 pt-1">
+          <span class="badge bg-light text-dark border"><i class="bi bi-robot text-success me-1"></i> ChatGPT: Manual Paste / Web Free</span>
+          <span class="badge bg-light text-dark border"><i class="bi bi-gemini text-primary me-1"></i> Gemini: Manual Paste / Free Adapter</span>
+          <span class="badge bg-light text-dark border"><i class="bi bi-cpu text-danger me-1"></i> Claude: Manual Paste / Web Free</span>
+        </div>
+      </div>
+      <div class="col-md-5 text-md-end mt-3 mt-md-0">
+        <div class="d-inline-flex flex-column gap-1 bg-light p-3 rounded-3 border text-start mb-2">
+          <small class="fw-bold text-secondary">BENCHMARK SUMMARY</small>
+          <span class="small">Sentences Evaluated: <strong>{{ stats.total_test_sentences }}</strong></span>
+          <span class="small text-success"><i class="bi bi-check-circle-fill"></i> Human Verified: <strong>{{ stats.verified_count }}</strong></span>
+          <span class="small text-warning"><i class="bi bi-question-circle-fill"></i> Uncertain / Under Review: <strong>{{ stats.uncertain_count + stats.pending_count }}</strong></span>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-sm fw-bold" data-bs-toggle="modal" data-bs-target="#addCustomSentenceModal">
+            <i class="bi bi-plus-circle me-1"></i> Add Custom Test Sentence
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison Sentences Accordion / Table -->
+  <div class="accordion d-flex flex-column gap-3" id="comparisonAccordion">
+    {% for item in items %}
+    <div class="card-custom p-0 border overflow-hidden">
+      <!-- Accordion Header -->
+      <div class="p-3 bg-light d-flex flex-wrap align-items-center justify-content-between gap-2 border-bottom" 
+           style="cursor: pointer;" data-bs-toggle="collapse" data-bs-target="#collapse_{{ item.id }}">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-primary px-2 py-1">Case #{{ item.id }}</span>
+          <span class="fw-bold text-dark fs-6">{{ item.sentence }}</span>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-secondary-subtle text-secondary border">{{ item.target_rule }}</span>
+          <span class="badge {% if item.verification_status == 'Verified' %}bg-success{% elif item.verification_status == 'Incorrect' %}bg-danger{% else %}bg-warning text-dark{% endif %}" id="status_badge_{{ item.id }}">
+            {{ item.verification_status }}
+          </span>
+          <i class="bi bi-chevron-down text-muted"></i>
+        </div>
+      </div>
+
+      <!-- Accordion Body -->
+      <div id="collapse_{{ item.id }}" class="accordion-collapse collapse {% if loop.first %}show{% endif %}" data-bs-parent="#comparisonAccordion">
+        <div class="p-4 bg-white">
+          <!-- Expected Ground Truth vs Tamil Context -->
+          <div class="row g-3 mb-4">
+            <div class="col-md-7">
+              <div class="p-3 bg-success-subtle rounded-3 border border-success-subtle">
+                <span class="small fw-bold text-success d-block" style="font-size: 0.72rem;">EXPECTED CURATED CORRECTION (HUMAN BENCHMARK)</span>
+                <p class="mb-0 fw-bold text-success fs-6">{{ item.expected_correction }}</p>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="p-3 bg-light rounded-3 border">
+                <span class="small fw-bold text-secondary d-block" style="font-size: 0.72rem;">L1 TAMIL CONTEXT (தமிழ் பின்னணி)</span>
+                <p class="tamil-text small mb-0">{{ item.tamil_context }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3-Tool Model Comparison Columns -->
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <h6 class="fw-bold text-secondary mb-0 small text-uppercase">Direct AI Model Outputs Comparison</h6>
+            <button class="btn btn-outline-secondary btn-sm" onclick="toggleEditPanel({{ item.id }})">
+              <i class="bi bi-pencil-square me-1"></i> Paste / Edit Tool Outputs
+            </button>
+          </div>
+
+          <!-- Editable Manual Paste Panel (Hidden by default) -->
+          <div class="p-3 bg-light rounded-3 border mb-3 d-none" id="edit_panel_{{ item.id }}">
+            <h6 class="fw-bold small text-primary mb-2"><i class="bi bi-input-cursor-text me-1"></i> Manual Paste Mode (Paste Actual Web Tool Outputs)</h6>
+            <div class="row g-2 mb-2">
+              <div class="col-md-4">
+                <label class="form-label small fw-bold text-success">ChatGPT Output</label>
+                <textarea class="form-control form-control-sm" id="edit_chatgpt_{{ item.id }}" rows="3">{{ item.chatgpt_output }}</textarea>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label small fw-bold text-primary">Gemini Output</label>
+                <textarea class="form-control form-control-sm" id="edit_gemini_{{ item.id }}" rows="3">{{ item.gemini_output }}</textarea>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label small fw-bold text-danger">Claude Output</label>
+                <textarea class="form-control form-control-sm" id="edit_claude_{{ item.id }}" rows="3">{{ item.claude_output }}</textarea>
+              </div>
+            </div>
+            <div class="mb-2">
+              <label class="form-label small fw-bold">Human Verified Verdict / Notes</label>
+              <input type="text" class="form-control form-control-sm" id="edit_notes_{{ item.id }}" value="{{ item.human_reviewed_answer }}" placeholder="Your findings on accuracy or missing Tamil explanations...">
+            </div>
+            <div class="text-end">
+              <button class="btn btn-secondary btn-sm me-1" onclick="toggleEditPanel({{ item.id }})">Cancel</button>
+              <button class="btn btn-success btn-sm fw-bold" onclick="saveManualToolOutputs({{ item.id }})">
+                <i class="bi bi-check-circle me-1"></i> Save Pasted Outputs
+              </button>
+            </div>
+          </div>
+
+          <!-- Read-Only 3-Tool Display Cards -->
+          <div class="row g-3 mb-4" id="cards_view_{{ item.id }}">
+            <!-- ChatGPT Column -->
+            <div class="col-lg-4">
+              <div class="p-3 border rounded-3 h-100 bg-light">
+                <div class="d-flex align-items-center justify-content-between mb-2 pb-2 border-bottom">
+                  <span class="fw-bold text-success"><i class="bi bi-check-all me-1"></i> OpenAI ChatGPT</span>
+                  <span class="badge bg-success-subtle text-success border">Audited</span>
+                </div>
+                <div class="small mb-3" id="display_chatgpt_{{ item.id }}" style="min-height: 120px; white-space: pre-line;">{{ item.chatgpt_output }}</div>
+                <div class="border-top pt-2">
+                  <span class="small text-muted d-block" style="font-size: 0.72rem;">AI AUDIT EVALUATION</span>
+                  <small class="text-secondary">{{ item.chatgpt_evaluation or 'Accurately corrected.' }}</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Google Gemini Column -->
+            <div class="col-lg-4">
+              <div class="p-3 border rounded-3 h-100 bg-light">
+                <div class="d-flex align-items-center justify-content-between mb-2 pb-2 border-bottom">
+                  <span class="fw-bold text-primary"><i class="bi bi-gemini me-1"></i> Google Gemini</span>
+                  <span class="badge bg-primary-subtle text-primary border">Bilingual</span>
+                </div>
+                <div class="small mb-3" id="display_gemini_{{ item.id }}" style="min-height: 120px; white-space: pre-line;">{{ item.gemini_output }}</div>
+                <div class="border-top pt-2">
+                  <span class="small text-muted d-block" style="font-size: 0.72rem;">AI AUDIT EVALUATION</span>
+                  <small class="text-secondary">{{ item.gemini_evaluation or 'Includes Tamil explanation.' }}</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Anthropic Claude Column -->
+            <div class="col-lg-4">
+              <div class="p-3 border rounded-3 h-100 bg-light">
+                <div class="d-flex align-items-center justify-content-between mb-2 pb-2 border-bottom">
+                  <span class="fw-bold text-danger"><i class="bi bi-cpu me-1"></i> Anthropic Claude</span>
+                  <span class="badge bg-danger-subtle text-danger border">Nuanced</span>
+                </div>
+                <div class="small mb-3" id="display_claude_{{ item.id }}" style="min-height: 120px; white-space: pre-line;">{{ item.claude_output }}</div>
+                <div class="border-top pt-2">
+                  <span class="small text-muted d-block" style="font-size: 0.72rem;">AI AUDIT EVALUATION</span>
+                  <small class="text-secondary">{{ item.claude_evaluation or 'Systematic structural audit.' }}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cross-Check & Human Verification Controls -->
+          <div class="p-3 bg-light rounded-3 border">
+            <div class="row align-items-center g-3">
+              <div class="col-md-7">
+                <span class="small fw-bold text-secondary d-block" style="font-size: 0.72rem;">GOOGLE TRANSLATE CROSS-CHECK (BASELINE ARTIFACT)</span>
+                <p class="tamil-text small mb-1 fst-italic">{{ item.google_translate or 'Google Translate artifact' }}</p>
+                <small class="text-muted d-block" style="font-size: 0.75rem;">
+                  <i class="bi bi-exclamation-triangle text-warning me-1"></i> Note: Machine translators frequently retain Indian ESL syntax flaws into Tamil without flagging grammar.
+                </small>
+              </div>
+
+              <div class="col-md-5">
+                <span class="small fw-bold text-secondary d-block mb-1" style="font-size: 0.72rem;">HUMAN VERIFICATION AUDIT</span>
+                <div class="input-group input-group-sm">
+                  <select class="form-select form-select-sm" id="verify_select_{{ item.id }}">
+                    <option value="Verified" {% if item.verification_status == 'Verified' %}selected{% endif %}>Verified (மனித சரிபார்ப்பு நிறைவு)</option>
+                    <option value="Uncertain" {% if item.verification_status == 'Uncertain' %}selected{% endif %}>Uncertain (சந்தேகத்திற்குரியது)</option>
+                    <option value="Incorrect" {% if item.verification_status == 'Incorrect' %}selected{% endif %}>Incorrect (பிழையான பதில்)</option>
+                  </select>
+                  <button class="btn btn-primary" onclick="saveVerificationStatus({{ item.id }})">
+                    <i class="bi bi-save me-1"></i> Save Status
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<!-- Modal: Add Custom Test Sentence with Manual Pastes -->
+<div class="modal fade" id="addCustomSentenceModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form id="customSentenceForm">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold"><i class="bi bi-plus-circle text-primary me-1"></i> Add Custom Test Sentence (Manual Entry Mode)</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="small text-muted mb-3">
+            Paste in your own sentence and the raw outputs copied directly from ChatGPT, Gemini, and Claude to conduct your comparative analysis.
+          </p>
+
+          <div class="row g-2 mb-3">
+            <div class="col-md-8">
+              <label class="form-label small fw-bold">Test Sentence with Error *</label>
+              <input type="text" class="form-control" id="customInputSentence" placeholder="e.g. He is having many problem." required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label small fw-bold">Target Grammar Rule</label>
+              <input type="text" class="form-control" id="customTargetRule" placeholder="e.g. Stative Verb / Plural Concord">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label small fw-bold text-success">Expected Standard Correction (Human Benchmark) *</label>
+            <input type="text" class="form-control" id="customExpectedCorrection" placeholder="e.g. He has many problems." required>
+          </div>
+
+          <div class="row g-2 mb-3">
+            <div class="col-md-4">
+              <label class="form-label small fw-bold text-success">Pasted ChatGPT Output</label>
+              <textarea class="form-control form-control-sm" id="customChatgpt" rows="4" placeholder="Paste response from ChatGPT..."></textarea>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label small fw-bold text-primary">Pasted Gemini Output</label>
+              <textarea class="form-control form-control-sm" id="customGemini" rows="4" placeholder="Paste response from Gemini..."></textarea>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label small fw-bold text-danger">Pasted Claude Output</label>
+              <textarea class="form-control form-control-sm" id="customClaude" rows="4" placeholder="Paste response from Claude..."></textarea>
+            </div>
+          </div>
+
+          <div class="row g-2 mb-2">
+            <div class="col-md-8">
+              <label class="form-label small fw-bold">Human Verification Notes</label>
+              <input type="text" class="form-control" id="customNotes" placeholder="Audit findings, missing Tamil notes, or hallucinated explanations...">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label small fw-bold">Initial Verification Status</label>
+              <select class="form-select" id="customStatus">
+                <option value="Verified">Verified</option>
+                <option value="Uncertain" selected>Uncertain / In Progress</option>
+                <option value="Incorrect">Incorrect</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary fw-bold">Save Test Case to SQLite</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function toggleEditPanel(sentenceId) {
+  const panel = document.getElementById(`edit_panel_${sentenceId}`);
+  panel.classList.toggle("d-none");
+}
+
+async function saveManualToolOutputs(sentenceId) {
+  const chatgpt = document.getElementById(`edit_chatgpt_${sentenceId}`).value;
+  const gemini = document.getElementById(`edit_gemini_${sentenceId}`).value;
+  const claude = document.getElementById(`edit_claude_${sentenceId}`).value;
+  const notes = document.getElementById(`edit_notes_${sentenceId}`).value;
+  const status = document.getElementById(`verify_select_${sentenceId}`).value;
+
+  try {
+    const res = await fetch("/comparison/verify", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        sentence_id: sentenceId,
+        status: status,
+        human_notes: notes,
+        chatgpt_output: chatgpt,
+        gemini_output: gemini,
+        claude_output: claude
+      })
+    });
+    const data = await res.json();
+    if (data.success) {
+      document.getElementById(`display_chatgpt_${sentenceId}`).innerText = chatgpt;
+      document.getElementById(`display_gemini_${sentenceId}`).innerText = gemini;
+      document.getElementById(`display_claude_${sentenceId}`).innerText = claude;
+      toggleEditPanel(sentenceId);
+      alert(`Case #${sentenceId} manual responses saved successfully!`);
+    }
+  } catch (err) {
+    alert("Error saving manual outputs.");
+  }
+}
+
+async function saveVerificationStatus(sentenceId) {
+  const sel = document.getElementById(`verify_select_${sentenceId}`);
+  const status = sel.value;
+  const badge = document.getElementById(`status_badge_${sentenceId}`);
+
+  try {
+    const res = await fetch("/comparison/verify", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sentence_id: sentenceId, status: status })
+    });
+    const data = await res.json();
+    if (data.success) {
+      badge.innerText = status;
+      if (status === "Verified") {
+        badge.className = "badge bg-success";
+      } else if (status === "Incorrect") {
+        badge.className = "badge bg-danger";
+      } else {
+        badge.className = "badge bg-warning text-dark";
+      }
+      alert(`Case #${sentenceId} status updated to: ${status}`);
+    }
+  } catch (err) {
+    alert("Failed to update status.");
+  }
+}
+
+// Custom Sentence Form Submission
+document.getElementById("customSentenceForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const sentence = document.getElementById("customInputSentence").value.trim();
+  const rule = document.getElementById("customTargetRule").value.trim();
+  const expected = document.getElementById("customExpectedCorrection").value.trim();
+  const chatgpt = document.getElementById("customChatgpt").value.trim();
+  const gemini = document.getElementById("customGemini").value.trim();
+  const claude = document.getElementById("customClaude").value.trim();
+  const notes = document.getElementById("customNotes").value.trim();
+  const status = document.getElementById("customStatus").value;
+
+  try {
+    const res = await fetch("/comparison/add-custom", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        sentence,
+        target_rule: rule,
+        expected_correction: expected,
+        chatgpt_output: chatgpt,
+        gemini_output: gemini,
+        claude_output: claude,
+        human_notes: notes,
+        status: status
+      })
+    });
+    const data = await res.json();
+    if (data.success) {
+      alert("Custom benchmark sentence added successfully!");
+      window.location.reload();
+    }
+  } catch (err) {
+    alert("Error adding custom sentence.");
+  }
+});
+</script>
+{% endblock %}

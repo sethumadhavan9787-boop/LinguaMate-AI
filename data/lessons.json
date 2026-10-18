@@ -1,0 +1,1052 @@
+[
+  {
+    "day_number": 1,
+    "title": "Day 1: Greetings and Introductions",
+    "topic": "Greetings & Introductions",
+    "level": "Beginner (A1)",
+    "learning_objectives": [
+      "Master standard English greetings and formal vs informal salutations.",
+      "Introduce yourself clearly with name, hometown, and occupation.",
+      "Understand the difference between 'Hello', 'Good morning', and 'Nice to meet you'."
+    ],
+    "grammar_focus": "Subject Pronoun 'I' and the verb 'am' (e.g., I am Suresh / My name is Suresh).",
+    "grammar_explanation": "In English, when introducing yourself, always pair the pronoun 'I' with 'am'. Never say 'I Suresh' or 'Myself Suresh' (a very common Indian English error). \n\nதமிழ் விளக்கம்: உங்களை அறிமுகப்படுத்தும் போது 'I am [Name]' அல்லது 'My name is [Name]' என்று கூற வேண்டும். 'Myself Suresh' என்று கூறக் கூடாது.",
+    "vocabulary_words": [
+      {"word": "Hello", "tamil": "வணக்கம்", "pronunciation": "heh-LOH"},
+      {"word": "Name", "tamil": "பெயர்", "pronunciation": "NAYM"},
+      {"word": "Morning", "tamil": "காலை", "pronunciation": "MOR-ning"},
+      {"word": "Evening", "tamil": "மாலை", "pronunciation": "EEV-ning"},
+      {"word": "Meet", "tamil": "சந்தி", "pronunciation": "MEET"},
+      {"word": "Welcome", "tamil": "நல்வரவு", "pronunciation": "WEL-kum"},
+      {"word": "Student", "tamil": "மாணவர்", "pronunciation": "STOO-dunt"},
+      {"word": "Friend", "tamil": "நண்பர்", "pronunciation": "FREND"},
+      {"word": "Please", "tamil": "தயவுசெய்து", "pronunciation": "PLEEZ"},
+      {"word": "Goodbye", "tamil": "விடைபெறுகிறேன்", "pronunciation": "gud-BYE"}
+    ],
+    "example_sentences": [
+      {"en": "Hello, my name is Priya.", "ta": "வணக்கம், என் பெயர் பிரியா."},
+      {"en": "I am a first-year college student.", "ta": "நான் முதலாம் ஆண்டு கல்லூரி மாணவி."},
+      {"en": "Nice to meet you, Mr. Kumar.", "ta": "உங்களை சந்தித்ததில் மகிழ்ச்சி, திரு. குமார்."},
+      {"en": "Good morning, everyone!", "ta": "அனைவருக்கும் காலை வணக்கம்!"},
+      {"en": "I come from Madurai.", "ta": "நான் மதுரையிலிருந்து வருகிறேன்."}
+    ],
+    "conversation_exercise": "Practice introducing yourself to your new classmate. State your name, where you live, and what course you study in college.",
+    "practice_questions": [
+      {
+        "id": 1,
+        "question": "Which sentence is grammatically correct for introducing yourself?",
+        "options": ["Myself Suresh.", "I am Suresh.", "Me Suresh.", "I is Suresh."],
+        "correct_answer": 1,
+        "explanation_en": "'I am Suresh' is the standard polite English introduction. 'Myself Suresh' is grammatically incorrect.",
+        "explanation_ta": "'I am Suresh' என்பதே சரியான அறிமுக வாக்கியம். 'Myself...' என்று தொடங்கக் கூடாது."
+      },
+      {
+        "id": 2,
+        "question": "What is the appropriate greeting at 9:00 AM?",
+        "options": ["Good evening", "Good afternoon", "Good morning", "Good night"],
+        "correct_answer": 2,
+        "explanation_en": "Use 'Good morning' before 12:00 PM noon.",
+        "explanation_ta": "நண்பகல் 12 மணிக்கு முன் 'Good morning' கூற வேண்டும்."
+      },
+      {
+        "id": 3,
+        "question": "How do you respond when someone says 'Nice to meet you'?",
+        "options": ["Thank you, nice to meet you too.", "I am going.", "No problem.", "Yes, I am."],
+        "correct_answer": 0,
+        "explanation_en": "'Nice to meet you too' is the standard polite reply.",
+        "explanation_ta": "'Nice to meet you too' என்று மரியாதையாக பதிலளிக்க வேண்டும்."
+      },
+      {
+        "id": 4,
+        "question": "Choose the correct missing word: 'I ____ from Coimbatore.'",
+        "options": ["are", "am", "is", "be"],
+        "correct_answer": 1,
+        "explanation_en": "The pronoun 'I' always pairs with 'am' in the present tense.",
+        "explanation_ta": "'I' உடன் எப்போதும் 'am' பயன்படும்."
+      },
+      {
+        "id": 5,
+        "question": "What does 'Vanakkam' mean in English?",
+        "options": ["Goodbye", "Hello / Greetings", "Sorry", "Please"],
+        "correct_answer": 1,
+        "explanation_en": "'Vanakkam' translates to 'Hello' or 'Greetings'.",
+        "explanation_ta": "வணக்கம் என்பது 'Hello' அல்லது 'Greetings' ஆகும்."
+      }
+    ]
+  },
+  {
+    "day_number": 2,
+    "title": "Day 2: Basic Pronouns and the Verb 'To Be'",
+    "topic": "Personal Pronouns & 'To Be'",
+    "level": "Beginner (A1)",
+    "learning_objectives": [
+      "Understand personal subject pronouns: I, You, He, She, It, We, They.",
+      "Master the forms of the verb 'to be': am, is, are.",
+      "Construct simple affirmative and negative statements."
+    ],
+    "grammar_focus": "Subject-Verb concord with 'to be': I am, He/She/It is, You/We/They are.",
+    "grammar_explanation": "Use 'am' with 'I'. Use 'is' with singular subjects (He, She, It, Ravi). Use 'are' with plural subjects (We, They) and 'You'. In negatives, simply add 'not' after the be-verb.\n\nதமிழ் விளக்கம்: \n- I -> am (நான்)\n- He / She / It -> is (அவன் / அவள் / அது)\n- We / You / They -> are (நாம் / நீங்கள் / அவர்கள்)\nஎதிர்மறைக்கு 'not' சேர்க்கவும்: He is not angry.",
+    "vocabulary_words": [
+      {"word": "He", "tamil": "அவன் / இவர்", "pronunciation": "HEE"},
+      {"word": "She", "tamil": "அவள் / இவர்", "pronunciation": "SHEE"},
+      {"word": "It", "tamil": "அது / இது", "pronunciation": "IT"},
+      {"word": "We", "tamil": "நாம் / நாங்கள்", "pronunciation": "WEE"},
+      {"word": "They", "tamil": "அவர்கள் / அவைகள்", "pronunciation": "THAY"},
+      {"word": "Teacher", "tamil": "ஆசிரியர்", "pronunciation": "TEE-chur"},
+      {"word": "Doctor", "tamil": "மருத்துவர்", "pronunciation": "DOK-tur"},
+      {"word": "Happy", "tamil": "மகிழ்ச்சியான", "pronunciation": "HAP-ee"},
+      {"word": "Ready", "tamil": "தயாரான", "pronunciation": "RED-ee"},
+      {"word": "Clever", "tamil": "புத்திசாலி", "pronunciation": "KLEV-ur"}
+    ],
+    "example_sentences": [
+      {"en": "She is a dedicated teacher.", "ta": "அவள் ஒரு அர்ப்பணிப்புள்ள ஆசிரியர்."},
+      {"en": "They are happy with their results.", "ta": "அவர்கள் தங்கள் முடிவுகளில் மகிழ்ச்சியாக உள்ளனர்."},
+      {"en": "We are ready for the examination.", "ta": "நாங்கள் தேர்வுக்கு தயாராக இருக்கிறோம்."},
+      {"en": "He is not feeling well today.", "ta": "அவருக்கு இன்று உடல்நலம் சரியில்லை."},
+      {"en": "It is a pleasant morning.", "ta": "இது ஒரு இனிமையான காலை பொழுது."}
+    ],
+    "conversation_exercise": "Talk with your study partner about members in your classroom. Use 'He is...', 'She is...', and 'They are...'.",
+    "practice_questions": [
+      {
+        "id": 1,
+        "question": "Which verb completes the sentence: 'They ____ college students.'?",
+        "options": ["is", "am", "are", "be"],
+        "correct_answer": 2,
+        "explanation_en": "'They' is plural and takes 'are'.",
+        "explanation_ta": "'They' என்பது பன்மை, எனவே 'are' வரும்."
+      },
+      {
+        "id": 2,
+        "question": "Correct the mistake: 'She are my sister.'",
+        "options": ["She is my sister.", "She am my sister.", "She be my sister.", "She were my sister."],
+        "correct_answer": 0,
+        "explanation_en": "'She' is singular third-person, so it takes 'is'.",
+        "explanation_ta": "'She' ஒருமை என்பதால் 'is' வரவேண்டும்."
+      },
+      {
+        "id": 3,
+        "question": "Choose the negative form: 'We are late.'",
+        "options": ["We not are late.", "We are not late.", "We do not late.", "We is not late."],
+        "correct_answer": 1,
+        "explanation_en": "Add 'not' immediately after 'are': 'We are not late'.",
+        "explanation_ta": "'are' க்குப் பின் 'not' சேர்க்க வேண்டும்."
+      },
+      {
+        "id": 4,
+        "question": "Fill in the blank: 'It ____ an interesting book.'",
+        "options": ["are", "am", "is", "have"],
+        "correct_answer": 2,
+        "explanation_en": "'It' takes 'is'.",
+        "explanation_ta": "'It' ஒருமை, எனவே 'is' பயன்படுத்தவும்."
+      },
+      {
+        "id": 5,
+        "question": "Which pronoun replaces 'Ravi and Suresh'?",
+        "options": ["He", "They", "We", "You"],
+        "correct_answer": 1,
+        "explanation_en": "Two other people together are referred to as 'They'.",
+        "explanation_ta": "ரவியும் சுரேஷும் இருவர், எனவே 'They' (அவர்கள்) பொருந்தும்."
+      }
+    ]
+  },
+  {
+    "day_number": 3,
+    "title": "Day 3: Family and Relationships Vocabulary",
+    "topic": "Family & Relationships",
+    "level": "Beginner (A1)",
+    "learning_objectives": [
+      "Learn English terms for immediate and extended family members.",
+      "Use possessive adjectives: my, your, his, her, our, their.",
+      "Describe relationships and family sizes in simple sentences."
+    ],
+    "grammar_focus": "Possessive Adjectives: My father, Her sister, Their home.",
+    "grammar_explanation": "Possessive adjectives show ownership. Use 'my' for things belonging to you, 'his' for a male, 'her' for a female, and 'their' for plurals.\n\nதமிழ் விளக்கம்:\n- My = என்னுடைய\n- Your = உங்களுடைய / உன்னுடைய\n- His = அவனுடைய / அவருடைய\n- Her = அவளுடைய\n- Our = எங்களுடைய / நம்முடைய\n- Their = அவர்களுடைய",
+    "vocabulary_words": [
+      {"word": "Father", "tamil": "அப்பா / தந்தை", "pronunciation": "FAH-thur"},
+      {"word": "Mother", "tamil": "அம்மா / தாய்", "pronunciation": "MUH-thur"},
+      {"word": "Brother", "tamil": "சகோதரன்", "pronunciation": "BRUH-thur"},
+      {"word": "Sister", "tamil": "சகோதரி", "pronunciation": "SIS-tur"},
+      {"word": "Parents", "tamil": "பெற்றோர்கள்", "pronunciation": "PAIR-unts"},
+      {"word": "Grandfather", "tamil": "தாத்தா", "pronunciation": "GRAND-fah-thur"},
+      {"word": "Grandmother", "tamil": "பாட்டி", "pronunciation": "GRAND-muh-thur"},
+      {"word": "Son", "tamil": "மகன்", "pronunciation": "SUN"},
+      {"word": "Daughter", "tamil": "மகள்", "pronunciation": "DAW-tur"},
+      {"word": "Family", "tamil": "குடும்பம்", "pronunciation": "FAM-uh-lee"}
+    ],
+    "example_sentences": [
+      {"en": "There are four members in my family.", "ta": "என் குடும்பத்தில் நான்கு உறுப்பினர்கள் உள்ளனர்."},
+      {"en": "His brother works as an electrical engineer.", "ta": "அவருடைய சகோதரன் மின்சார பொறியாளராக பணியாற்றுகிறார்."},
+      {"en": "Her mother is an exceptional cook.", "ta": "அவளுடைய தாய் ஒரு சிறந்த சமையல் கலைஞர்."},
+      {"en": "Our grandparents live in Thanjavur.", "ta": "எங்கள் தாத்தா பாட்டி தஞ்சாவூரில் வசிக்கிறார்கள்."},
+      {"en": "My elder sister helps me with homework.", "ta": "என் அக்கா எனக்கு வீட்டுப்பாடத்தில் உதவுகிறார்."}
+    ],
+    "conversation_exercise": "Describe your family in 3 to 4 sentences. Mention how many siblings you have and what your parents do.",
+    "practice_questions": [
+      {
+        "id": 1,
+        "question": "Which word indicates 'அவளுடைய சகோதரி'?",
+        "options": ["His sister", "Her sister", "Their sister", "Your sister"],
+        "correct_answer": 1,
+        "explanation_en": "'Her' refers to a female possessive.",
+        "explanation_ta": "'Her sister' என்பது 'அவளுடைய சகோதரி' ஆகும்."
+      },
+      {
+        "id": 2,
+        "question": "What is the collective term for father and mother?",
+        "options": ["Brothers", "Sisters", "Parents", "Children"],
+        "correct_answer": 2,
+        "explanation_en": "'Parents' refers to both father and mother together.",
+        "explanation_ta": "அப்பா, அம்மா இருவரையும் சேர்த்து 'Parents' (பெற்றோர்) என்போம்."
+      },
+      {
+        "id": 3,
+        "question": "Fill in the blank: 'Ravi loves ____ grandmother very much.'",
+        "options": ["his", "her", "their", "its"],
+        "correct_answer": 0,
+        "explanation_en": "Ravi is male, so use 'his'.",
+        "explanation_ta": "ரவி ஆண் என்பதால் 'his' பொருத்தமானது."
+      },
+      {
+        "id": 4,
+        "question": "Translate to English: 'என் குடும்பம் சிறியது.'",
+        "options": ["My family is small.", "My family are small.", "I family is small.", "My families is small."],
+        "correct_answer": 0,
+        "explanation_en": "'My family is small' is the correct singular sentence.",
+        "explanation_ta": "'My family is small' என்பதே சரியான வாக்கியம்."
+      },
+      {
+        "id": 5,
+        "question": "Which sentence is correct?",
+        "options": ["He has two brothers.", "He have two brothers.", "He is two brother.", "He has two brother."],
+        "correct_answer": 0,
+        "explanation_en": "'He' takes 'has', and 'two' requires the plural 'brothers'.",
+        "explanation_ta": "'He' உடன் 'has' வரும், 'two' உள்ளதால் 'brothers' பன்மை வரும்."
+      }
+    ]
+  },
+  {
+    "day_number": 4,
+    "title": "Day 4: Simple Present Tense",
+    "topic": "Simple Present Tense & Habits",
+    "level": "Beginner (A1)",
+    "learning_objectives": [
+      "Form sentences expressing facts, universal truths, and regular habits.",
+      "Apply the third-person singular rule (adding -s / -es to verbs).",
+      "Avoid the common error of dropping the -s with He/She/It."
+    ],
+    "grammar_focus": "Subject-Verb Agreement: He reads, She writes, They read, We write.",
+    "grammar_explanation": "In simple present tense, when the subject is third-person singular (He, She, It, or a singular name like Arun), add '-s' or '-es' to the base verb. For I, You, We, They, use the base verb without '-s'.\n\nதமிழ் விளக்கம்:\n- He / She / It வந்தால் வினைச்சொல்லுடன் 's' அல்லது 'es' சேர்க்க வேண்டும் (He plays, She drinks).\n- I / We / You / They வந்தால் வினைச்சொல்லை அப்படியே பயன்படுத்தவும் (I play, They drink).\nதவறு: He play cricket (X) -> சரி: He plays cricket (✓).",
+    "vocabulary_words": [
+      {"word": "Play", "tamil": "விளையாடு", "pronunciation": "PLAY"},
+      {"word": "Like", "tamil": "பிடிக்கும் / விரும்பு", "pronunciation": "LYK"},
+      {"word": "Work", "tamil": "வேலை செய்", "pronunciation": "WURK"},
+      {"word": "Live", "tamil": "வசி / வாழ்", "pronunciation": "LIV"},
+      {"word": "Speak", "tamil": "பேசு", "pronunciation": "SPEEK"},
+      {"word": "Study", "tamil": "படி", "pronunciation": "STUH-dee"},
+      {"word": "Know", "tamil": "தெரியும் / அறி", "pronunciation": "NOH"},
+      {"word": "Teach", "tamil": "கற்பி", "pronunciation": "TEECH"},
+      {"word": "Watch", "tamil": "பார்", "pronunciation": "WOCH"},
+      {"word": "Go", "tamil": "செல் / போ", "pronunciation": "GOH"}
+    ],
+    "example_sentences": [
+      {"en": "He plays cricket every Saturday morning.", "ta": "அவர் ஒவ்வொரு சனிக்கிழமை காலையிலும் கிரிக்கெட் விளையாடுகிறார்."},
+      {"en": "She speaks English with good confidence.", "ta": "அவள் நல்ல தன்னம்பிக்கையுடன் ஆங்கிலம் பேசுகிறாள்."},
+      {"en": "We live in an apartment in Tiruchirappalli.", "ta": "நாங்கள் திருச்சிராப்பள்ளியில் ஒரு அடுக்குமாடி குடியிருப்பில் வசிக்கிறோம்."},
+      {"en": "The sun rises in the east.", "ta": "சூரியன் கிழக்கில் உதிக்கிறது."},
+      {"en": "My brother works in an IT company.", "ta": "என் சகோதரன் ஒரு தகவல் தொழில்நுட்ப நிறுவனத்தில் பணியாற்றுகிறார்."}
+    ],
+    "conversation_exercise": "Tell your partner three facts about your regular lifestyle: what time you sleep, what sports you like, and where you live.",
+    "practice_questions": [
+      {
+        "id": 1,
+        "question": "Which sentence is correct?",
+        "options": ["Arun work in Chennai.", "Arun works in Chennai.", "Arun is work in Chennai.", "Arun working in Chennai."],
+        "correct_answer": 1,
+        "explanation_en": "Arun is singular, so the verb requires '-s' in simple present: 'works'.",
+        "explanation_ta": "அருண் ஒருமை என்பதால் வினைச்சொல்லுடன் 's' சேர்ந்து 'works' வரும்."
+      },
+      {
+        "id": 2,
+        "question": "Fill in the blank: 'They ____ football after college hours.'",
+        "options": ["plays", "play", "playing", "is play"],
+        "correct_answer": 1,
+        "explanation_en": "'They' is plural and takes the base verb 'play'.",
+        "explanation_ta": "'They' பன்மை என்பதால் 'play' என்று மட்டுமே வரும்."
+      },
+      {
+        "id": 3,
+        "question": "What is the third-person singular form of 'teach'?",
+        "options": ["teaches", "teachies", "teach", "teaching"],
+        "correct_answer": 0,
+        "explanation_en": "Verbs ending in '-ch' add '-es': 'teaches'.",
+        "explanation_ta": "'-ch' இல் முடியும் சொல்லுக்கு '-es' சேர்க்க வேண்டும்: 'teaches'."
+      },
+      {
+        "id": 4,
+        "question": "Choose the correct negative: 'He ____ like tea.'",
+        "options": ["do not", "does not", "is not", "has not"],
+        "correct_answer": 1,
+        "explanation_en": "Use 'does not' for He/She/It in the present tense.",
+        "explanation_ta": "'He' உடன் எதிர்மறைக்கு 'does not' பயன்படும்."
+      },
+      {
+        "id": 5,
+        "question": "Correct the error: 'Water boil at 100 degrees Celsius.'",
+        "options": ["Water boils at 100 degrees Celsius.", "Water boiling at 100 degrees Celsius.", "Water are boiled at 100 degrees Celsius.", "Water boil is 100 degrees Celsius."],
+        "correct_answer": 0,
+        "explanation_en": "Water is an uncountable singular noun, so the scientific fact takes 'boils'.",
+        "explanation_ta": "தண்ணீர் ஒருமை என்பதால் 'boils' வரவேண்டும்."
+      }
+    ]
+  },
+  {
+    "day_number": 5,
+    "title": "Day 5: Daily Routines",
+    "topic": "Daily Routines & Time Expressions",
+    "level": "Beginner (A1)",
+    "learning_objectives": [
+      "Describe daily morning, afternoon, and night activities in sequential order.",
+      "Use adverbs of frequency: always, usually, often, sometimes, never.",
+      "Express times using 'at 6:00 AM', 'in the morning', and 'at night'."
+    ],
+    "grammar_focus": "Adverbs of Frequency (placed between subject and main verb: I always wake up early).",
+    "grammar_explanation": "Adverbs of frequency describe how often an action happens. Place them before normal verbs (I usually drink tea), but after 'to be' (He is always punctual).\n\nதமிழ் விளக்கம்:\n- Always = எப்போதும்\n- Usually = வழக்கமாக\n- Sometimes = சில நேரங்களில்\n- Never = ஒருபோதும் இல்லை\nவாக்கியத்தில் வைக்க வேண்டிய இடம்: Subject + Adverb + Verb (I always brush my teeth).",
+    "vocabulary_words": [
+      {"word": "Wake up", "tamil": "எழுந்திரு", "pronunciation": "WAYK up"},
+      {"word": "Brush", "tamil": "துலக்கு", "pronunciation": "BRUSH"},
+      {"word": "Bath", "tamil": "குளி", "pronunciation": "BAHTH"},
+      {"word": "Breakfast", "tamil": "காலை உணவு", "pronunciation": "BREK-fust"},
+      {"word": "College", "tamil": "கல்லூரி", "pronunciation": "KOL-ij"},
+      {"word": "Always", "tamil": "எப்போதும்", "pronunciation": "AWL-wayz"},
+      {"word": "Usually", "tamil": "வழக்கமாக", "pronunciation": "YOO-zhoo-uh-lee"},
+      {"word": "Sometimes", "tamil": "சில நேரங்களில்", "pronunciation": "SUM-tymz"},
+      {"word": "Never", "tamil": "ஒருபோதும் இல்லை", "pronunciation": "NEV-ur"},
+      {"word": "Sleep", "tamil": "தூங்கு", "pronunciation": "SLEEP"}
+    ],
+    "example_sentences": [
+      {"en": "I always wake up at six in the morning.", "ta": "நான் எப்போதும் காலை ஆறு மணிக்கு எழுந்திருக்கிறேன்."},
+      {"en": "She usually eats breakfast before eight o'clock.", "ta": "அவள் வழக்கமாக எட்டு மணிக்குள் காலை உணவு சாப்பிடுகிறாள்."},
+      {"en": "We sometimes play badminton in the evening.", "ta": "நாங்கள் சில நேரங்களில் மாலையில் பேட்மிண்டன் விளையாடுகிறோம்."},
+      {"en": "He never skips his English practice session.", "ta": "அவர் ஒருபோதும் ஆங்கில பயிற்சி அமர்வைத் தவிர்ப்பதில்லை."},
+      {"en": "I sleep at ten thirty every night.", "ta": "நான் தினமும் இரவு பத்து முப்பதுக்கு தூங்குகிறேன்."}
+    ],
+    "conversation_exercise": "Walk through your day from waking up to going to bed. Use at least two adverbs of frequency.",
+    "practice_questions": [
+      {
+        "id": 1,
+        "question": "Which sentence has the correct word order?",
+        "options": ["I wake up always at 6 AM.", "I always wake up at 6 AM.", "Always I wake up at 6 AM.", "I wake always up at 6 AM."],
+        "correct_answer": 1,
+        "explanation_en": "Frequency adverbs usually go between the subject and verb: 'I always wake up'.",
+        "explanation_ta": "'I always wake up' என்பதே சரியான சொல் வரிசை."
+      },
+      {
+        "id": 2,
+        "question": "Which preposition is used with clock time: 'I sleep ____ 10:00 PM'?",
+        "options": ["in", "on", "at", "by"],
+        "correct_answer": 2,
+        "explanation_en": "Use 'at' with specific clock times (at 6:00, at 10:00).",
+        "explanation_ta": "குறிப்பிட்ட மணி நேரத்திற்கு 'at' பயன்படுத்த வேண்டும்."
+      },
+      {
+        "id": 3,
+        "question": "What does 'Usually' mean in Tamil?",
+        "options": ["எப்போதும்", "வழக்கமாக", "ஒருபோதும் இல்லை", "இன்று"],
+        "correct_answer": 1,
+        "explanation_en": "'Usually' translates to 'வழக்கமாக' (habitually).",
+        "explanation_ta": "'Usually' என்றால் 'வழக்கமாக' என்று பொருள்."
+      },
+      {
+        "id": 4,
+        "question": "Complete the sentence: 'She is ____ late for her lecture.'",
+        "options": ["never", "never does", "doesn't never", "no"],
+        "correct_answer": 0,
+        "explanation_en": "After the verb 'to be' (is), place the adverb directly: 'She is never late'.",
+        "explanation_ta": "'is' க்கு அடுத்து 'never' வைக்கலாம்: 'She is never late'."
+      },
+      {
+        "id": 5,
+        "question": "Which time phrase is correct?",
+        "options": ["in the night", "at the morning", "in the morning", "on morning"],
+        "correct_answer": 2,
+        "explanation_en": "Standard English uses 'in the morning', 'in the afternoon', but 'at night'.",
+        "explanation_ta": "காலைக்கு 'in the morning' என்று கூறுவதே சரியானது."
+      }
+    ]
+  },
+  {
+    "day_number": 6,
+    "title": "Day 6: Asking and Answering Questions",
+    "topic": "Wh- Questions & Yes/No Questions",
+    "level": "Beginner (A1)",
+    "learning_objectives": [
+      "Form questions with question words: What, Where, When, Who, Why, How.",
+      "Construct Yes/No questions using Do/Does and Am/Is/Are.",
+      "Answer questions politely in complete sentences."
+    ],
+    "grammar_focus": "Question formation: Wh-word + auxiliary verb + subject + main verb?",
+    "grammar_explanation": "To make a question in simple present, place 'Do' or 'Does' before the subject (Do you speak English? Does he study here?). For Wh-questions, put the Wh-word at the very beginning.\n\nதமிழ் விளக்கம்:\n- What = என்ன\n- Where = எங்கே\n- When = எப்போது\n- Why = ஏன்\n- Who = யார்\n- How = எப்படி\nகேள்வி அமைப்பு: Do you know? / Where do you live?",
+    "vocabulary_words": [
+      {"word": "What", "tamil": "என்ன", "pronunciation": "WOT"},
+      {"word": "Where", "tamil": "எங்கே", "pronunciation": "WAIR"},
+      {"word": "When", "tamil": "எப்போது", "pronunciation": "WEN"},
+      {"word": "Who", "tamil": "யார்", "pronunciation": "HOO"},
+      {"word": "Why", "tamil": "ஏன்", "pronunciation": "WY"},
+      {"word": "How", "tamil": "எப்படி", "pronunciation": "HOW"},
+      {"word": "Address", "tamil": "முகவரி", "pronunciation": "uh-DRESS"},
+      {"word": "Reason", "tamil": "காரணம்", "pronunciation": "REE-zun"},
+      {"word": "Time", "tamil": "நேரம்", "pronunciation": "TYM"},
+      {"word": "Phone", "tamil": "தொலைபேசி", "pronunciation": "FOHN"}
+    ],
+    "example_sentences": [
+      {"en": "Where do you live in Tamil Nadu?", "ta": "நீங்கள் தமிழ்நாட்டில் எங்கே வசிக்கிறீர்கள்?"},
+      {"en": "What is your favorite subject?", "ta": "உங்களுக்கு பிடித்த பாடம் எது?"},
+      {"en": "Do you speak English at home?", "ta": "நீங்கள் வீட்டில் ஆங்கிலம் பேசுகிறீர்களா?"},
+      {"en": "How do you travel to college every morning?", "ta": "தினமும் காலையில் நீங்கள் கல்லூரிக்கு எப்படி பயணம் செய்கிறீர்கள்?"},
+      {"en": "Why are you learning English now?", "ta": "நீங்கள் இப்போது ஏன் ஆங்கிலம் கற்கிறீர்கள்?"}
+    ],
+    "conversation_exercise": "Interview your classmate by asking 4 simple questions: their name, hometown, favorite food, and why they study this course.",
+    "practice_questions": [
+      {
+        "id": 1,
+        "question": "Which question asks for a place?",
+        "options": ["What do you study?", "Where do you live?", "When do you sleep?", "Who is your friend?"],
+        "correct_answer": 1,
+        "explanation_en": "'Where' asks for locations or places.",
+        "explanation_ta": "'Where' இடத்தைக் கேட்கப் பயன்படுகிறது."
+      },
+      {
+        "id": 2,
+        "question": "Which sentence is correctly structured?",
+        "options": ["Where you live?", "Where do you live?", "Where does you live?", "Where are you live?"],
+        "correct_answer": 1,
+        "explanation_en": "Present simple question with 'you' requires the auxiliary 'do': 'Where do you live?'.",
+        "explanation_ta": "'Where do you live?' என்பதே இலக்கணப்படி சரியானது."
+      },
+      {
+        "id": 3,
+        "question": "Fill in the blank: '____ does your college reopen?' - 'On Monday.'",
+        "options": ["Where", "When", "Who", "Why"],
+        "correct_answer": 1,
+        "explanation_en": "'When' asks about time or dates.",
+        "explanation_ta": "நேரம் அல்லது நாளைக் கேட்க 'When' (எப்போது) பயன்படும்."
+      },
+      {
+        "id": 4,
+        "question": "Choose the correct question: '____ he have an English dictionary?'",
+        "options": ["Do", "Does", "Is", "Are"],
+        "correct_answer": 1,
+        "explanation_en": "Singular 'he' requires 'Does'.",
+        "explanation_ta": "'He' ஒருமை என்பதால் 'Does' வரும்."
+      },
+      {
+        "id": 5,
+        "question": "How do you politely ask someone's name?",
+        "options": ["Who are you name?", "What is your name?", "Which is you?", "Tell name now."],
+        "correct_answer": 1,
+        "explanation_en": "'What is your name?' is standard and polite.",
+        "explanation_ta": "'What is your name?' என்பதே முறையான கேள்வி."
+      }
+    ]
+  },
+  {
+    "day_number": 7,
+    "title": "Day 7: Revision and Weekly Quiz",
+    "topic": "Week 1 Cumulative Review",
+    "level": "Beginner (A1)",
+    "learning_objectives": [
+      "Review Days 1-6 core vocabulary (60 words) and sentence structures.",
+      "Test mastery of subject-verb agreement and personal pronouns.",
+      "Diagnose early learning errors and log them into the Mistake Log."
+    ],
+    "grammar_focus": "Consolidation of Be-verbs, simple present tense, and question formation.",
+    "grammar_explanation": "Take time to review your mistakes from the first six days. Remember: language acquisition happens through repetition, noticing errors, and self-correction.\n\nதமிழ் விளக்கம்: முதல் வாரத்தில் கற்ற பாடங்களின் முக்கிய விதிகளை நினைவூட்டுங்கள். நாம் செய்யும் தவறுகளே அடுத்த வெற்றிக்கான படிகள். தவறுகளைப் பதிவு செய்து பயிற்சி செய்யுங்கள்.",
+    "vocabulary_words": [
+      {"word": "Review", "tamil": "மறுபார்வை", "pronunciation": "ri-VYOO"},
+      {"word": "Quiz", "tamil": "வினாடி வினா", "pronunciation": "KWIZ"},
+      {"word": "Score", "tamil": "மதிப்பெண்", "pronunciation": "SKOR"},
+      {"word": "Weekly", "tamil": "வாராந்திர", "pronunciation": "WEEK-lee"},
+      {"word": "Improve", "tamil": "மேம்படுத்து", "pronunciation": "im-PROOV"},
+      {"word": "Remember", "tamil": "நினைவில் கொள்", "pronunciation": "ri-MEM-bur"},
+      {"word": "Sentence", "tamil": "வாக்கியம்", "pronunciation": "SEN-tunss"},
+      {"word": "Correct", "tamil": "சரியான", "pronunciation": "kuh-REKT"},
+      {"word": "Mistake", "tamil": "தவறு", "pronunciation": "mis-TAYK"},
+      {"word": "Progress", "tamil": "முன்னேற்றம்", "pronunciation": "PROG-ress"}
+    ],
+    "example_sentences": [
+      {"en": "I revised all sixty vocabulary words today.", "ta": "நான் இன்று அனைத்து அறுபது சொற்களையும் திருத்தினேன்."},
+      {"en": "My quiz score increased from 60% to 90%.", "ta": "என் வினாடி வினா மதிப்பெண் 60% இலிருந்து 90% ஆக உயர்ந்தது."},
+      {"en": "She practices her English speaking every evening.", "ta": "அவள் தினமும் மாலையில் ஆங்கிலம் பேசப் பழகுகிறாள்."},
+      {"en": "We are proud of our weekly progress.", "ta": "எங்கள் வாராந்திர முன்னேற்றத்தில் நாங்கள் பெருமிதம் கொள்கிறோம்."},
+      {"en": "Consistency is the real key to mastering a language.", "ta": "ஒரு மொழியில் தேர்ச்சி பெற தொடர்முயற்சியே உண்மையான திறவுகோல்."}
+    ],
+    "conversation_exercise": "Deliver a 1-minute self-introduction combining your name, family details, daily routine, and your goal for next week.",
+    "practice_questions": [
+      {
+        "id": 1,
+        "question": "Which sentence has NO grammatical error?",
+        "options": ["Myself Karthik from Salem.", "I am Karthik from Salem.", "I are Karthik from Salem.", "Me is Karthik from Salem."],
+        "correct_answer": 1,
+        "explanation_en": "'I am Karthik from Salem' is completely grammatically sound.",
+        "explanation_ta": "'I am Karthik from Salem' என்பதே முழுமையான சரியான வாக்கியம்."
+      },
+      {
+        "id": 2,
+        "question": "Identify the correct verb: 'My sister ____ in a school.'",
+        "options": ["teach", "teaches", "teaching", "is teach"],
+        "correct_answer": 1,
+        "explanation_en": "Sister is singular, requiring 'teaches'.",
+        "explanation_ta": "'Sister' ஒருமை என்பதால் 'teaches' வரும்."
+      },
+      {
+        "id": 3,
+        "question": "Choose the correct negative sentence:",
+        "options": ["He does not plays cricket.", "He does not play cricket.", "He not play cricket.", "He do not play cricket."],
+        "correct_answer": 1,
+        "explanation_en": "After 'does not', the main verb remains in base form without '-s': 'play'.",
+        "explanation_ta": "'does not' வந்த பிறகு 'play' என்ற மூல வினைச்சொல் மட்டுமே வரும் ('s' கூடாது)."
+      },
+      {
+        "id": 4,
+        "question": "Which question asks for someone's reason?",
+        "options": ["Where are you going?", "Why are you laughing?", "When will you come?", "What is this?"],
+        "correct_answer": 1,
+        "explanation_en": "'Why' asks for reasons.",
+        "explanation_ta": "'Why' (ஏன்) என்பது காரணத்தைக் கேட்கும்."
+      },
+      {
+        "id": 5,
+        "question": "What is the opposite of 'always'?",
+        "options": ["usually", "often", "never", "sometimes"],
+        "correct_answer": 2,
+        "explanation_en": "'Never' is the exact opposite of 'always'.",
+        "explanation_ta": "'Always' (எப்போதும்) என்பதன் எதிர்ச்சொல் 'Never' (ஒருபோதும் இல்லை)."
+      }
+    ]
+  },
+  {
+    "day_number": 8,
+    "title": "Day 8: Food and Shopping Conversations",
+    "topic": "Food, Shopping & Politeness",
+    "level": "Beginner (A1-A2)",
+    "learning_objectives": [
+      "Use polite expressions: 'Could I have...', 'How much is this?', 'I would like...'.",
+      "Understand food and price terms used in shops and restaurants.",
+      "Count items using 'a bottle of', 'a kilo of', and 'a packet of'."
+    ],
+    "grammar_focus": "Polite modal verbs ('Can I', 'Could you', 'Would like') and countable/uncountable food quantifiers.",
+    "grammar_explanation": "In English, direct demands ('Give me tea') sound blunt. Use polite requests instead: 'Could I please have a cup of tea?' or 'I would like two notebooks, please.'\n\nதமிழ் விளக்கம்:\nகடை அல்லது உணவகங்களில் நேரடியாக கட்டளையிடுவது மரியாதை குறைவாக தோன்றும். அதற்குப் பதிலாக:\n- 'I would like...' (நான் விரும்புகிறேன்)\n- 'Could you please give me...' (தயவுசெய்து தர முடியுமா?)\n- 'How much does this cost?' (இதன் விலை என்ன?) என்று பேச வேண்டும்.",
+    "vocabulary_words": [
+      {"word": "Price", "tamil": "விலை", "pronunciation": "PRYS"},
+      {"word": "Cost", "tamil": "செலவு / விலை", "pronunciation": "KOST"},
+      {"word": "Vegetables", "tamil": "காய்கறிகள்", "pronunciation": "VEJ-tuh-bulz"},
+      {"word": "Fruit", "tamil": "பழம்", "pronunciation": "FROOT"},
+      {"word": "Bill", "tamil": "ரசீது / கட்டணம்", "pronunciation": "BIL"},
+      {"word": "Money", "tamil": "பணம்", "pronunciation": "MUN-ee"},
+      {"word": "Discount", "tamil": "தள்ளுபடி", "pronunciation": "DIS-kownt"},
+      {"word": "Delicious", "tamil": "சுவையான", "pronunciation": "di-LISH-us"},
+      {"word": "Spicy", "tamil": "காரமான", "pronunciation": "SPY-see"},
+      {"word": "Sweet", "tamil": "இனிப்பான", "pronunciation": "SWEET"}
+    ],
+    "example_sentences": [
+      {"en": "How much does one kilo of tomatoes cost?", "ta": "ஒரு கிலோ தக்காளி என்ன விலை?"},
+      {"en": "I would like a plate of vegetable biryani, please.", "ta": "எனக்கு ஒரு தட்டு வெஜிடபிள் பிரியாணி வேண்டும், தயவுசெய்து."},
+      {"en": "Could you please provide the bill?", "ta": "தயவுசெய்து ரசீதை வழங்க முடியுமா?"},
+      {"en": "This traditional mango payasam is truly delicious.", "ta": "இந்த பாரம்பரிய மாம்பழ பாயாசம் மிகவும் சுவையாக உள்ளது."},
+      {"en": "Is there any student discount available on this laptop?", "ta": "இந்த மடிக்கணினியில் மாணவர் தள்ளுபடி ஏதேனும் உள்ளதா?"}
+    ],
+    "conversation_exercise": "Role-play ordering lunch at a college cafeteria with the AI tutor. Ask the price, order your dish, and request the bill.",
+    "practice_questions": [
+      {
+        "id": 1,
+        "question": "Which phrase is the most polite way to order coffee?",
+        "options": ["Give me coffee.", "I want coffee now.", "I would like a cup of coffee, please.", "Bring coffee."],
+        "correct_answer": 2,
+        "explanation_en": "'I would like a cup of coffee, please' is respectful and courteous.",
+        "explanation_ta": "'I would like...' என்று கேட்பதே மரியாதையான முறை."
+      },
+      {
+        "id": 2,
+        "question": "How do you ask the price of a shirt?",
+        "options": ["How much is this shirt?", "What rupees shirt?", "How many cost shirt?", "Shirt is what price?"],
+        "correct_answer": 0,
+        "explanation_en": "'How much is this shirt?' is the natural expression.",
+        "explanation_ta": "'How much is this shirt?' என்று கேட்க வேண்டும்."
+      },
+      {
+        "id": 3,
+        "question": "Which quantifier is appropriate for water?",
+        "options": ["a loaf of water", "a bottle of water", "a slice of water", "a packet of water"],
+        "correct_answer": 1,
+        "explanation_en": "Liquids like water are counted in bottles, glasses, or liters.",
+        "explanation_ta": "தண்ணீருக்கு 'a bottle of water' பொருத்தமானது."
+      },
+      {
+        "id": 4,
+        "question": "What does 'Spicy' mean in Tamil?",
+        "options": ["இனிப்பான", "காரமான", "புளிப்பான", "கசப்பான"],
+        "correct_answer": 1,
+        "explanation_en": "'Spicy' translates to 'காரமான'.",
+        "explanation_ta": "'Spicy' என்றால் 'காரமான' என்று பொருள்."
+      },
+      {
+        "id": 5,
+        "question": "Complete the request: 'Could you ____ me a pen?'",
+        "options": ["lends", "lending", "please lend", "loaned"],
+        "correct_answer": 2,
+        "explanation_en": "Modal 'could' takes the base verb: 'Could you please lend me a pen?'.",
+        "explanation_ta": "'Could you please lend...' என்பதே சரியானது."
+      }
+    ]
+  },
+  {
+    "day_number": 9,
+    "title": "Day 9: Present Continuous Tense",
+    "topic": "Present Continuous (Actions Happening Now)",
+    "level": "Beginner (A1-A2)",
+    "learning_objectives": [
+      "Describe actions currently in progress using am/is/are + verb-ing.",
+      "Distinguish simple present (habits) from present continuous (happening right now).",
+      "Avoid using continuous tense with stative verbs like 'know' or 'like'."
+    ],
+    "grammar_focus": "Be-verb + Verb+ing: I am studying, She is writing, They are watching.",
+    "grammar_explanation": "Use present continuous for an event taking place right at this moment. Structure: Subject + am/is/are + verb-ing. Note: We don't say 'I am knowing English' (stative verb); we say 'I know English'.\n\nதமிழ் விளக்கம்:\nஇப்போது நிகழ்ந்து கொண்டிருக்கும் செயலைக் குறிக்க:\n- I am reading (நான் படித்துக் கொண்டிருக்கிறேன்).\n- He is writing (அவன் எழுதிக் கொண்டிருக்கிறான்).\n- They are playing (அவர்கள் விளையாடிக் கொண்டிருக்கிறார்கள்).",
+    "vocabulary_words": [
+      {"word": "Currently", "tamil": "தற்போது", "pronunciation": "KUR-unt-lee"},
+      {"word": "Reading", "tamil": "வாசித்தல்", "pronunciation": "REED-ing"},
+      {"word": "Writing", "tamil": "எழுதுதல்", "pronunciation": "RY-ting"},
+      {"word": "Listening", "tamil": "கவனித்தல்", "pronunciation": "LIS-ning"},
+      {"word": "Cooking", "tamil": "சமைத்தல்", "pronunciation": "KOOK-ing"},
+      {"word": "Studying", "tamil": "படித்தல்", "pronunciation": "STUH-dee-ing"},
+      {"word": "Waiting", "tamil": "காத்திருத்தல்", "pronunciation": "WAY-ting"},
+      {"word": "Walking", "tamil": "நடத்தல்", "pronunciation": "WAWK-ing"},
+      {"word": "Running", "tamil": "ஓடுதல்", "pronunciation": "RUN-ing"},
+      {"word": "Now", "tamil": "இப்போது", "pronunciation": "NOW"}
+    ],
+    "example_sentences": [
+      {"en": "I am studying English grammar on LinguaMate AI right now.", "ta": "நான் இப்போது LinguaMate AI இல் ஆங்கில இலக்கணம் படித்துக் கொண்டிருக்கிறேன்."},
+      {"en": "My mother is cooking dinner in the kitchen.", "ta": "என் அம்மா சமையலறையில் இரவு உணவு சமைத்துக் கொண்டிருக்கிறார்."},
+      {"en": "The students are listening attentively to the professor.", "ta": "மாணவர்கள் பேராசிரியரை கவனமாகக் கேட்டுக் கொண்டிருக்கிறார்கள்."},
+      {"en": "He is waiting for the town bus at the bus stand.", "ta": "அவர் பேருந்து நிலையத்தில் நகரப் பேருந்துக்காக காத்திருக்கிறார்."},
+      {"en": "It is raining heavily in Chennai today.", "ta": "சென்னையில் இன்று பலத்த மழை பெய்து கொண்டிருக்கிறது."}
+    ],
+    "conversation_exercise": "Look around your room or imagine your college campus. Describe three actions people are doing right now.",
+    "practice_questions": [
+      {
+        "id": 1,
+        "question": "Which sentence describes an action happening at this exact moment?",
+        "options": ["I read books every night.", "I am reading a book now.", "I will read a book tomorrow.", "I read a book yesterday."],
+        "correct_answer": 1,
+        "explanation_en": "'I am reading a book now' uses the present continuous tense.",
+        "explanation_ta": "'I am reading a book now' என்பது இப்போது நடக்கும் செயல்."
+      },
+      {
+        "id": 2,
+        "question": "Fill in the blank: 'Look! The baby ____ sweetly.'",
+        "options": ["sleep", "is sleeping", "are sleeping", "sleeps"],
+        "correct_answer": 1,
+        "explanation_en": "'Look!' signals an ongoing action with a singular subject: 'is sleeping'.",
+        "explanation_ta": "'The baby' ஒருமை என்பதால் 'is sleeping' வரும்."
+      },
+      {
+        "id": 3,
+        "question": "Correct the error: 'They is playing cricket in the ground.'",
+        "options": ["They are playing cricket in the ground.", "They am playing cricket in the ground.", "They plays cricket in the ground.", "They are play cricket in the ground."],
+        "correct_answer": 0,
+        "explanation_en": "'They' is plural and takes 'are playing'.",
+        "explanation_ta": "'They' பன்மை என்பதால் 'are playing' வர வேண்டும்."
+      },
+      {
+        "id": 4,
+        "question": "Why is 'I am knowing the answer' incorrect in English?",
+        "options": ["'Knowing' is not an English word.", "'Know' is a stative verb and usually cannot be used in continuous tense.", "It needs 'are' instead of 'am'.", "It is correct."],
+        "correct_answer": 1,
+        "explanation_en": "Verbs of perception/cognition like 'know' are rarely used in continuous tense. Say 'I know the answer'.",
+        "explanation_ta": "'Know' என்பது நிலையை குறிக்கும் வினைச்சொல்; 'I know' என்று கூற வேண்டும்."
+      },
+      {
+        "id": 5,
+        "question": "What is the correct spelling of 'run' in continuous form?",
+        "options": ["runing", "running", "runnning", "runed"],
+        "correct_answer": 1,
+        "explanation_en": "Double the consonant 'n' before '-ing': 'running'.",
+        "explanation_ta": "கடைசி மெய்யெழுத்து இரட்டித்து 'running' என மாறும்."
+      }
+    ]
+  },
+  {
+    "day_number": 10,
+    "title": "Day 10: Past Tense Basics",
+    "topic": "Simple Past Tense & Regular/Irregular Verbs",
+    "level": "Beginner (A2)",
+    "learning_objectives": [
+      "Form sentences about finished past events using simple past verbs.",
+      "Learn regular past tense (-ed) and frequent irregular verbs (went, saw, ate, had, came).",
+      "Construct negative past sentences using 'did not' + base verb."
+    ],
+    "grammar_focus": "Simple Past (Subject + Verb2) and Negatives (Subject + did not + Verb1).",
+    "grammar_explanation": "Simple past represents completed actions in the past. Regular verbs add '-ed' (walked, played). Irregular verbs change completely (go -> went, eat -> ate). In negatives and questions, use 'did not' or 'Did' with the BASE verb (He did not go, NOT He did not went).\n\nதமிழ் விளக்கம்:\nமுடிந்த செயலைக் குறிக்க இறந்த காலம் பயன்படுகிறது.\n- go -> went (சென்றேன்)\n- come -> came (வந்தேன்)\n- eat -> ate (சாப்பிட்டேன்)\nஎதிர்மறைக்கு: did not + base verb: He did not come (He did not came என்பது தவறு).",
+    "vocabulary_words": [
+      {"word": "Went", "tamil": "சென்றார் / போனார்", "pronunciation": "WENT"},
+      {"word": "Came", "tamil": "வந்தார்", "pronunciation": "KAYM"},
+      {"word": "Saw", "tamil": "பார்த்தார்", "pronunciation": "SAW"},
+      {"word": "Ate", "tamil": "சாப்பிட்டார்", "pronunciation": "AYT"},
+      {"word": "Had", "tamil": "வைத்திருந்தார் / கொண்டிருந்தார்", "pronunciation": "HAD"},
+      {"word": "Did", "tamil": "செய்தார்", "pronunciation": "DID"},
+      {"word": "Spoke", "tamil": "பேசினார்", "pronunciation": "SPOHK"},
+      {"word": "Wrote", "tamil": "எழுதினார்", "pronunciation": "ROHT"},
+      {"word": "Bought", "tamil": "வாங்கினார்", "pronunciation": "BAWT"},
+      {"word": "Yesterday", "tamil": "நேற்று", "pronunciation": "YES-tur-day"}
+    ],
+    "example_sentences": [
+      {"en": "I went to the college library yesterday afternoon.", "ta": "நான் நேற்று மதியம் கல்லூரி நூலகத்திற்குச் சென்றேன்."},
+      {"en": "She wrote an impressive article on artificial intelligence.", "ta": "அவள் செயற்கை நுண்ணறிவு குறித்து ஒரு அருமையான கட்டுரை எழுதினாள்."},
+      {"en": "They ate traditional dosa for breakfast this morning.", "ta": "அவர்கள் இன்று காலை உணவுக்கு பாரம்பரிய தோசை சாப்பிட்டார்கள்."},
+      {"en": "He did not attend the seminar due to fever.", "ta": "காய்ச்சல் காரணமாக அவர் கருத்தரங்கில் கலந்து கொள்ளவில்லை."},
+      {"en": "We bought a new grammar book from the bookstore.", "ta": "நாங்கள் புத்தகக் கடையிலிருந்து ஒரு புதிய இலக்கணப் புத்தகம் வாங்கினோம்."}
+    ],
+    "conversation_exercise": "Tell your AI companion about what you did yesterday. Mention three distinct activities.",
+    "practice_questions": [
+      {
+        "id": 1,
+        "question": "What is the past tense of 'go'?",
+        "options": ["goed", "went", "gone", "going"],
+        "correct_answer": 1,
+        "explanation_en": "'Went' is the simple past form of 'go'.",
+        "explanation_ta": "'Go' என்பதன் இறந்த காலம் 'Went' ஆகும்."
+      },
+      {
+        "id": 2,
+        "question": "Which negative past sentence is grammatically correct?",
+        "options": ["He did not went to college.", "He did not go to college.", "He not went to college.", "He did not goes to college."],
+        "correct_answer": 1,
+        "explanation_en": "Always use the base verb after 'did not': 'did not go'.",
+        "explanation_ta": "'did not' வந்தால் அடுத்து 'go' என்ற மூல வினைச்சொல் வரவேண்டும்."
+      },
+      {
+        "id": 3,
+        "question": "Fill in the blank: 'We ____ an engaging Tamil movie last night.'",
+        "options": ["see", "saw", "seen", "watching"],
+        "correct_answer": 1,
+        "explanation_en": "'Last night' indicates past tense; the past of 'see' is 'saw'.",
+        "explanation_ta": "நேற்று இரவு நடந்ததால் 'saw' வர வேண்டும்."
+      },
+      {
+        "id": 4,
+        "question": "Choose the past tense of 'buy':",
+        "options": ["buyed", "bought", "bringing", "boughted"],
+        "correct_answer": 1,
+        "explanation_en": "The past tense of 'buy' is 'bought'.",
+        "explanation_ta": "'Buy' என்பதன் இறந்த காலம் 'bought'."
+      },
+      {
+        "id": 5,
+        "question": "Which sentence correctly uses regular past tense?",
+        "options": ["She completed her project on time.", "She complete her project on time.", "She was complete her project on time.", "She completes her project yesterday."],
+        "correct_answer": 0,
+        "explanation_en": "'Completed' has the standard regular '-ed' ending.",
+        "explanation_ta": "'Completed' என்பதே சரியான இறந்த கால வடிவம்."
+      }
+    ]
+  },
+  {
+    "day_number": 11,
+    "title": "Day 11: Directions and Travel",
+    "topic": "Giving & Asking for Directions",
+    "level": "Beginner (A2)",
+    "learning_objectives": [
+      "Ask for directions politely using 'Excuse me, where is...' and 'How do I get to...'.",
+      "Give step-by-step directions using imperatives: Turn left, Go straight, Cross the road.",
+      "Understand preposition of place: opposite to, next to, behind, in front of."
+    ],
+    "grammar_focus": "Imperative sentences for giving directions and prepositions of location.",
+    "grammar_explanation": "Imperative sentences give instructions or commands. They begin directly with the base verb without a subject pronoun (e.g., 'Turn left', 'Walk past the bank').\n\nதமிழ் விளக்கம்:\nவழி சொல்வதற்கு நேரடி வினைச்சொற்கள் பயன்படும்:\n- Go straight = நேராக செல்லுங்கள்\n- Turn right / left = வலது / இடதுபுறம் திரும்புங்கள்\n- Opposite to = எதிரில்\n- Next to = அருகில் / அடுத்ததாக",
+    "vocabulary_words": [
+      {"word": "Direction", "tamil": "திசை / வழி", "pronunciation": "duh-REK-shun"},
+      {"word": "Turn", "tamil": "திரும்பு", "pronunciation": "TURN"},
+      {"word": "Straight", "tamil": "நேராக", "pronunciation": "STRAYT"},
+      {"word": "Cross", "tamil": "கடந்து செல்", "pronunciation": "KROSS"},
+      {"word": "Opposite", "tamil": "எதிரில்", "pronunciation": "OP-uh-zit"},
+      {"word": "Next to", "tamil": "பக்கத்தில்", "pronunciation": "NEKST too"},
+      {"word": "Behind", "tamil": "பின்னே", "pronunciation": "bi-HYND"},
+      {"word": "In front of", "tamil": "முன்னே", "pronunciation": "in FRUNT ov"},
+      {"word": "Distance", "tamil": "தூரம்", "pronunciation": "DIS-tunss"},
+      {"word": "Bus stop", "tamil": "பேருந்து நிறுத்தம்", "pronunciation": "BUS stop"}
+    ],
+    "example_sentences": [
+      {"en": "Excuse me, how can I reach the central railway station?", "ta": "மன்னிக்கவும், மத்திய ரயில் நிலையத்தை நான் எவ்வாறு அடைவது?"},
+      {"en": "Go straight for two hundred meters and then turn left.", "ta": "இருநூறு மீட்டர்கள் நேராகச் சென்று பின்னர் இடதுபுறம் திரும்பவும்."},
+      {"en": "The bank is right opposite the government hospital.", "ta": "வங்கி அரசு மருத்துவமனைக்கு நேர் எதிரே உள்ளது."},
+      {"en": "Cross the main road at the zebra crossing.", "ta": "வரிக்குதிரை பாதசாரி கடவையில் பிரதான சாலையைக் கடக்கவும்."},
+      {"en": "The college auditorium is situated next to the central library.", "ta": "கல்லூரி கலையரங்கம் மைய நூலகத்திற்கு அடுத்து அமைந்துள்ளது."}
+    ],
+    "conversation_exercise": "Guide a tourist from the college main gate to the computer science department laboratory.",
+    "practice_questions": [
+      {
+        "id": 1,
+        "question": "Which phrase politely attracts attention before asking for directions?",
+        "options": ["Hey you!", "Excuse me,", "Listen to me,", "Stop there,"],
+        "correct_answer": 1,
+        "explanation_en": "'Excuse me' is universally polite.",
+        "explanation_ta": "'Excuse me' என்று தொடங்குவதே மரியாதையான வழி."
+      },
+      {
+        "id": 2,
+        "question": "What does 'Turn right' mean in Tamil?",
+        "options": ["இடதுபுறம் திரும்பு", "வலதுபுறம் திரும்பு", "நேராக செல்", "பின்னே செல்"],
+        "correct_answer": 1,
+        "explanation_en": "'Right' translates to 'வலது'.",
+        "explanation_ta": "'Turn right' என்பது 'வலதுபுறம் திரும்பு' ஆகும்."
+      },
+      {
+        "id": 3,
+        "question": "Choose the preposition: 'The pharmacy is ____ the clinic.'",
+        "options": ["next to", "at to", "on next", "over to"],
+        "correct_answer": 0,
+        "explanation_en": "'Next to' denotes directly beside.",
+        "explanation_ta": "'Next to' பக்கத்தில் இருப்பதைக் குறிக்கிறது."
+      },
+      {
+        "id": 4,
+        "question": "Which imperative instruction is correct?",
+        "options": ["You turning left.", "Turn left.", "Turns left.", "To turn left."],
+        "correct_answer": 1,
+        "explanation_en": "Imperatives start with the base form: 'Turn left'.",
+        "explanation_ta": "கட்டளை அல்லது வழி காட்டுவதற்கு 'Turn left' என வரும்."
+      },
+      {
+        "id": 5,
+        "question": "Translate to English: 'அரசு மருத்துவமனை எதிரே உள்ளது.'",
+        "options": ["It is opposite the government hospital.", "It is beside the government hospital.", "It is under the government hospital.", "It is behind of government hospital."],
+        "correct_answer": 0,
+        "explanation_en": "'Opposite the government hospital' is the accurate translation.",
+        "explanation_ta": "'It is opposite the government hospital' என்பதே சரியான மொழிபெயர்ப்பு."
+      }
+    ]
+  },
+  {
+    "day_number": 12,
+    "title": "Day 12: Common Mistakes and Sentence Correction",
+    "topic": "Error Analysis & Indian English Corrections",
+    "level": "Beginner (A2)",
+    "learning_objectives": [
+      "Identify common Indian English grammatical transfers (e.g. 'revert back', 'cousin brother').",
+      "Fix article errors (using 'a', 'an', and 'the' accurately).",
+      "Correct preposition and plural noun blunders (e.g. 'one of my friend' -> 'one of my friends')."
+    ],
+    "grammar_focus": "Definite/Indefinite Articles and Common Lexical Transfer Errors.",
+    "grammar_explanation": "Notice these frequent mistakes:\n1. 'One of my friends' (NOT 'one of my friend' - you choose one from many friends).\n2. 'She works as an engineer' (NOT 'She works as engineer' - don't drop articles).\n3. 'Reply' instead of 'revert back' ('revert' already means go back).\n4. 'My cousin' (NOT 'cousin brother' or 'cousin sister').\n\nதமிழ் விளக்கம்:\nதமிழ் வழியில் சிந்தித்து ஆங்கிலத்தில் மொழிபெயர்க்கும்போது ஏற்படும் தவறுகளைச் சரிசெய்யுங்கள்:\n- One of my friends (என் நண்பர்களில் ஒருவர்)\n- She is an engineer ('an' சேர்க்க வேண்டும்)\n- Cousin (brother / sister சேர்க்கக் கூடாது).",
+    "vocabulary_words": [
+      {"word": "Mistake", "tamil": "தவறு", "pronunciation": "mis-TAYK"},
+      {"word": "Correction", "tamil": "திருத்தம்", "pronunciation": "kuh-REK-shun"},
+      {"word": "Rule", "tamil": "விதி", "pronunciation": "ROOL"},
+      {"word": "Article", "tamil": "சுட்டுச்சொல் (a, an, the)", "pronunciation": "AHR-ti-kul"},
+      {"word": "Plural", "tamil": "பன்மை", "pronunciation": "PLOOR-ul"},
+      {"word": "Singular", "tamil": "ஒருமை", "pronunciation": "SING-gyuh-lur"},
+      {"word": "Accurate", "tamil": "துல்லியமான", "pronunciation": "AK-yur-it"},
+      {"word": "Cousin", "tamil": "ஒன்றுவிட்ட உடன்பிறப்பு", "pronunciation": "KUZ-in"},
+      {"word": "Preposition", "tamil": "முன்னிடைச்சொல்", "pronunciation": "prep-uh-ZISH-un"},
+      {"word": "Improvement", "tamil": "மேம்பாடு", "pronunciation": "im-PROOV-munt"}
+    ],
+    "example_sentences": [
+      {"en": "One of my friends is visiting from Madurai.", "ta": "என் நண்பர்களில் ஒருவர் மதுரையிலிருந்து வருகிறார்."},
+      {"en": "She wants to become an honest civil servant.", "ta": "அவள் ஒரு நேர்மையான அரசு அதிகாரியாக விரும்புகிறாள்."},
+      {"en": "Please reply to my email at your earliest convenience.", "ta": "தயவுசெய்து உங்கள் வசதிக்கேற்ப என் மின்னஞ்சலுக்கு பதிலளிக்கவும்."},
+      {"en": "Suresh is my cousin.", "ta": "சுரேஷ் எனது ஒன்றுவிட்ட சகோதரன்."},
+      {"en": "I have been staying here for two years.", "ta": "நான் இங்கு இரண்டு ஆண்டுகளாக தங்கி வருகிறேன்."}
+    ],
+    "conversation_exercise": "Analyze three sentences you wrote earlier this week. Find one mistake in each, explain why it happened, and write the corrected version.",
+    "practice_questions": [
+      {
+        "id": 1,
+        "question": "Which sentence correctly corrects 'One of my friend is a doctor'?",
+        "options": ["One of my friend are a doctor.", "One of my friends is a doctor.", "One of my friends are a doctor.", "One of my friend be doctor."],
+        "correct_answer": 1,
+        "explanation_en": "Use 'friends' (plural noun after 'one of') with 'is' (singular verb matching 'one').",
+        "explanation_ta": "'One of my friends is a doctor' - 'friends' பன்மை, ஆனால் 'is' ஒருமை வினைச்சொல் வர வேண்டும்."
+      },
+      {
+        "id": 2,
+        "question": "What is wrong with 'He gave me a good advice'?",
+        "options": ["'Advice' is uncountable; use 'a piece of advice' or just 'good advice'.", "'Gave' should be 'gives'.", "'Good' is misspelled.", "Nothing is wrong."],
+        "correct_answer": 0,
+        "explanation_en": "'Advice' is an uncountable noun and cannot directly take 'a'.",
+        "explanation_ta": "'Advice' எண்ண முடியாத பெயர்ச்சொல், எனவே 'a advice' என்று வரக் கூடாது."
+      },
+      {
+        "id": 3,
+        "question": "Correct the Indian English redundancy: 'Please revert back immediately.'",
+        "options": ["Please reply immediately.", "Please revert again back.", "Please revert back soon.", "Please be reverting back."],
+        "correct_answer": 0,
+        "explanation_en": "'Revert' already means return; combining it with 'back' is redundant. Use 'reply'.",
+        "explanation_ta": "'Revert back' தேவையற்ற இரட்டிப்பு; 'reply' என்பதே சரியான சொல்."
+      },
+      {
+        "id": 4,
+        "question": "Fill in the correct article: 'Ravi is ____ honest student.'",
+        "options": ["a", "an", "the", "no article"],
+        "correct_answer": 1,
+        "explanation_en": "'Honest' starts with a vowel sound (silent 'h'), so use 'an'.",
+        "explanation_ta": "'Honest' என்பது உயிர் ஒலி ('ஆ') கொண்டு தொடங்குவதால் 'an' வரும்."
+      },
+      {
+        "id": 5,
+        "question": "Which term is preferred in standard English instead of 'cousin brother'?",
+        "options": ["brother-cousin", "cousin", "brotherly cousin", "family brother"],
+        "correct_answer": 1,
+        "explanation_en": "Standard English simply uses 'cousin' for both genders.",
+        "explanation_ta": "ஆங்கிலத்தில் 'brother' சேர்க்காமல் 'cousin' என்று மட்டுமே சொல்ல வேண்டும்."
+      }
+    ]
+  },
+  {
+    "day_number": 13,
+    "title": "Day 13: College, Workplace, and Interview Conversations",
+    "topic": "Academic & Professional Speaking",
+    "level": "Beginner (A2)",
+    "learning_objectives": [
+      "Introduce your academic strengths, skills, and capstone project.",
+      "Answer typical interview starter questions: 'Tell me about yourself' and 'What are your strengths?'.",
+      "Speak politely in campus and workplace situations."
+    ],
+    "grammar_focus": "Present Perfect for experiences ('I have worked on...', 'I have completed...') and professional modal verbs.",
+    "grammar_explanation": "When discussing your skills or accomplishments up to the present, use present perfect (have/has + past participle): 'I have built a web application', 'I have learned Python'.\n\nதமிழ் விளக்கம்:\nஉங்கள் திறன்கள் மற்றும் சாதனைகளைப் பற்றி நேர்காணலில் பேசும்போது 'have/has + past participle' பயன்படுகிறது:\n- I have completed my project (நான் என் திட்டப்பணியை முடித்துள்ளேன்).\n- I have learned Python (நான் பைத்தான் கற்றுக்கொண்டுள்ளேன்).",
+    "vocabulary_words": [
+      {"word": "Interview", "tamil": "நேர்காணல்", "pronunciation": "IN-tur-vyoo"},
+      {"word": "Strength", "tamil": "பலம் / ஆற்றல்", "pronunciation": "STRENGKTH"},
+      {"word": "Opportunity", "tamil": "வாய்ப்பு", "pronunciation": "op-ur-TOO-nuh-tee"},
+      {"word": "Experience", "tamil": "அனுபவம்", "pronunciation": "ik-SPEER-ee-unss"},
+      {"word": "Responsible", "tamil": "பொறுப்புள்ள", "pronunciation": "ri-SPON-suh-bul"},
+      {"word": "Achieve", "tamil": "அடை / சாதி", "pronunciation": "uh-CHEEV"},
+      {"word": "Career", "tamil": "தொழில் வாழ்க்கை", "pronunciation": "kuh-REER"},
+      {"word": "Collaborate", "tamil": "இணைந்து செயல்படு", "pronunciation": "kuh-LAB-uh-rayt"},
+      {"word": "Resume", "tamil": "சுயவிவரக் குறிப்பு", "pronunciation": "REZ-oo-may"},
+      {"word": "Confident", "tamil": "தன்னம்பிக்கை உடைய", "pronunciation": "KON-fi-dunt"}
+    ],
+    "example_sentences": [
+      {"en": "Good morning, sir. Thank you for this interview opportunity.", "ta": "காலை வணக்கம் ஐயா. இந்த நேர்காணல் வாய்ப்புக்கு நன்றி."},
+      {"en": "I have completed my capstone project on AI language learning.", "ta": "நான் AI மொழி கற்றல் குறித்த எனது இறுதி ஆண்டு திட்டப்பணியை முடித்துள்ளேன்."},
+      {"en": "My greatest strength is consistent problem solving.", "ta": "எனது மிகப்பெரிய பலம் தொடர்ச்சியான சிக்கல் தீர்க்கும் திறன் ஆகும்."},
+      {"en": "I can communicate clearly and work effectively in a team.", "ta": "என்னால் தெளிவாக தொடர்பு கொண்டு ஒரு குழுவில் திறம்பட செயல்பட முடியும்."},
+      {"en": "I am eager to contribute my technical skills to this organization.", "ta": "இந்த நிறுவனத்திற்கு எனது தொழில்நுட்ப திறன்களை வழங்க நான் ஆர்வமாக உள்ளேன்."}
+    ],
+    "conversation_exercise": "Practice a simulated job interview with LinguaMate AI. Answer the prompt: 'Tell me about yourself and your capstone project.'",
+    "practice_questions": [
+      {
+        "id": 1,
+        "question": "How do you professionally begin an interview response to 'Tell me about yourself'?",
+        "options": ["Sir, my name is Priya, and I recently completed my degree in Computer Science.", "Myself Priya, what you want to know?", "Hey there, Priya here.", "I don't know what to say."],
+        "correct_answer": 0,
+        "explanation_en": "A polite formal greeting followed by your name and educational background is the best start.",
+        "explanation_ta": "மரியாதையான காலை வணக்கத்துடன் உங்கள் கல்விப் பின்னணியை விவரிப்பதே சிறந்தது."
+      },
+      {
+        "id": 2,
+        "question": "Fill in the blank: 'I ____ completed a certification in Python programming.'",
+        "options": ["has", "have", "am", "was"],
+        "correct_answer": 1,
+        "explanation_en": "'I' pairs with 'have' in the present perfect tense.",
+        "explanation_ta": "'I' உடன் 'have' வரவேண்டும்."
+      },
+      {
+        "id": 3,
+        "question": "Which sentence expresses a professional strength?",
+        "options": ["I am a quick learner and a supportive team player.", "I am very proud and angry.", "I can sleep long hours.", "I don't talk to anyone."],
+        "correct_answer": 0,
+        "explanation_en": "Being a quick learner and team player is a classic professional strength.",
+        "explanation_ta": "வேகமாகக் கற்கும் திறன் மற்றும் குழு ஒற்றுமையே தொழில் பலம் ஆகும்."
+      },
+      {
+        "id": 4,
+        "question": "Translate to English: 'இந்த வாய்ப்புக்கு நன்றி.'",
+        "options": ["Thanks for this chance.", "Thank you for this opportunity.", "Opportunity thank you.", "I take this opportunity."],
+        "correct_answer": 1,
+        "explanation_en": "'Thank you for this opportunity' is formal and widely respected.",
+        "explanation_ta": "'Thank you for this opportunity' என்பதே தொழில்முறை ஆங்கிலம்."
+      },
+      {
+        "id": 5,
+        "question": "Which modal verb expresses willingness politely: 'I ____ like to apply for this post.'",
+        "options": ["will", "would", "must", "can"],
+        "correct_answer": 1,
+        "explanation_en": "'I would like to apply' is the standard polite formulation.",
+        "explanation_ta": "'I would like to...' என்பது மரியாதையான விருப்பத்தை தெரிவிக்கும்."
+      }
+    ]
+  },
+  {
+    "day_number": 14,
+    "title": "Day 14: Final Quiz and Before/After Assessment",
+    "topic": "Comprehensive Capstone Evaluation",
+    "level": "Beginner (A1-A2 Complete)",
+    "learning_objectives": [
+      "Evaluate progress across all 14 days of grammar, vocabulary, and conversation.",
+      "Compare Day 1 diagnostic baseline with Day 14 comprehensive assessment.",
+      "Reflect on AI limitations and plan continued independent learning."
+    ],
+    "grammar_focus": "Mastery of Tenses, Concord, Articles, Prepositions, and Conversational Fluency.",
+    "grammar_explanation": "Congratulations on completing the 14-day journey! Reviewing your initial diagnostic versus your Day 14 performance reveals measurable gains in vocabulary, grammar accuracy, and spoken confidence.\n\nதமிழ் விளக்கம்:\nவாழ்த்துகள்! 14 நாட்கள் பயிற்சியை நீங்கள் வெற்றிகரமாக நிறைவு செய்துள்ளீர்கள். முதல் நாளின் நிலை மற்றும் இன்றைய நிலையை ஒப்பிட்டு உங்கள் முன்னேற்றத்தைக் கொண்டாடுங்கள். தொடர்ந்து எளிய ஆங்கிலத்தில் பேசவும் எழுதவும் பழகுங்கள்.",
+    "vocabulary_words": [
+      {"word": "Assessment", "tamil": "மதிப்பீடு", "pronunciation": "uh-SES-munt"},
+      {"word": "Evaluation", "tamil": "மதிப்பிடுதல்", "pronunciation": "i-val-yoo-AY-shun"},
+      {"word": "Achievement", "tamil": "சாதனை", "pronunciation": "uh-CHEEV-munt"},
+      {"word": "Fluency", "tamil": "சரளத்தன்மை", "pronunciation": "FLOO-un-see"},
+      {"word": "Confidence", "tamil": "தன்னம்பிக்கை", "pronunciation": "KON-fi-dunss"},
+      {"word": "Milestone", "tamil": "மைல்கல்", "pronunciation": "MYL-stohn"},
+      {"word": "Reflection", "tamil": "சிந்தனை / பிரதிபலிப்பு", "pronunciation": "ri-FLEK-shun"},
+      {"word": "Independent", "tamil": "சுயாதீனமான", "pronunciation": "in-di-PEN-dunt"},
+      {"word": "Knowledge", "tamil": "அறிவு", "pronunciation": "NOL-ij"},
+      {"word": "Future", "tamil": "எதிர்காலம்", "pronunciation": "FYOO-chur"}
+    ],
+    "example_sentences": [
+      {"en": "I have successfully completed the 14-day English learning plan.", "ta": "நான் 14 நாள் ஆங்கில கற்றல் திட்டத்தை வெற்றிகரமாக முடித்துள்ளேன்."},
+      {"en": "My vocabulary expanded by more than one hundred practical words.", "ta": "என் சொற்களஞ்சியம் நூற்றுக்கும் மேற்பட்ட பயனுள்ள சொற்களால் விரிவடைந்துள்ளது."},
+      {"en": "I can now introduce myself confidently without hesitation.", "ta": "இப்போது என்னால் எந்த தயக்கமும் இன்றி தன்னம்பிக்கையுடன் என்னை அறிமுகப்படுத்த முடிகிறது."},
+      {"en": "The before-and-after assessment shows clear grammatical progress.", "ta": "முந்தைய மற்றும் பிந்தைய மதிப்பீடு தெளிவான இலக்கண முன்னேற்றத்தைக் காட்டுகிறது."},
+      {"en": "I will continue speaking simple English with my college peers.", "ta": "கல்லூரி நண்பர்களுடன் தொடர்ந்து எளிய ஆங்கிலத்தில் பேசுவேன்."}
+    ],
+    "conversation_exercise": "Celebrate your completion! Engage in a final graduation conversation with LinguaMate AI summarizing what you learned and your plan for the future.",
+    "practice_questions": [
+      {
+        "id": 1,
+        "question": "Which sentence demonstrates proper subject-verb agreement?",
+        "options": ["Each student has an identity card.", "Each student have an identity card.", "Each students is having identity card.", "Each student are having identity card."],
+        "correct_answer": 0,
+        "explanation_en": "'Each student' is singular and requires 'has'.",
+        "explanation_ta": "'Each student' ஒருமை என்பதால் 'has' வரவேண்டும்."
+      },
+      {
+        "id": 2,
+        "question": "Identify the correct sentence in simple past:",
+        "options": ["She writed a letter.", "She wrote a letter.", "She has wrote a letter.", "She is wrote a letter."],
+        "correct_answer": 1,
+        "explanation_en": "The past tense of write is 'wrote'.",
+        "explanation_ta": "'Write' இன் இறந்த காலம் 'wrote'."
+      },
+      {
+        "id": 3,
+        "question": "Choose the correctly capitalized and punctuated sentence:",
+        "options": ["good morning, How are you.", "Good morning, how are you?", "Good morning how are you", "good Morning how are you?"],
+        "correct_answer": 1,
+        "explanation_en": "Capital 'G' at the start and a question mark at the end.",
+        "explanation_ta": "தொடக்கத்தில் பெரிய எழுத்து மற்றும் இறுதியில் கேள்விக்குறி இருத்தல் வேண்டும்."
+      },
+      {
+        "id": 4,
+        "question": "What is the primary role of an AI language companion according to responsible AI principles?",
+        "options": ["An unquestionable authority that is never wrong.", "A practice assistant that requires human verification and critical thinking.", "A tool that replaces teachers and exams completely.", "A system that invents rules on the spot."],
+        "correct_answer": 1,
+        "explanation_en": "AI is a practice assistant; learners and teachers should critically verify its outputs.",
+        "explanation_ta": "AI ஒரு பயிற்சி துணையே; அதன் பதில்களை மனித சரிபார்ப்புடன் அணுக வேண்டும்."
+      },
+      {
+        "id": 5,
+        "question": "Translate to Tamil: 'Consistency leads to fluency.'",
+        "options": ["தொடர்ச்சி சரளத்திற்கு வழிவகுக்கும்.", "வேகம் மட்டுமே முக்கியம்.", "அமைதியாக இருங்கள்.", "பயிற்சி செய்ய வேண்டாம்."],
+        "correct_answer": 0,
+        "explanation_en": "'Consistency leads to fluency' means 'தொடர்ச்சி சரளத்திற்கு வழிவகுக்கும்'.",
+        "explanation_ta": "தொடர்ச்சியான முயற்சியே சரளமாகப் பேச வழிவகுக்கும்."
+      }
+    ]
+  }
+]

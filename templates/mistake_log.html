@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %}Mistake Log — {{ app_name }}{% endblock %}
+{% block page_title %}Mistake Log (தவறுகள் மற்றும் திருத்தக் குறிப்பேடு){% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0">
+  <!-- Controls Bar -->
+  <div class="card-custom p-3 mb-4">
+    <form method="GET" action="{{ url_for('mistakes.index') }}" class="row g-2 align-items-center">
+      <div class="col-md-4">
+        <div class="input-group">
+          <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
+          <input type="text" name="search" class="form-control border-start-0" placeholder="Search sentence or grammar rule..." value="{{ search_query }}">
+        </div>
+      </div>
+      <div class="col-md-2">
+        <select name="source" class="form-select" onchange="this.form.submit()">
+          <option value="">All Sources</option>
+          <option value="grammar_checker" {% if current_source == 'grammar_checker' %}selected{% endif %}>Grammar Lab</option>
+          <option value="conversation" {% if current_source == 'conversation' %}selected{% endif %}>AI Conversation</option>
+          <option value="quiz" {% if current_source == 'quiz' %}selected{% endif %}>Quiz Questions</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select name="category" class="form-select" onchange="this.form.submit()">
+          <option value="">All Categories</option>
+          {% for cat in categories %}
+          <option value="{{ cat }}" {% if current_category == cat %}selected{% endif %}>{{ cat }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-md-2">
+        <select name="status" class="form-select" onchange="this.form.submit()">
+          <option value="">All Statuses</option>
+          <option value="0" {% if current_status == '0' %}selected{% endif %}>Pending Review</option>
+          <option value="1" {% if current_status == '1' %}selected{% endif %}>Reviewed</option>
+        </select>
+      </div>
+      <div class="col-md-2 text-md-end">
+        <a href="{{ url_for('mistakes.before_after') }}" class="btn btn-outline-primary btn-sm w-100">
+          <i class="bi bi-graph-up-arrow me-1"></i> Before/After Report
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Stats Counter -->
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <span class="text-muted small">Total Mistakes Recorded: <strong>{{ total_count }}</strong></span>
+    <div class="d-flex gap-2">
+      <span class="badge bg-danger-subtle text-danger border border-danger-subtle">
+        <i class="bi bi-exclamation-circle-fill me-1"></i> {{ pending_count }} Pending
+      </span>
+      <span class="badge bg-success-subtle text-success border border-success-subtle">
+        <i class="bi bi-check-circle-fill me-1"></i> {{ reviewed_count }} Mastered
+      </span>
+    </div>
+  </div>
+
+  <!-- Mistakes Table -->
+  <div class="card-custom p-4">
+    {% if mistakes %}
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0">
+        <thead class="table-light">
+          <tr>
+            <th style="width: 28%;">Learner's Original Sentence</th>
+            <th style="width: 28%;">Standard English Correction</th>
+            <th>Mistake Category & Source</th>
+            <th>Tamil Pedagogical Note</th>
+            <th class="text-end">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for m in mistakes %}
+          <tr>
+            <td>
+              <span class="text-danger fw-semibold d-block">
+                <i class="bi bi-x-circle me-1"></i> {{ m.original_sentence }}
+              </span>
+              <small class="text-muted" style="font-size: 0.72rem;">{{ m.created_at }}</small>
+            </td>
+            <td>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="text-success fw-bold">
+                  <i class="bi bi-check-circle me-1"></i> {{ m.corrected_sentence }}
+                </span>
+                <button class="btn btn-sm btn-link text-muted p-0 ms-1" onclick="speakText('{{ m.corrected_sentence|replace("'", "\\'") }}', 0.9)">
+                  <i class="bi bi-volume-up"></i>
+                </button>
+              </div>
+            </td>
+            <td>
+              <span class="badge bg-light text-dark border mb-1 d-inline-block">{{ m.mistake_category }}</span>
+              <div>
+                {% if m.source == 'quiz' %}
+                  <span class="badge bg-warning-subtle text-warning-emphasis border" style="font-size: 0.68rem;"><i class="bi bi-patch-question me-1"></i>Quiz Incorrect</span>
+                {% elif m.source == 'conversation' %}
+                  <span class="badge bg-info-subtle text-info-emphasis border" style="font-size: 0.68rem;"><i class="bi bi-chat-dots me-1"></i>Spoken Dialogue</span>
+                {% else %}
+                  <span class="badge bg-danger-subtle text-danger border" style="font-size: 0.68rem;"><i class="bi bi-spellcheck me-1"></i>Grammar Lab L1 Transfer</span>
+                {% endif %}
+              </div>
+            </td>
+            <td>
+              <span class="tamil-text small">{{ m.explanation_ta }}</span>
+            </td>
+            <td class="text-end">
+              <button class="btn btn-sm {% if m.reviewed %}btn-success{% else %}btn-outline-secondary{% endif %}" 
+                      onclick="toggleMistakeReview({{ m.id }}, this)">
+                {% if m.reviewed %}
+                  <i class="bi bi-check-circle-fill me-1"></i> Reviewed
+                {% else %}
+                  <i class="bi bi-circle me-1"></i> Mark Reviewed
+                {% endif %}
+              </button>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <div class="text-center py-5 text-muted">
+      <i class="bi bi-shield-check fs-1 text-success d-block mb-2"></i>
+      <h5>No matching mistakes found!</h5>
+      <p class="small text-muted">Keep practicing in the Grammar Lab and AI Conversation module to identify and log new areas for improvement.</p>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+async function toggleMistakeReview(mistakeId, btn) {
+  try {
+    const res = await fetch("/mistakes/toggle-review", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: mistakeId })
+    });
+    const data = await res.json();
+    if (data.success) {
+      if (data.reviewed) {
+        btn.className = "btn btn-sm btn-success";
+        btn.innerHTML = '<i class="bi bi-check-circle-fill me-1"></i> Reviewed';
+      } else {
+        btn.className = "btn btn-sm btn-outline-secondary";
+        btn.innerHTML = '<i class="bi bi-circle me-1"></i> Mark Reviewed';
+      }
+    }
+  } catch (err) {
+    alert("Error updating review status.");
+  }
+}
+</script>
+{% endblock %}

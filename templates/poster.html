@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Illustrated Vocabulary Poster — {{ app_name }}{% endblock %}
+{% block page_title %}Illustrated Vocabulary Poster (விளக்கப்பட சொல்லகராதி அட்டை){% endblock %}
+
+{% block content %}
+<div class="container-fluid px-0">
+  <!-- Controls Bar -->
+  <div class="card-custom p-3 mb-4 no-print">
+    <div class="row align-items-center g-3">
+      <div class="col-md-6">
+        <h5 class="fw-bold mb-1"><i class="bi bi-file-earmark-richtext-fill text-primary me-1"></i> Topic-Wise Vocabulary Poster Generator</h5>
+        <p class="text-muted small mb-0">Select any vocabulary topic to render a high-quality printable visual study poster.</p>
+      </div>
+      <div class="col-md-6 d-flex flex-wrap justify-content-md-end gap-2">
+        <form method="GET" action="{{ url_for('poster.index') }}" class="d-flex align-items-center gap-2">
+          <select name="topic" class="form-select form-select-sm" onchange="this.form.submit()">
+            {% for cat in categories %}
+            <option value="{{ cat }}" {% if current_topic == cat %}selected{% endif %}>{{ cat }}</option>
+            {% endfor %}
+          </select>
+        </form>
+        <button class="btn btn-primary btn-sm fw-bold" onclick="window.print()">
+          <i class="bi bi-printer-fill me-1"></i> Print / Save as PDF
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Printable Poster Canvas -->
+  <div class="card-custom p-5 poster-sheet bg-white border-2 border-primary mb-4" id="printablePoster">
+    <!-- Poster Header -->
+    <div class="text-center pb-4 mb-4 border-bottom border-primary border-2">
+      <span class="badge bg-primary px-3 py-1 fs-6 mb-2">LinguaMate AI &bull; Bilingual Classroom Poster</span>
+      <h1 class="display-5 fw-bold text-dark mb-1">
+        <i class="bi {{ topic_icon }} text-primary me-2"></i> {{ current_topic }} Vocabulary
+      </h1>
+      <h4 class="tamil-text fw-bold mb-0">10 அத்தியாவசிய ஆங்கிலச் சொற்கள் மற்றும் பயன்பாடுகள்</h4>
+    </div>
+
+    <!-- Poster 10 Word Grid -->
+    <div class="row g-4">
+      {% for w in words %}
+      <div class="col-md-6">
+        <div class="p-3 rounded-3 border border-2 h-100 bg-light d-flex align-items-start gap-3">
+          <div class="bg-primary text-white rounded-3 p-3 flex-shrink-0 text-center" style="width: 54px;">
+            <span class="fs-4 fw-bold">#{{ loop.index }}</span>
+          </div>
+          <div class="flex-grow-1">
+            <div class="d-flex align-items-center justify-content-between mb-1">
+              <h5 class="fw-bold text-primary mb-0">{{ w.word }}</h5>
+              <span class="badge bg-white text-secondary border small">{{ w.part_of_speech }}</span>
+            </div>
+            <p class="tamil-text fw-bold mb-2 fs-6">{{ w.tamil_meaning }}</p>
+            <div class="small text-muted p-2 bg-white rounded border">
+              <span class="d-block text-dark fw-semibold">"{{ w.example_sentence }}"</span>
+              <span class="tamil-text d-block">{{ w.example_tamil }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Poster Footer -->
+    <div class="text-center pt-4 mt-4 border-top text-muted small d-flex justify-content-between">
+      <span>LinguaMate AI — College Capstone Project</span>
+      <span>Designed for Tamil-Speaking Beginners (A1–A2)</span>
+      <span>Practice Daily for Fluency</span>
+    </div>
+  </div>
+
+  <!-- Canva / Free Visual Tools Tip -->
+  <div class="card-custom p-4 bg-light border no-print">
+    <div class="d-flex align-items-center">
+      <i class="bi bi-palette-fill fs-3 text-secondary me-3"></i>
+      <div>
+        <h6 class="fw-bold mb-1">Canva & Free Design Tool Compatibility Tip</h6>
+        <p class="small text-muted mb-0">
+          Want to print this as a physical poster for your campus notice board? Use the browser's <strong>Print / Save as PDF</strong> feature or copy these 10 verified bilingual definitions into Canva’s free educational templates for custom graphic layouts.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
