@@ -423,7 +423,7 @@ class GrammarChecker:
             modal_pattern = re.compile(
                 r'\b(I|you|we|they|he|she|it)\s+'
                 r'(will|would|can|could|shall|should|may|might|must)\s+'
-                r'(has|have|had|goes|went|go|speaks|spoke|studies|studied)\b',
+                r'(has|had|goes|went|speaks|spoke|studies|studied)\b',
                 re.IGNORECASE
             )
 
